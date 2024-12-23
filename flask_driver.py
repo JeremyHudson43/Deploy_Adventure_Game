@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 import os
 
 # Import your game's core logic
-from adventure_game_adventure_lib.src.core.Game import Game
+# from adventure_game_adventure_lib.src.core.Game import Game
 
 # Create the Flask application
 app = Flask(__name__)
