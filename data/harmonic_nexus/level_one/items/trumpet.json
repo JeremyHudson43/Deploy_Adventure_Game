@@ -1,0 +1,11 @@
+{
+    "id": "trumpet",
+    "name": "Trumpet",
+    "description": "A gleaming brass trumpet that resonates with musical potential. Perfect for integrating into orchestral chaos.",
+    "portable": true,
+    "properties": {
+        "type": "instrument",
+        "musical_style": "brass",
+        "integration_power": 3
+    }
+} 

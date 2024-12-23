@@ -1,0 +1,24 @@
+{
+    "name": "Brendon Urie",
+    "description": "The charismatic frontman commands attention in his tailored suit and top hat, moving with theatrical flair across the ballroom floor.",
+    "dialogue": {
+        "greeting": "Haven't you people ever heard of closing the goddamn door? No? Perfect, Isaac! Welcome to the party!",
+        "topics": {
+            "about_performance": {
+                "drama": "Every move should tell a story! Perform with passion, with drama, with FLAIR!",
+                "presence": "Stage presence isn't just about being seen - it's about commanding attention with every gesture.",
+                "expression": "Let your emotions drive your performance. The stage is yours to own!"
+            },
+            "about_theatrics": {
+                "style": "Combine different theatrical elements - the dance, the drama, the spectacle!",
+                "practice": "Start with dramatic moves, then build your presence from there.",
+                "mastery": "When you can express every emotion through your performance, you'll truly understand showmanship."
+            },
+            "about_stage": {
+                "energy": "The stage is where magic happens - where every move becomes part of the show!",
+                "technique": "Mix your moves with theatrical flair. Make each gesture count!",
+                "wisdom": "True performers know how to combine different elements into one spectacular show."
+            }
+        }
+    }
+}

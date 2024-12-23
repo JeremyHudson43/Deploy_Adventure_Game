@@ -1,0 +1,9 @@
+{
+    "name": "Vanishing Potion",
+    "description": "A mysterious liquid that makes the drinker fade in and out of reality. The bottle is always half empty and half full simultaneously.",
+    "properties": {
+        "type": "magical",
+        "effect": "Reality phasing",
+        "origin": "Cheshire Cat's experiments"
+    }
+} 

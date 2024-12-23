@@ -1,0 +1,9 @@
+{
+    "name": "Bedroom",
+    "description": "A quiet, small bedroom with a neatly made bed and a faint glow of early morning light seeping through the curtains.",
+    "exits": {
+        "south": "living_room"
+    },
+    "items": [],
+    "npcs": ["Tezzeret"]
+}

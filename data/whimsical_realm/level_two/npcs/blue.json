@@ -1,0 +1,47 @@
+{
+    "id": "blue",
+    "name": "Blue",
+    "description": "The playful blue puppy bounds around leaving paw prints that shimmer with memories, each one leading to another piece of the puzzle.",
+    "type": "mentor",
+    "dialogue": {
+        "greeting": "*excited bark* *leaves a glowing paw print of a cherished memory*",
+        "topics": {
+            "about_clues": {
+                "initial": "*paws excitedly at old photographs and treasured toys*",
+                "discovery": "*follows a trail of memory-filled paw prints*",
+                "solving": "*assembles memory clues into a bigger picture*"
+            },
+            "about_play": {
+                "initial": "*invites you to skip through childhood games*",
+                "joy": "*demonstrates how to make old games new again*",
+                "sharing": "*brings friends together to share memory clues*"
+            }
+        }
+    },
+    "states": {
+        "default": {
+            "pose": "playful",
+            "location": "memory_garden",
+            "action": "leaving_clues"
+        },
+        "puzzle_complete": {
+            "pose": "happy",
+            "location": "memory_garden",
+            "action": "celebrating"
+        }
+    },
+    "interactions": {
+        "requirements": {
+            "notebook": {
+                "type": "item",
+                "message": "*points excitedly at the Handy Dandy Notebook*"
+            }
+        },
+        "rewards": {
+            "puzzle_complete": {
+                "type": "knowledge",
+                "message": "You've learned to follow the clues to uncover precious memories!"
+            }
+        }
+    }
+} 

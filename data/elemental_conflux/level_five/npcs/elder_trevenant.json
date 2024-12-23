@@ -1,0 +1,21 @@
+{
+    "name": "Elder Trevenant",
+    "description": "An ancient Trevenant, its bark etched by centuries of wind and rain. A single glowing eye peers kindly from its hollow trunk, while ghostly energy swirls around its roots.",
+    "dialogue": {
+        "greeting": "*A deep, creaking voice resonates through the earth* Isaac... you stand upon sacred ground, where spirits and roots entwine.",
+        "topics": {
+            "about_summit": {
+                "initial": "This peak bridges the realms of flesh and spirit—memories dwell among the towering pines.",
+                "purpose": "We guard the recollections of those who've passed on, their essence nourishing the forest's heart.",
+                "warning": "Tread softly—old spirits watch from the mist. Show reverence, and they shall guide you."
+            },
+            "about_items": {
+                "spirit_tag": "These tags hold the names of the departed, woven into the forest's ancient memory.",
+                "ancestral_incense": "Its fragrant smoke travels the hidden paths of root and spirit, carrying prayers to the departed."
+            },
+            "about_rituals": {
+                "hint": "Light your incense at dusk... when the boundary between spirit and leaf grows thin..."
+            }
+        }
+    }
+}

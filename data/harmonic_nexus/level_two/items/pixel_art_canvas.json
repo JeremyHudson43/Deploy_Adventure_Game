@@ -1,0 +1,11 @@
+{
+    "id": "pixel_art_canvas",
+    "name": "Pixel Art Canvas",
+    "description": "A digital canvas that transforms music into vibrant pixel art patterns.",
+    "portable": true,
+    "properties": {
+        "type": "digital_art",
+        "visual_style": "retro",
+        "pattern_complexity": 3
+    }
+} 

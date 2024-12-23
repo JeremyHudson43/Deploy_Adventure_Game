@@ -1,0 +1,36 @@
+{
+    "id": "flame_guardian_chandra",
+    "name": "Flame Guardian Chandra",
+    "description": "A fierce pyromancer with blazing red hair and battle-forged goggles. She stands amid roaring flames, commanding the sacred fire with explosive power.",
+    "type": "quest_npc",
+    "dialogue": {
+        "greeting": "Isaac, step into my Flame Arena. Strength alone won't save you here; precision and discipline forge true fire mastery.",
+        "topics": {
+            "flame_essence": {
+                "locked": "Master the lesser flames before attempting raw elemental fire.",
+                "unlocked": "Your spirit is strong enough now. The Flame Essence awaits.",
+                "hint": "Remember: intense control tames intense power."
+            },
+            "ritual_candle": {
+                "locked": "These candles gauge a fighter's inner flame. Prove your combat spirit here.",
+                "unlocked": "Your warrior heart has kindled the candle's flame. Keep advancing.",
+                "hint": "Observe how the flame responds to your stance."
+            },
+            "phoenix_feather": {
+                "locked": "Phoenix fire demands unbreakable resolve and rebirth. Are you worthy?",
+                "unlocked": "You've earned the right to the Phoenix Feather. Wield its eternal blaze with honor!",
+                "hint": "To conquer the feather, you must rise as the phoenix does."
+            }
+        },
+        "quest_dialogue": {
+            "start": "We test power, control, and will in this arena. Are you prepared to walk the path of flame?",
+            "in_progress": "Your determination is tested with each spark. Maintain your focus.",
+            "complete": "You wield fire with purpose and clarity. The arena stands in awe!"
+        }
+    },
+    "properties": {
+        "level": "master",
+        "element": "fire",
+        "teaching_style": "intense"
+    }
+} 

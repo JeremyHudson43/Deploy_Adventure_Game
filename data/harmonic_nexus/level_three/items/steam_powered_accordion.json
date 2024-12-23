@@ -1,0 +1,11 @@
+{
+    "id": "steam_powered_accordion",
+    "name": "Steam-Powered Accordion",
+    "description": "An accordion modified with brass pipes and steam valves. Creates haunting melodies powered by steam pressure.",
+    "portable": true,
+    "properties": {
+        "type": "instrument",
+        "steam_pressure": 4,
+        "automaton_compatible": true
+    }
+} 

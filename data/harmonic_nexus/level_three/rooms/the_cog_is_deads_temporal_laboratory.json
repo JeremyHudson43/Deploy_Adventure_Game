@@ -1,0 +1,19 @@
+{
+    "name": "The Cog is Dead's Temporal Laboratory",
+    "description": "A Victorian laboratory where time itself seems to stutter and flow irregularly. Massive brass chronometers line the walls, their gears clicking in complex polyrhythms. Temporal experiments and musical instruments intertwine in organized chaos.",
+    "exits": {
+        "east": "level_three/abney_parks_steampunk_airship"
+    },
+    "items": [
+        "resonance_fragment"
+    ],
+    "npcs": [
+        "doctor_xander"
+    ],
+    "ambient_descriptions": [
+        "Clocks tick in impossible patterns.",
+        "Steam hisses in perfectly timed beats.",
+        "Gears turn both clockwise and counterclockwise simultaneously.",
+        "Musical notes seem to reverse themselves mid-air."
+    ]
+}

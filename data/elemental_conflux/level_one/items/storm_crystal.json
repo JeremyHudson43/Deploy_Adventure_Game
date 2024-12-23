@@ -1,0 +1,13 @@
+{
+    "id": "storm_crystal",
+    "name": "Storm Crystal",
+    "description": "A mystical crystal that resonates with storm energy. It can be used to read and understand tempest patterns.",
+    "type": "puzzle_item",
+    "properties": {
+        "puzzle_id": "air_currents_puzzle",
+        "use_message": "The crystal pulses with storm energy, revealing the tempest's patterns.",
+        "examine_message": "The crystal seems to react to the surrounding storm, its facets flickering with trapped lightning."
+    },
+    "can_take": true,
+    "visible": true
+} 

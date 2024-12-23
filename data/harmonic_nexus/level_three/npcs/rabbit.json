@@ -1,0 +1,18 @@
+{
+    "name": "Rabbit",
+    "description": "A copper automaton with an ever-changing face of mechanical masks, wearing a flowing dress. Her movements switch between graceful fluidity and charming mechanical staccato.",
+    "dialogue": {
+        "greeting": "*face plates shift into a smile* Oh! Isaac! A new audience member! How delightful!",
+        "topics": {
+            "about_carnival": {
+                "initial": "It's a wonderful place where music and mechanics dance together!",
+                "magic": "Sometimes I malfunction- I mean, add improvisational elements to our performances!",
+                "history": "We've been performing since the 1890s... *checks internal chronometer* give or take a century."
+            },
+            "about_items": {
+                "clockwork_harmonizer": "It helps us stay in sync when my gears get a bit... eccentric.",
+                "steam_powered_accordion": "The bellows work just like our ventilation systems! *vents steam musically*"
+            }
+        }
+    }
+}

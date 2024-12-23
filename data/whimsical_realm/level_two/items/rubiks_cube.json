@@ -1,0 +1,11 @@
+{
+    "id": "rubiks_cube",
+    "name": "Rubiks Cube",
+    "description": "A well-worn Rubik's cube that WALL-E endlessly tries to solve. A testament to curiosity and persistence.",
+    "portable": true,
+    "usable": true,
+    "properties": {
+        "state": "partially solved",
+        "significance": "treasured"
+    }
+}

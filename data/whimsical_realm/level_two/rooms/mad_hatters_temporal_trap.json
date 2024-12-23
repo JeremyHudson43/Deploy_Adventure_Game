@@ -1,0 +1,16 @@
+{
+    "name": "Mad Hatters Temporal Trap",
+    "description": "A room where time doesn't make sense. Clocks of all shapes and sizes cover every surface.",
+    "exits": {
+        "east": "level_two/queen_of_hearts_grim_garden_party"
+    },
+    "items": [
+        "pocket_watch",
+        "tea_cup"
+    ],
+    "npcs": [
+        "mad_hatter"
+    ],
+    "stairs_up": "level_three/blankas_electrifying_jungle",
+    "stairs_down": "level_one/bob_ross_haven"
+}

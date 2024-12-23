@@ -1,0 +1,11 @@
+{
+    "name": "Wing Cap Mario",
+    "description": "The legendary plumber hovers gracefully in his Wing Cap, observing the shifting wind patterns around the floating platforms.",
+    "dialogue": {
+        "greeting": "Isaac! It's-a me, Mario! The sky is-a calling, and the stars are dancing with the wind!",
+        "topics": {
+            "about_flying": "If you can see the path the wind makes in the clouds, you'll find your way up here.",
+            "about_heights": "There's a certain harmony in the skies, Isaac. The Power Star can help you tune in to it!"
+        }
+    }
+}

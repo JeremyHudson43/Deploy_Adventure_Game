@@ -1,0 +1,13 @@
+{
+    "name": "Fire Flower",
+    "description": "A magical flower that grants the power to throw fireballs.",
+    "properties": {
+        "element": "fire",
+        "usage": "Fireball generation",
+        "origin": "Mushroom Kingdom flora",
+        "effects": [
+            "generates fireballs",
+            "heat immunity"
+        ]
+    }
+}

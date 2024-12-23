@@ -1,0 +1,14 @@
+{
+    "name": "White Rabbit",
+    "description": "A frantically checking his pocket watch, which shows several impossible times at once.",
+    "dialogue": {
+        "greeting": "Late! Late! For a very important... wait, what time is it really?",
+        "topics": {
+            "about_time": {
+                "initial": "We're late! Or early! Or exactly on time! All at once!",
+                "schedule": "The Queen's garden party is in negative three hours!",
+                "worry": "Oh dear! Oh dear! The tarts are simultaneously done and not yet started!"
+            }
+        }
+    }
+} 

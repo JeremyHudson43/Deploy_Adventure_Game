@@ -1,0 +1,13 @@
+{
+    "name": "Time Displacement Tuner",
+    "description": "A brass and crystal device resembling a tuning fork merged with a pocket watch. Its resonance can shift objects and sounds through different temporal frequencies.",
+    "properties": {
+        "type": "instrument",
+        "usage": "Temporal frequency manipulation",
+        "origin": "The Cog is Dead's Chronorium",
+        "effects": [
+            "time signature manipulation",
+            "temporal resonance"
+        ]
+    }
+}

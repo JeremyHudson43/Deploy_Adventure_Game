@@ -1,0 +1,24 @@
+{
+    "name": "Tyler Joseph",
+    "description": "The Twenty One Pilots frontman stands vigilant, wearing a bandito jacket with yellow tape accents. His eyes scan the terminal with cautious determination.",
+    "dialogue": {
+        "greeting": "Welcome to Trench, Isaac. Stay quiet, stay alive. ||-//",
+        "topics": {
+            "about_music": {
+                "style": "The underground has its own rhythm, its own heartbeat. You have to feel it to understand it.",
+                "energy": "True Banditos know how to channel the raw energy of the underground into their sound.",
+                "unity": "Different voices blend here in the underground, creating something authentic and powerful."
+            },
+            "about_performance": {
+                "approach": "Start by feeling the rhythm of Trench. Let it flow through you.",
+                "technique": "Channel that underground energy - it's raw, it's real, it's who we are.",
+                "mastery": "When you can blend different voices into one unified sound, you'll understand our power."
+            },
+            "about_banditos": {
+                "culture": "We each bring our own voice, but together we create something bigger.",
+                "philosophy": "The underground isn't just a place - it's a groove, a vibe, a pulse that connects us all.",
+                "wisdom": "Listen to the spirits of the underground. They'll teach you how to unite our voices."
+            }
+        }
+    }
+}

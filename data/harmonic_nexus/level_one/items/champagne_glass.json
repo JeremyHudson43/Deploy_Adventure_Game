@@ -1,0 +1,11 @@
+{
+    "id": "champagne_glass",
+    "name": "Champagne Glass",
+    "description": "A delicate champagne glass that rings with perfect pitch when tapped. Adds sophistication to any performance.",
+    "portable": true,
+    "properties": {
+        "type": "prop",
+        "resonance": "crystal",
+        "elegance_factor": 4
+    }
+} 

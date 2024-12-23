@@ -1,0 +1,23 @@
+{
+    "name": "Steam Powered Giraffe's Clockwork Stage",
+    "description": "A grand Victorian stage where clockwork automatons perform. Brass gears turn in perfect harmony, and steam hisses create a rhythmic backdrop.",
+    "exits": {
+        "west": "level_three/abney_parks_steampunk_airship"
+    },
+    "items": [
+        "resonance_fragment"
+    ],
+    "npcs": [
+        "rabbit",
+        "the_spine",
+        "zero"
+    ],
+    "puzzle_elements": {
+        "steampunk_music_puzzle": {
+            "status": "inactive",
+            "required_items": ["Brass Gear", "Steam Valve"],
+            "activation_phrase": "synchronize gears",
+            "completion_message": "The clockwork mechanisms align perfectly, creating a beautiful steampunk symphony!"
+        }
+    }
+}

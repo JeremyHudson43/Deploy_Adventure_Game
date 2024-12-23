@@ -1,0 +1,15 @@
+{
+    "name": "Utopian Lego City",
+    "description": "A vibrant city built entirely of Lego bricks. Everything is awesome here!",
+    "exits": {
+        "west": "level_one/megaminds_misguided_mansion"
+    },
+    "items": [
+        "lego_brick",
+        "instruction_manual"
+    ],
+    "npcs": [
+        "lego_batman"
+    ],
+    "stairs_up": "level_two/walles_wonderful_world"
+}

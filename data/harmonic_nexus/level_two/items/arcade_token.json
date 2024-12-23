@@ -1,0 +1,9 @@
+{
+    "name": "Arcade Token",
+    "description": "A glowing token that never runs out of plays. Marked with kawaii pixel art.",
+    "properties": {
+        "type": "currency",
+        "effect": "Infinite plays",
+        "origin": "Beep Boop Arcade"
+    }
+} 

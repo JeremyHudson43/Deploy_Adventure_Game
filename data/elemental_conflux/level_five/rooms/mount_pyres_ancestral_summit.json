@@ -1,0 +1,19 @@
+{
+    "name": "Mount Pyres Ancestral Summit",
+    "description": "High in the swirling mists rests a sacred vantage point where lingering spirits draw near. Monuments and memorials mark those who came before.",
+    "exits": {
+        "west": "level_five/celeste_mountains_astral_ascent",
+        "east": "level_five/raavas_ethereal_sanctuary"
+    },
+    "items": [
+        "elemental_shard"
+    ],
+    "npcs": [
+        "elder_trevenant"
+    ],
+    "messages": {
+        "enter": "A hush settles as you crest the summit, ghostly silhouettes dancing just beyond view.",
+        "look": "Memorials and candles glow faintly through the mist, reflecting countless stories of those passed."
+    },
+    "stairs_down": "level_four/squirtles_surfing_coast"
+}

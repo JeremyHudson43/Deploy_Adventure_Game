@@ -1,0 +1,15 @@
+{
+    "name": "Blankas Electrifying Jungle",
+    "description": "A lush jungle pulsing with electrical energy. The air crackles with excitement.",
+    "exits": {
+        "west": "level_three/the_brave_little_toasters_appliance_uprising",
+        "east": "level_three/pickleball_court_of_eternal_triumph"
+    },
+    "items": [
+        "imagination_shard"
+    ],
+    "npcs": [
+        "blanka"
+    ],
+    "stairs_down": "level_two/mad_hatters_temporal_trap"
+}

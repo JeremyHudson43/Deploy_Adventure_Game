@@ -1,0 +1,14 @@
+{
+    "id": "phoenix_feather",
+    "name": "Phoenix Feather",
+    "description": "A brilliant feather that radiates eternal warmth. It seems to pulse with immortal flame energy.",
+    "type": "quest_item",
+    "properties": {
+        "glow": "bright",
+        "temperature": "hot",
+        "magical": true,
+        "immortal": true
+    },
+    "use_text": "The phoenix feather burns with eternal flame, resonating with your fire mastery.",
+    "examine_text": "This magical feather contains the essence of a phoenix's immortal flame. It's crucial for advanced fire manipulation."
+} 

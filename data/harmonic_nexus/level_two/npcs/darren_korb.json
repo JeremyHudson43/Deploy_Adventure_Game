@@ -1,0 +1,24 @@
+{
+    "name": "Darren Korb",
+    "description": "The composer sits amid his instruments, wearing his signature bandana. His energy switches between laid-back and intensely focused as he works on various musical pieces.",
+    "dialogue": {
+        "greeting": "Hey Isaac, welcome to the Fusion Studio! Ready to blend some waveforms into something fresh?",
+        "topics": {
+            "about_fusion": {
+                "technique": "The key is layering different waveforms. Each channel brings its own resonance to the mix.",
+                "process": "Start by fusing simple sounds, then enhance them with modern processing.",
+                "mastery": "When you can blend multiple channels seamlessly, that's when innovation happens."
+            },
+            "about_modern": {
+                "approach": "Modern chiptune is all about combining the old with the new. Layer those sounds thoughtfully.",
+                "evolution": "We take those classic transistor sounds and merge them with contemporary filters.",
+                "innovation": "Don't be afraid to mix and enhance different elements - that's how we push the genre forward."
+            },
+            "about_production": {
+                "method": "Each waveform needs to be processed just right before you can fuse them together.",
+                "balance": "The trick is finding the perfect blend between retro and modern channels.",
+                "wisdom": "True fusion comes when you can combine elements while keeping their unique character."
+            }
+        }
+    }
+}

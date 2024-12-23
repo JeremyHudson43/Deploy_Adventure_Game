@@ -1,0 +1,22 @@
+{
+    "name": "Snail's House Beep Boop Arcade",
+    "description": "A kawaii-themed arcade filled with retro game cabinets and pastel decorations. Chiptune melodies float through the air.",
+    "exits": {
+        "west": "level_two/qumu_8_bit_oasis"
+    },
+    "items": [
+        "pixel_heart",
+        "arcade_token",
+        "kawaii_plushie"
+    ],
+    "npcs": [
+        "snail_chan",
+        "pixel_sprite"
+    ],
+    "puzzle_elements": {
+        "chiptune_puzzle": {
+            "status": "inactive"
+        }
+    },
+    "stairs_up": "level_three/steam_powered_giraffes_clockwork_stage"
+}

@@ -1,0 +1,13 @@
+{
+    "name": "Water Stone",
+    "description": "A mysterious stone that resonates with water energy. It pulses with the power of evolution.",
+    "properties": {
+        "element": "water",
+        "usage": "Water enhancement",
+        "origin": "Pokemon world artifacts",
+        "effects": [
+            "water power boost",
+            "evolution catalyst"
+        ]
+    }
+} 

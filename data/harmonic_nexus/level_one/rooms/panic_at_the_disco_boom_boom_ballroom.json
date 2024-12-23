@@ -1,0 +1,15 @@
+{
+    "name": "Panic At The Disco Boom Boom Ballroom",
+    "description": "An extravagant ballroom with a high, vaulted ceiling. Champagne fountains and glittering decorations catch the eye.",
+    "exits": {
+        "west": "level_one/saint_motel_voyeur_vista"
+    },
+    "items": [
+        "top_hat",
+        "champagne_glass"
+    ],
+    "npcs": [
+        "brendon_urie"
+    ],
+    "stairs_up": "level_two/darren_korb_supergiant_studio"
+}

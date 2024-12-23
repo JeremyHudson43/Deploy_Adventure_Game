@@ -1,0 +1,11 @@
+{
+    "id": "vintage_camera",
+    "name": "Vintage Camera",
+    "description": "A beautifully preserved vintage camera, perfect for capturing musical stories through visual means.",
+    "portable": true,
+    "properties": {
+        "type": "equipment",
+        "visual_storytelling": 5,
+        "narrative_power": "high"
+    }
+} 

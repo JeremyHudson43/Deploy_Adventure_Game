@@ -1,0 +1,27 @@
+{
+    "name": "Captain Robert",
+    "description": "The charismatic leader of Abney Park stands at the airship's helm, his outfit a perfect blend of Victorian explorer and post-apocalyptic survivor. Brass goggles rest on his top hat, and various musical instruments hang from his leather bandolier.",
+    "dialogue": {
+        "greeting": "Welcome aboard the airship Ophelia! Mind the gears, and feel free to join our temporal musical expedition.",
+        "topics": {
+            "about_airship": {
+                "initial": "She's more than just a vessel - every pipe and gear is tuned to resonate at just the right frequency.",
+                "mechanics": "The steam powers both our engines and our instruments. Quite efficient, if I do say so myself.",
+                "history": "We've traveled through time and space with these songs... sometimes literally."
+            },
+            "about_items": {
+                "captains_chronometer": "Not just for telling time - it helps us synchronize our music with the temporal winds.",
+                "aetheric_resonator": "Captures the very vibrations of the aether. Makes for some interesting harmonies."
+            },
+            "about_music": {
+                "hint": "The key to post-apocalyptic Victorian airship rock? It's all in the steam pressure."
+            }
+        }
+    },
+    "idle_actions": [
+        "*Adjusts various pressure gauges while humming*",
+        "*Consults maps of both geographic and musical variety*",
+        "*Tests the resonance of different steam pipes*",
+        "*Polishes brass instruments and navigation tools alike*"
+    ]
+}

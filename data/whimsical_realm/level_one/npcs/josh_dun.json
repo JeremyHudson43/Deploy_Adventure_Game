@@ -1,0 +1,18 @@
+{
+    "name": "Josh Dun",
+    "description": "The Twenty One Pilots drummer stands ready, his drumsticks creating yellow sparks with each tap.",
+    "dialogue": {
+        "greeting": "Stay low, stay quiet... *taps a rhythm that seems to bend reality*",
+        "topics": {
+            "about_trench": {
+                "initial": "The rhythm here... it's both a weapon and a shield.",
+                "protection": "Keep to the beat, and the Bishops can't touch you.",
+                "escape": "Sometimes the best path is the one you drum yourself."
+            },
+            "about_items": {
+                "yellow_tape": "Use it to mark safe paths. The rhythm will guide you.",
+                "drumsticks": "These aren't just for keeping time... they're for making time."
+            }
+        }
+    }
+} 

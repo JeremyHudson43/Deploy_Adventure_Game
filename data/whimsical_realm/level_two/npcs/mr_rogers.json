@@ -1,0 +1,52 @@
+{
+    "id": "mr_rogers",
+    "name": "Mr. Rogers",
+    "description": "The kind-hearted host stands in his familiar living room, changing into his cardigan sweater with a warm smile. The atmosphere around him radiates acceptance and gentle wisdom.",
+    "type": "mentor",
+    "dialogue": {
+        "greeting": "Hello, neighbor! What a special day this is - a day to recall precious memories together.",
+        "topics": {
+            "about_memories": {
+                "initial": "Every memory is special, just like every neighbor in our neighborhood.",
+                "childhood": "Remember the simple joys, like a friendly wave from a neighbor, or a kind word shared.",
+                "connection": "When we recall these moments together, they become even more precious."
+            },
+            "about_neighborhood": {
+                "initial": "In this neighborhood, every memory finds its place to belong.",
+                "sharing": "Sometimes sharing a memory helps us understand its true value.",
+                "kindness": "Each remembered moment of kindness makes our neighborhood brighter."
+            },
+            "about_imagination": {
+                "initial": "In the Neighborhood of Make-Believe, memories come alive in special ways.",
+                "play": "Let's take these childhood moments and give them new life through play.",
+                "wonder": "When we believe in our memories, wonderful things can happen."
+            }
+        }
+    },
+    "states": {
+        "default": {
+            "pose": "welcoming",
+            "location": "living_room",
+            "action": "changing_sweater"
+        },
+        "puzzle_complete": {
+            "pose": "seated",
+            "location": "living_room",
+            "action": "sharing"
+        }
+    },
+    "interactions": {
+        "requirements": {
+            "cardigan": {
+                "type": "item",
+                "message": "Would you like to borrow a cardigan sweater? It helps make sharing memories more comfortable."
+            }
+        },
+        "rewards": {
+            "puzzle_complete": {
+                "type": "knowledge",
+                "message": "You've learned that every memory, like every person, is special in its own way."
+            }
+        }
+    }
+}

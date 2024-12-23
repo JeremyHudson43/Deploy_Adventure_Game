@@ -1,0 +1,8 @@
+{
+    "id": "resonance_fragment",
+    "name": "Resonance Fragment",
+    "description": "A crystalline shard that hums with harmonic energy. It seems to resonate with the musical essence of this steampunk realm.",
+    "portable": true,
+    "usable": false,
+    "examine_text": "The fragment pulses with an otherworldly rhythm, its surface reflecting brass and copper hues. Musical notes seem to shimmer within its crystalline structure."
+} 

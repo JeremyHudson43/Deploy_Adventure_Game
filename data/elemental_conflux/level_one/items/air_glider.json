@@ -1,0 +1,13 @@
+{
+    "name": "Air Glider",
+    "description": "A sturdy staff that unfolds into wings, allowing airbenders to soar through the sky.",
+    "properties": {
+        "element": "air",
+        "usage": "Flight and air manipulation",
+        "origin": "Air Nomad technology",
+        "effects": [
+            "grants flight",
+            "enhances airbending"
+        ]
+    }
+}

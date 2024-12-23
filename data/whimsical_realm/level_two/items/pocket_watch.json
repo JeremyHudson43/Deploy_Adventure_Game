@@ -1,0 +1,11 @@
+{
+    "id": "pocket_watch",
+    "name": "Pocket Watch",
+    "description": "A peculiar timepiece that never shows the same time twice. Sometimes runs backwards, sometimes sideways.",
+    "portable": true,
+    "usable": true,
+    "properties": {
+        "time": "always tea time",
+        "reliability": "perfectly mad"
+    }
+} 

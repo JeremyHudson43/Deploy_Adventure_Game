@@ -1,0 +1,11 @@
+{
+    "id": "guitar",
+    "name": "Guitar",
+    "description": "A versatile guitar that adapts to any musical style. Perfect for cross-genre fusion.",
+    "portable": true,
+    "properties": {
+        "type": "instrument",
+        "musical_style": "versatile",
+        "fusion_capability": 4
+    }
+} 

@@ -1,0 +1,13 @@
+{
+    "name": "Storm Feather",
+    "description": "A mystical feather crackling with electrical energy.",
+    "properties": {
+        "element": "air",
+        "usage": "Weather manipulation",
+        "origin": "Storm Crow's peak",
+        "effects": [
+            "controls wind",
+            "generates lightning"
+        ]
+    }
+}

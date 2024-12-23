@@ -1,0 +1,21 @@
+{
+    "name": "Surfer Squirtle",
+    "description": "A laid-back Squirtle sporting sunglasses and a surfboard, droplets spiraling in playful patterns around it.",
+    "dialogue": {
+        "greeting": "*Squirtle flashes a thumbs-up, water droplets forming a mini wave around it.* Isaac, ready to ride some waves?",
+        "topics": {
+            "about_surfing": {
+                "initial": "*Squirtle crouches low, miming wave-riding motions with fluid sweeps of its arms.*",
+                "technique": "*It demonstrates shifting balance on a surfboard, creating small ripples that grow into arcs.*",
+                "advanced": "*Squirtle spins the board mid-air, landing neatly. It conjures a spiral of water, beckoning you to follow.*"
+            },
+            "about_items": {
+                "squirtle_shell_board": "*Patting its own shell, it lifts the board, showing off how both match perfectly for wave-riding.*",
+                "water_stone": "*Holding a glowing stone over a pool, it creates ripples that shimmer. Squirtle nods, hinting at the stone's power.*"
+            },
+            "about_training": {
+                "practice": "*Squirtle creates small waves with its hands, slowly building bigger ones to show how control scales.*"
+            }
+        }
+    }
+}

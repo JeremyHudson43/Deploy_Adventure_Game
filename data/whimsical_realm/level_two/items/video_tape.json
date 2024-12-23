@@ -1,0 +1,12 @@
+{
+    "id": "video_tape",
+    "name": "Video Tape",
+    "description": "An ancient VHS tape of 'Hello, Dolly!' that shows glimpses of humanity's joy and connection.",
+    "portable": true,
+    "properties": {
+        "type": "media",
+        "nostalgia_rating": 5,
+        "dance_inspiration": true,
+        "human_connection": "profound"
+    }
+} 

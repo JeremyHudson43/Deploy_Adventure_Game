@@ -1,0 +1,15 @@
+{
+    "id": "torbrans_forge_hall",
+    "name": "Torbran's Forge Hall",
+    "description": "A dwarven stronghold carved deep into the mountain. An enormous forge blazes at its center, runes flickering against the stone pillars. The rhythmic beat of hammers resonates through the hall.",
+    "exits": {
+        "west": "level_two/rock_solid_chess_dojo"
+    },
+    "items": [],
+    "npcs": [
+        "torbran"
+    ],
+    "puzzle_id": "earth_stability_puzzle",
+    "stairs_down": "level_one/storm_crows_ascension",
+    "stairs_up": "level_three/chandras_flame_sanctuary"
+}

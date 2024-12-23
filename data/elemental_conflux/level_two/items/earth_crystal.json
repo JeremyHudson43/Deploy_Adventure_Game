@@ -1,0 +1,11 @@
+{
+    "id": "earth_crystal",
+    "name": "Earth Crystal",
+    "description": "A powerful crystal infused with pure earth energy. It resonates strongly with ancient roots and natural formations, its core pulsing with a deep emerald light.",
+    "type": "catalyst",
+    "properties": {
+        "use_message": "The Earth Crystal pulses with natural energy, ready to awaken dormant earth magic...",
+        "durability": "infinite",
+        "origin": "Crystal Caverns depths"
+    }
+} 

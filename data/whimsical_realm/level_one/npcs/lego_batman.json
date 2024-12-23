@@ -1,0 +1,21 @@
+{
+    "name": "Lego Batman",
+    "description": "A brooding minifigure in black, constantly striking dramatic poses and speaking in a gravelly voice, despite the perpetually cheerful surroundings.",
+    "dialogue": {
+        "greeting": "I'm Batman. *dramatic pause* And yes, Isaac, everything IS awesome... I guess.",
+        "topics": {
+            "about_city": {
+                "initial": "This city needs me. Because I'm Batman. And also because everything's made of bricks.",
+                "safety": "Crime doesn't stand a chance here. Because all the criminals keep stepping on Lego bricks.",
+                "building": "Sometimes you have to tear things apart to build them back better. But always follow the instructions."
+            },
+            "about_items": {
+                "lego_brick": "The foundation of everything awesome. Also really hurts to step on. Like justice.",
+                "instruction_manual": "I don't need instructions. I'm Batman. But uh... maybe keep them just in case."
+            },
+            "about_construction": {
+                "rule": "First rule of master building: there are no rules. Except the ones in the instruction manual."
+            }
+        }
+    }
+}

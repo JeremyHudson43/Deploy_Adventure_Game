@@ -1,0 +1,11 @@
+{
+    "id": "film_reel",
+    "name": "Film Reel",
+    "description": "A mysterious film reel that seems to capture music in visual form. Essential for musical montages.",
+    "portable": true,
+    "properties": {
+        "type": "media",
+        "montage_capability": true,
+        "perspective_shift": 3
+    }
+} 

@@ -1,0 +1,30 @@
+{
+    "id": "raava",
+    "name": "Raava",
+    "description": "The spirit of light and peace, radiating gentle luminosity. Patterns of shifting brilliance ripple across her form, echoing all elements in harmonious balance.",
+    "dialogue": {
+        "greeting": {
+            "initial": "*A voice of shimmering light* Welcome, Isaac. Within this sanctuary, the boundary between worlds softens.",
+            "return": "The energies still speak of your journey. How may I guide you further?",
+            "after_completion": "You carry a fragment of unity, Isaac. May it illuminate your path."
+        },
+        "topics": {
+            "about_spirit": {
+                "essence": "The spirit realm is always near, woven into every breath. Those who find stillness can touch it.",
+                "connection": "Quiet your mind, and the spirit world whispers. True vision begins in inner balance.",
+                "mastery": "Some can project their spirits beyond the physical, walking unseen paths of light."
+            },
+            "about_enlightenment": {
+                "path": "Seek the subtle energies pervading all things; attune yourself, and they respond in kind.",
+                "practice": "In stillness lies the door to spiritual insight. Harmony of body and mind unlocks deeper truths.",
+                "achievement": "When inner balance is achieved, the spirit roams freely, unbound by form."
+            }
+        }
+    },
+    "rewards": {
+        "puzzle_completion": {
+            "item": "spirit_crystal_fragment",
+            "message": "Raava glows brighter, presenting you with a fragment that pulses with spiritual energy."
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "name": "Sheetz Station of Infinite Delight",
+    "description": "A magical convenience store where snacks refill endlessly and slushie machines dispense liquid happiness. The air smells of fresh MTO orders and childhood dreams.",
+    "exits": {
+        "west": "level_three/pickleball_court_of_eternal_triumph"
+    },
+    "items": [
+        "imagination_shard"
+    ],
+    "npcs": [
+        "friendly_cashier",
+        "snack_wizard"
+    ],
+    "stairs_up": "level_four/childhood_memories_finale"
+}

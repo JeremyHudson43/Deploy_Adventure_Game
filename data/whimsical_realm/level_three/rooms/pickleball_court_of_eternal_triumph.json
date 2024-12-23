@@ -1,0 +1,15 @@
+{
+    "name": "Pickleball Court of Eternal Triumph",
+    "description": "An impossibly large pickleball court where the game never ends and everyone's a winner.",
+    "exits": {
+        "west": "level_three/blankas_electrifying_jungle",
+        "east": "level_three/sheetz_station_of_infinite_delight"
+    },
+    "items": [
+        "imagination_shard"
+    ],
+    "npcs": [
+        "eternal_referee"
+    ],
+    "stairs_down": "level_two/queen_of_hearts_grim_garden_party"
+}

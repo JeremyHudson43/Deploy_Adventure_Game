@@ -1,0 +1,27 @@
+{
+    "id": "adult_aang",
+    "name": "Adult Aang",
+    "description": "The masterful Avatar Aang stands calmly, stirring gentle breezes around him. His gaze holds a quiet wisdom.",
+    "type": "mentor",
+    "dialogue": {
+      "greeting": "Isaac, welcome to my academy. Within these walls, the wind itself can become an ally if your heart is steady.",
+      "topics": {
+        "about_academy": "This chamber honors the ancient ways of the Air Nomads. Let the Wind Resonance Crystals guide you toward subtle currents.",
+        "about_bending": "Only those who find harmony in the unseen can shape the air. Feel how each breath stirs the world around you."
+      }
+    },
+    "requirements": {
+      "air_mastery": {
+        "items": [
+          "wind_resonance_crystals"
+        ],
+        "message": "Isaac, you will need the Wind Resonance Crystals to fully sense each shift in the breeze."
+      },
+      "air_control": {
+        "items": [
+          "air_glider"
+        ],
+        "message": "Bring the Air Glider, Isaac, so you may guide the currents with purpose."
+      }
+    }
+}

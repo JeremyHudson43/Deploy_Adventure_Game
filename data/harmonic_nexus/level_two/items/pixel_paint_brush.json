@@ -1,0 +1,12 @@
+{
+    "id": "pixel_paint_brush",
+    "name": "Pixel Paint Brush",
+    "description": "A digital brush that paints with pure sound waves, creating kawaii melodies and future bass harmonies.",
+    "portable": true,
+    "properties": {
+        "type": "instrument",
+        "style": "kawaii",
+        "future_bass": true,
+        "glitch_harmonics": 3
+    }
+} 

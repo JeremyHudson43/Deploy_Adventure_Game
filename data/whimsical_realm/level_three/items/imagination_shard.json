@@ -1,0 +1,8 @@
+{
+    "id": "imagination_shard",
+    "name": "Imagination Shard",
+    "description": "A sparkling crystal that seems to change shape and color as you watch it, filled with pure creative energy.",
+    "portable": true,
+    "usable": false,
+    "examine_text": "The shard twinkles with endless possibilities, each facet showing a different whimsical scene. Rainbow light dances within its ever-changing surface."
+} 

@@ -1,0 +1,14 @@
+{
+    "name": "Snail Chan",
+    "description": "A kawaii snail VTuber whose shell glows with pixel art patterns.",
+    "dialogue": {
+        "greeting": "Welcome to the Beep Boop Zone! ^_^",
+        "topics": {
+            "about_arcade": {
+                "initial": "Every game here is powered by pure digital joy!",
+                "magic": "The pixels... they dance when nobody's looking! :D",
+                "fun": "Remember: high scores are temporary, but kawaii is forever! <3"
+            }
+        }
+    }
+} 

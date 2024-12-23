@@ -1,0 +1,9 @@
+{
+    "name": "Tarts Recipe",
+    "description": "A royal recipe for perfect heart-shaped tarts. Handle with extreme care.",
+    "properties": {
+        "type": "document",
+        "effect": "Perfect baking",
+        "origin": "Royal kitchen"
+    }
+} 

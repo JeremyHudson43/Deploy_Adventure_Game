@@ -1,0 +1,21 @@
+{
+    "name": "Squirtles Surfing Coast",
+    "description": "A sunlit beach with rolling waves that seem made for surfing. Squirtle and friends zip across the surface, showing off watery tricks.",
+    "exits": {
+        "north": "level_four/moana_waves",
+        "east": "level_four/kataras_waterbending_rapids"
+    },
+    "items": [
+        "squirtle_shell_board",
+        "water_stone"
+    ],
+    "npcs": [
+        "surfer_squirtle"
+    ],
+    "messages": {
+        "enter": "Golden sands warm your feet as perfect surfing waves crash in gentle arcs.",
+        "look": "Surfer Squirtle winks, pointing out an especially large wave crest on the horizon."
+    },
+    "stairs_up": "level_five/mount_pyres_ancestral_summit",
+    "stairs_down": "level_three/marios_fire_flower_fields"
+}

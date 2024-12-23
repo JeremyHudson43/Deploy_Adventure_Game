@@ -1,0 +1,21 @@
+{
+    "id": "fire_mario",
+    "name": "Fire Mario",
+    "description": "Mario in his fire form, his overalls shining with a fiery hue as flames dance around his hands.",
+    "type": "mentor",
+    "dialogue": {
+        "greeting": "Isaac! It's-a me, Fire Mario! Let's learn how nature and flame come together!",
+        "topics": {
+            "about_flowers": {
+                "initial": "Fire Flowers, they're-a great example of how fire and growth can work together!",
+                "growth": "Watch how they bloom with fire's energy, creating patterns of warmth!",
+                "harmony": "Flames and flowers together make-a something truly special!"
+            },
+            "about_fire": {
+                "initial": "Fire's not just destruction; it's about-a renewal and passion!",
+                "technique": "Find the flame's rhythm, and you'll-a see how it dances in harmony!",
+                "mastery": "When you move with the fire, it becomes-a part of your power!"
+            }
+        }
+    }
+}

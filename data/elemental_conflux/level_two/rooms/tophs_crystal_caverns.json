@@ -1,0 +1,18 @@
+{
+    "name": "Tophs Crystal Caverns",
+    "description": "A subterranean realm where glowing crystals flourish in clusters along walls and ceilings. The natural hum of earth resonates all around.",
+    "exits": {
+        "east": "level_two/rock_solid_chess_dojo"
+    },
+    "items": [
+        "earth_crystal"
+    ],
+    "npcs": [
+        "crystal_master_toph"
+    ],
+    "messages": {
+        "enter": "A gentle pulse ripples through the crystals as you step inside, acknowledging your presence.",
+        "look": "Varied crystals shimmer in mesmerizing hues, each formation carrying an echo of the earth's heartbeat."
+    },
+    "stairs_down": "level_one/aangs_airbending_academy"
+}

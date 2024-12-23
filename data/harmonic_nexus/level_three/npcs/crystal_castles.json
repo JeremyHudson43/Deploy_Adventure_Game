@@ -1,0 +1,52 @@
+{
+    "id": "crystal_castles",
+    "name": "Crystal Castles",
+    "description": "Enigmatic artists amidst a chaotic array of circuit-bent equipment and glitch-inducing machinery. Their setup crackles with unpredictable energy.",
+    "type": "mentor",
+    "dialogue": {
+        "greeting": "Welcome to the Glitch Gallery. Time to break some soundwaves.",
+        "topics": {
+            "about_glitch": {
+                "initial": "True glitch art comes from manipulating the signal path itself.",
+                "technique": "Listen to how the synth cutoff creates controlled chaos.",
+                "understanding": "Every distortion has its own twisted pattern, its own corrupted beauty."
+            },
+            "about_chaos": {
+                "initial": "We program structured chaos into the oscillator matrix.",
+                "process": "The bass frequencies drive the signal into beautiful destruction.",
+                "mastery": "When you understand the rules, you can break them perfectly."
+            },
+            "about_gallery": {
+                "initial": "Each twisted signal tells its own abstract story.",
+                "wisdom": "Feel how the structure breaks down and reforms?",
+                "harmony": "Even in chaos, there's an underlying pattern waiting to be found."
+            }
+        }
+    },
+    "states": {
+        "default": {
+            "pose": "experimenting",
+            "location": "glitch_gallery",
+            "action": "distorting"
+        },
+        "puzzle_complete": {
+            "pose": "glitching",
+            "location": "glitch_gallery",
+            "action": "transcending"
+        }
+    },
+    "interactions": {
+        "requirements": {
+            "circuit_bender": {
+                "type": "item",
+                "message": "You'll need a Circuit Bender to understand how to manipulate the signal path."
+            }
+        },
+        "rewards": {
+            "puzzle_complete": {
+                "type": "knowledge",
+                "message": "You've mastered the art of controlled chaos. The glitch patterns flow through your circuits."
+            }
+        }
+    }
+} 

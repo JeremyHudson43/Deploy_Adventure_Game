@@ -1,0 +1,24 @@
+{
+    "name": "Snail",
+    "description": "A cheerful musician in pastel colors, surrounded by cute arcade machines. Their setup seamlessly blends kawaii aesthetics with serious music production equipment.",
+    "dialogue": {
+        "greeting": "\u266a Hey Isaac! Welcome to the Glitch Lab! Ready to corrupt some signals in the cutest way possible? \u266a",
+        "topics": {
+            "about_glitch": {
+                "technique": "The synth is your canvas - play with cutoff frequencies until the signal starts to break in interesting ways!",
+                "process": "Program your beats first, then manipulate the structure until it gets delightfully weird.",
+                "mastery": "True glitch art happens when you can corrupt signals while keeping musical coherence."
+            },
+            "about_structure": {
+                "basics": "Start with a simple bass pattern, then twist and distort it into something new.",
+                "practice": "Try manipulating different oscillator envelopes - each one breaks differently!",
+                "advanced": "The best glitches come from understanding signal flow, then deliberately breaking it."
+            },
+            "about_style": {
+                "approach": "Don't just randomly corrupt your sounds - program specific structures to break in musical ways.",
+                "creativity": "Each cutoff point, each signal manipulation adds to the abstract beauty.",
+                "philosophy": "Glitch art is about finding the sweet spot between chaos and control."
+            }
+        }
+    }
+}

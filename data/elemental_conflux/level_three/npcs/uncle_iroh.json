@@ -1,0 +1,26 @@
+{
+    "id": "uncle_iroh",
+    "name": "Uncle Iroh",
+    "description": "The Dragon of the West sits serenely, a teapot by his side. A gentle warmth radiates around him, hinting at the depth of his firebending wisdom.",
+    "type": "mentor",
+    "dialogue": {
+        "greeting": "Isaac, come join me for a cup of tea. You might be surprised how much it can teach about fire.",
+        "topics": {
+            "about_tea": {
+                "initial": "Brewing tea and firebending share the same essence: patience and subtlety.",
+                "wisdom": "Focus on how the steam rises in harmony with your breath.",
+                "harmony": "Fire, like tea, can nourish and warm when balanced properly."
+            },
+            "about_dragons": {
+                "initial": "The ancient dragons show us that true fire is a dance of many colors.",
+                "teaching": "Their rainbow flames reveal aspects of spirit, passion, and life.",
+                "understanding": "When you breathe with the flame, you connect to that ancient wisdom."
+            },
+            "about_balance": {
+                "initial": "Balance is key to harnessing fire's warmth and avoiding its wrath.",
+                "technique": "Feel your breath guide the flames, shaping them gently but firmly.",
+                "mastery": "In harmony with breath and mind, fire becomes a soothing ally, not a raging force."
+            }
+        }
+    }
+}

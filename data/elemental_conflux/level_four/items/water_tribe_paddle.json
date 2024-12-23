@@ -1,0 +1,13 @@
+{
+    "name": "Water Tribe Paddle",
+    "description": "A beautifully carved paddle infused with waterbending magic.",
+    "properties": {
+        "element": "water",
+        "usage": "Water navigation and bending",
+        "origin": "Northern Water Tribe",
+        "effects": [
+            "water control",
+            "ice creation"
+        ]
+    }
+}

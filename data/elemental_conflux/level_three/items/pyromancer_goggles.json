@@ -1,0 +1,13 @@
+{
+    "name": "Pyromancer Goggles",
+    "description": "Protective eyewear that allows the wearer to see through flames.",
+    "properties": {
+        "element": "fire",
+        "usage": "Fire vision and protection",
+        "origin": "Fire Nation artificers",
+        "effects": [
+            "heat vision",
+            "fire resistance"
+        ]
+    }
+}

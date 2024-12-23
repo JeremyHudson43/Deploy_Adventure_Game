@@ -1,0 +1,9 @@
+{
+    "name": "Black Paint",
+    "description": "Paint that seems to absorb light itself. Perfect for creating cryptic symbols.",
+    "properties": {
+        "type": "art_supply",
+        "effect": "Creates rebellious symbols",
+        "origin": "Trench era supplies"
+    }
+} 

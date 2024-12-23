@@ -1,0 +1,9 @@
+{
+    "name": "Kawaii Headphones",
+    "description": "Cute headphones that make everything sound sweeter.",
+    "properties": {
+        "genre": "electronic",
+        "usage": "Audio enhancement and mood lifting",
+        "origin": "Snail's House"
+    }
+}

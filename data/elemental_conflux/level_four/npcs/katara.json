@@ -1,0 +1,24 @@
+{
+    "name": "Katara",
+    "description": "A master waterbender from the Southern Water Tribe, wearing traditional blue robes. Her gentle demeanor belies her fierce strength.",
+    "dialogue": {
+        "greeting": "Welcome, Isaac. Water is the element of change and healing. Let's see if you're ready to embrace its flow.",
+        "topics": {
+            "about_waterbending": {
+                "basics": "Every ripple in the water has a story to tell, if you learn to listen.",
+                "advanced": "True mastery means guiding the water's natural flow, not forcing it.",
+                "mastery": "Feel the moon's pull in every wave, Isaac. Even in daylight, its rhythm remains."
+            },
+            "about_water_tribe": {
+                "traditions": "Observe the ocean each morning. Understanding precedes action.",
+                "philosophy": "We learn flexibility from water—flow around obstacles or guide the current.",
+                "connection": "The strongest benders sense the moon's influence at all times."
+            },
+            "about_teaching": {
+                "methods": "Start by observing water's subtle movements before attempting to lead them.",
+                "philosophy": "A master balances when to watch and when to act. The water reveals its path.",
+                "advanced": "Uniting with the ocean's rhythm is the highest stage of waterbending."
+            }
+        }
+    }
+} 

@@ -1,0 +1,9 @@
+{
+    "name": "Paint Brush",
+    "description": "A brush that only paints in shades of red.",
+    "properties": {
+        "type": "artistic",
+        "effect": "Reality alteration (red only)",
+        "origin": "Queen of Hearts' Royal Collection"
+    }
+}

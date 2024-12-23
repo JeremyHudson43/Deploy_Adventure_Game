@@ -1,0 +1,13 @@
+{
+    "name": "Power Star",
+    "description": "A brilliant star that radiates pure energy. It seems to enhance one's ability to soar through the air.",
+    "properties": {
+        "element": "air",
+        "usage": "Power enhancement",
+        "origin": "Mushroom Kingdom artifacts",
+        "effects": [
+            "flight boost",
+            "invincibility burst"
+        ]
+    }
+} 

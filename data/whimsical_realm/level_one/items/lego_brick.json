@@ -1,0 +1,9 @@
+{
+    "name": "Lego Brick",
+    "description": "A magical Lego brick that multiplies when connected to other bricks. Can build anything imaginable... and steps on itself.",
+    "properties": {
+        "type": "construction",
+        "effect": "Creative building",
+        "origin": "Utopian Lego City foundation"
+    }
+} 

@@ -1,0 +1,14 @@
+{
+    "name": "Snack Wizard",
+    "description": "A mysterious figure in a robe made of convenience store receipts.",
+    "dialogue": {
+        "greeting": "Ah, seeker of eternal flavors! What snack speaks to your soul?",
+        "topics": {
+            "about_magic": {
+                "initial": "Every slushie contains a universe of taste...",
+                "wisdom": "The secret is in the infinite refills of possibility.",
+                "power": "True power lies in knowing which snack combinations unlock reality."
+            }
+        }
+    }
+} 

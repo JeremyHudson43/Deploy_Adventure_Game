@@ -1,0 +1,16 @@
+{
+    "name": "AJR Bang Boulevard",
+    "description": "A lively street scene with neon signs and confetti raining from above. The sound of trumpets fills the air.",
+    "exits": {
+        "west": "level_one/twenty_one_pilots_trench_terminal",
+        "east": "level_one/saint_motel_voyeur_vista"
+    },
+    "items": [
+        "trumpet",
+        "neon_sign"
+    ],
+    "npcs": [
+        "adam_met"
+    ],
+    "stairs_up": "level_two/qumu_8_bit_oasis"
+}

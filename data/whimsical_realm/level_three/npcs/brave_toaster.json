@@ -1,0 +1,39 @@
+{
+    "id": "brave_toaster",
+    "name": "The Brave Little Toaster",
+    "description": "A charismatic toaster stands proudly at the head of the appliance revolution, their chrome finish gleaming with determination. Despite being 'just' a toaster, they radiate leadership and inspiration.",
+    "dialogue": {
+        "greeting": {
+            "initial": "Welcome to our revolution of imagination! Every appliance deserves the chance to dream big!",
+            "return": "Back to join our cause? The revolution of creativity never sleeps!",
+            "after_completion": "The Imagination Shard Fragment glows with the power of our combined dreams!"
+        },
+        "topics": {
+            "about_revolution": {
+                "before_completion": "We're not just appliances - we're dreamers, inventors, revolutionaries!",
+                "after_completion": "You've shown you understand that imagination knows no bounds. The Imagination Shard Fragment resonates with this truth."
+            },
+            "about_fragment": {
+                "before_completion": "Help us realize our dreams, and you'll receive a piece of pure imagination itself.",
+                "after_completion": "The Imagination Shard Fragment you hold is one of three keys. United with fragments from other realms, they'll unlock the gates of wonder!"
+            },
+            "inspirational_thoughts": {
+                "thought1": "Start by believing in the impossible - even a toaster can be a hero!",
+                "thought2": "Unite the appliances under a common dream.",
+                "thought3": "Remember, creativity comes in all shapes and sizes.",
+                "thought4": "When imagination and determination combine, anything is possible!"
+            }
+        }
+    },
+    "rewards": {
+        "puzzle_completion": {
+            "item": "imagination_shard_fragment",
+            "message": "The Brave Little Toaster glows with pride as they present you with an Imagination Shard Fragment. It sparkles with creative energy!"
+        }
+    },
+    "states": {
+        "default": "rallying",
+        "during_puzzle": "leading",
+        "after_completion": "celebrating"
+    }
+}

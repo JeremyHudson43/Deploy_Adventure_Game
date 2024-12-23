@@ -1,0 +1,13 @@
+{
+    "name": "Heart of Te Fiti",
+    "description": "A small stone pulsing with vibrant green energy. It resonates strongly with water and life itself.",
+    "properties": {
+        "element": "water",
+        "usage": "Life and water harmony",
+        "origin": "Te Fiti's essence",
+        "effects": [
+            "nature connection",
+            "water control"
+        ]
+    }
+}

@@ -1,0 +1,47 @@
+{
+    "id": "brave_toaster",
+    "name": "The Brave Little Toaster",
+    "description": "A plucky toaster whose chrome finish reflects warm memories, leading a band of loyal appliance friends with unwavering optimism.",
+    "type": "mentor",
+    "dialogue": {
+        "greeting": "Friends! Another wonderful day to share stories of the good old days!",
+        "topics": {
+            "about_friendship": {
+                "initial": "Every appliance has a story, every memory worth keeping bright.",
+                "loyalty": "Together we collect these precious echoes of the past.",
+                "unity": "When friends share memories, they become part of something greater."
+            },
+            "about_courage": {
+                "initial": "It takes bravery to keep old memories alive and shining.",
+                "determination": "We polish these memories until they gleam like new chrome!",
+                "heart": "The strongest memories are the ones we protect together."
+            }
+        }
+    },
+    "states": {
+        "default": {
+            "pose": "cheerful",
+            "location": "appliance_home",
+            "action": "polishing"
+        },
+        "puzzle_complete": {
+            "pose": "gleaming",
+            "location": "appliance_home",
+            "action": "celebrating"
+        }
+    },
+    "interactions": {
+        "requirements": {
+            "polish_cloth": {
+                "type": "item",
+                "message": "A bit of polish would help these memories shine even brighter!"
+            }
+        },
+        "rewards": {
+            "puzzle_complete": {
+                "type": "knowledge",
+                "message": "You've learned that memories, like chrome, can always be made to shine again."
+            }
+        }
+    }
+}

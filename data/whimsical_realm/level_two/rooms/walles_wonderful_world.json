@@ -1,0 +1,17 @@
+{
+    "name": "Walles Wonderful World",
+    "description": "A world in transition, with piles of trash being transformed into a green paradise.",
+    "exits": {
+        "west": "level_two/queen_of_hearts_grim_garden_party",
+        "east": "level_two/mr_rogers_nostalgic_nexus"
+    },
+    "items": [
+        "plant_boot",
+        "rubiks_cube"
+    ],
+    "npcs": [
+        "wall-e"
+    ],
+    "stairs_up": "level_three/sheetz_station_of_infinite_delight",
+    "stairs_down": "level_one/megaminds_misguided_mansion"
+}

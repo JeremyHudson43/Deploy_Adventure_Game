@@ -1,0 +1,13 @@
+{
+    "name": "Dual Dao Swords",
+    "description": "Twin blades that channel the user's inner fire.",
+    "properties": {
+        "element": "fire",
+        "usage": "Firebending enhancement",
+        "origin": "Fire Nation royal armory",
+        "effects": [
+            "channels fire",
+            "enhanced agility"
+        ]
+    }
+}

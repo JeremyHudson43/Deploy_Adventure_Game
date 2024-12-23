@@ -1,0 +1,11 @@
+{
+    "name": "Storm Crow",
+    "description": "A majestic crow wreathed in crackling storm energy. Its feathers ripple with the power of the tempest.",
+    "dialogue": {
+        "greeting": "Isaac... *CAWW!* The thunder calls beyond these clouds. Do you hear its voice in the air?",
+        "topics": {
+            "about_lightning": "Each arc of lightning answers the storm's rhythm. Dare you stir these winds further?",
+            "about_storm": "Look into the roiling sky; sometimes the mightiest powers require a gentle touch to truly guide them."
+        }
+    }
+}

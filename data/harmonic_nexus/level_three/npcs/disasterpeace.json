@@ -1,0 +1,52 @@
+{
+    "id": "disasterpeace",
+    "name": "Disasterpeace",
+    "description": "A thoughtful musician surrounded by modern synthesizers that seamlessly blend with retro equipment. Ambient melodies float through the air around them.",
+    "type": "mentor",
+    "dialogue": {
+        "greeting": "Welcome to the Fusion Studio. Here we bridge the gap between old and new sound.",
+        "topics": {
+            "about_fusion": {
+                "initial": "Modern synthesis is about layering waveforms, creating new resonances.",
+                "technique": "Listen to how the filters shape each sound, blending frequencies.",
+                "mastery": "When classic meets modern, we can create entirely new harmonies."
+            },
+            "about_sound": {
+                "initial": "Each layer adds depth, like adding new instruments to a digital orchestra.",
+                "process": "The transistors process each wave, enhancing the natural harmonics.",
+                "evolution": "By merging old and new, we create something fresh yet familiar."
+            },
+            "about_studio": {
+                "initial": "This space is where waveforms combine and evolve into something more.",
+                "wisdom": "Feel how the modern channels enhance the classic sounds.",
+                "harmony": "True fusion comes from understanding both past and present."
+            }
+        }
+    },
+    "states": {
+        "default": {
+            "pose": "composing",
+            "location": "fusion_studio",
+            "action": "teaching"
+        },
+        "puzzle_complete": {
+            "pose": "performing",
+            "location": "fusion_studio",
+            "action": "harmonizing"
+        }
+    },
+    "interactions": {
+        "requirements": {
+            "hybrid_synth": {
+                "type": "item",
+                "message": "You'll need a Hybrid Synthesizer to understand how classic and modern sounds merge."
+            }
+        },
+        "rewards": {
+            "puzzle_complete": {
+                "type": "knowledge",
+                "message": "You've learned to bridge the gap between old and new synthesis. The harmonies flow through you."
+            }
+        }
+    }
+} 

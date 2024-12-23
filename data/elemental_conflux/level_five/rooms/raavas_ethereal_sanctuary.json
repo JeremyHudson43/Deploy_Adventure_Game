@@ -1,0 +1,18 @@
+{
+    "name": "Raavas Ethereal Sanctuary",
+    "description": "A domain of gentle radiance where the line between physical and spirit realms fades. Raava's luminescence weaves through the air, offering peace.",
+    "exits": {
+        "west": "level_five/mount_pyres_ancestral_summit"
+    },
+    "items": [
+        "elemental_shard"
+    ],
+    "npcs": [
+        "raava"
+    ],
+    "messages": {
+        "enter": "Soft pulses of light wash over you, erasing worry and guiding you deeper into serene understanding.",
+        "look": "Here, color and form blend seamlessly, each breath a reminder of unity between worlds."
+    },
+    "stairs_down": "level_four/water_tribe_kayak_rapids"
+}

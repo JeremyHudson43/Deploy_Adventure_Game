@@ -1,0 +1,9 @@
+{
+    "name": "Chiptune Synthesizer",
+    "description": "A synthesizer that creates nostalgic 8-bit melodies.",
+    "properties": {
+        "genre": "video game music",
+        "usage": "Creates retro game music effects",
+        "origin": "Qumu's collection"
+    }
+}

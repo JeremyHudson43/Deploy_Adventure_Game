@@ -1,0 +1,12 @@
+{
+    "id": "cardigan_sweater",
+    "name": "Cardigan Sweater",
+    "description": "A cozy red cardigan sweater that radiates warmth and acceptance. Just putting it on makes you feel like a valued neighbor.",
+    "portable": true,
+    "properties": {
+        "type": "clothing",
+        "comfort_level": 5,
+        "kindness_aura": "strong",
+        "neighbor_welcome": true
+    }
+} 

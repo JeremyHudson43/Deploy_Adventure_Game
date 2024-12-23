@@ -1,0 +1,11 @@
+{
+    "id": "cardigan",
+    "name": "Mr. Rogers' Cardigan",
+    "description": "A cozy red cardigan that makes everyone feel like a neighbor. Radiates warmth and kindness.",
+    "portable": true,
+    "wearable": true,
+    "properties": {
+        "comfort": "neighborly",
+        "color": "warm red"
+    }
+} 

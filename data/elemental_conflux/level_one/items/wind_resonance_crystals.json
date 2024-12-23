@@ -1,0 +1,13 @@
+{
+    "id": "wind_resonance_crystals",
+    "name": "Wind Resonance Crystals",
+    "description": "A string of mystical crystals that resonate with air currents. They glow and hum with power when exposed to strong winds.",
+    "type": "quest_item",
+    "properties": {
+        "glow": "pulsing",
+        "material": "crystal",
+        "magical": true
+    },
+    "use_text": "The crystals vibrate with energy as they detect the air currents!",
+    "examine_text": "These special crystals are used to amplify and control air currents. They seem to respond to your movements."
+}

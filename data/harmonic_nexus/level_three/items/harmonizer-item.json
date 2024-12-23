@@ -1,0 +1,14 @@
+{
+    "name": "Clockwork Harmonizer",
+    "description": "A complex brass device covered in synchronization gears and harmony tubes. When activated, it coordinates mechanical movements to create perfect musical timing.",
+    "properties": {
+        "type": "device",
+        "usage": "Automaton synchronization",
+        "origin": "Steam Powered Giraffe's workshop",
+        "effects": [
+            "mechanical timing",
+            "harmonic coordination",
+            "steam pressure regulation"
+        ]
+    }
+}

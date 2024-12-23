@@ -1,0 +1,13 @@
+{
+    "name": "Lightning Rod",
+    "description": "A metallic rod crackling with electrical energy. It seems to attract and channel storm energy.",
+    "properties": {
+        "element": "air",
+        "usage": "Lightning control",
+        "origin": "Storm Crow's peak",
+        "effects": [
+            "lightning attraction",
+            "storm manipulation"
+        ]
+    }
+} 

@@ -1,0 +1,14 @@
+{
+    "name": "The Brave Little Toasters Appliance Uprising",
+    "description": "A chaotic room where household appliances have come to life and are staging a revolution.",
+    "exits": {
+        "east": "level_three/blankas_electrifying_jungle"
+    },
+    "items": [
+        "imagination_shard"
+    ],
+    "npcs": [
+        "brave_toaster"
+    ],
+    "stairs_down": "level_two/mr_rogers_nostalgic_nexus"
+}

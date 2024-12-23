@@ -1,0 +1,14 @@
+{
+    "name": "Minion",
+    "description": "A small yellow figure in overalls who speaks in enthusiastic gibberish.",
+    "dialogue": {
+        "greeting": "Bello! *waves excitedly*",
+        "topics": {
+            "about_mansion": {
+                "initial": "Papoy! *gestures at various incredible inventions*",
+                "boss": "Boss! *makes exaggerated evil laugh*",
+                "gadgets": "Bananaaaa! *demonstrates device functions through charades*"
+            }
+        }
+    }
+} 

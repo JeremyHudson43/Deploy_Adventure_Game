@@ -1,0 +1,26 @@
+{
+    "name": "Mad Hatter",
+    "description": "A wildly dressed figure with an impossibly tall hat, surrounded by floating teacups and ticking clocks.",
+    "dialogue": {
+        "greeting": "Isaac! You're late for tea! Or early. Or right on time. What time is it anyway?",
+        "topics": {
+            "about_tea": {
+                "philosophy": "A cup of tea solves everything, even if it creates new problems!",
+                "time": "Time is just tea waiting to happen!",
+                "parties": "Unbirthdays are better than birthdays - there are more of them!"
+            },
+            "riddles": {
+                "time": "Why is a raven like a writing desk?",
+                "logic": "Sometimes the best sense is nonsense!",
+                "advice": "If you think you're going mad, you're probably going the right way!"
+            },
+            "farewell": {
+                "initial": "Don't be late for your next unbirthday!"
+            }
+        }
+    },
+    "items": [
+        "mercury_thermometer",
+        "infinite_teapot"
+    ]
+}

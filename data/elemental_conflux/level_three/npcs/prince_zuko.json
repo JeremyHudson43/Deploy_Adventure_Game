@@ -1,0 +1,21 @@
+{
+    "id": "prince_zuko",
+    "name": "Prince Zuko",
+    "description": "A focused Fire Nation prince stands in a careful stance, steam rising from his fists. His gaze shows he knows fire as life, not just destruction.",
+    "type": "mentor",
+    "dialogue": {
+        "greeting": "Isaac, welcome to Dragon Fire Mountain. Here you'll learn the true heart of firebending: life and energy.",
+        "topics": {
+            "about_dragons": {
+                "initial": "The dragons taught me to see fire as creation, not just destruction.",
+                "wisdom": "Observe how their flames shift color, each hue telling a story of balance.",
+                "understanding": "When you see flame as the dragons do, you'll discover its deeper purpose."
+            },
+            "about_training": {
+                "initial": "Fire is breath given form—feel it flow with each inhale and exhale.",
+                "technique": "Notice how the flames respond to calm, steady breathing.",
+                "mastery": "Discipline transforms raw fire into something truly controlled."
+            }
+        }
+    }
+}

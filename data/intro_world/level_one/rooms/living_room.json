@@ -1,0 +1,12 @@
+{
+    "name": "Living Room",
+    "description": "A cozy living room with a couch, a coffee table stacked with books, and a television turned off.",
+    "exits": {
+        "north": "bedroom",
+        "west": "kitchen",
+        "east": "locked_room"
+    },
+    "items": [
+    ],
+    "npcs": []
+}

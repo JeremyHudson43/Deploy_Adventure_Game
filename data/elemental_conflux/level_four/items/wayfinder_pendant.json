@@ -1,0 +1,13 @@
+{
+    "name": "Wayfinder Pendant",
+    "description": "An ancient necklace used for reading stars and currents. It glows faintly when pointing the right way.",
+    "properties": {
+        "element": "water",
+        "usage": "Navigation and water reading",
+        "origin": "Ancient wayfinders",
+        "effects": [
+            "star reading",
+            "current sensing"
+        ]
+    }
+}

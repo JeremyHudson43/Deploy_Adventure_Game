@@ -1,0 +1,18 @@
+{
+    "name": "Queen of Hearts' Grim Garden Party",
+    "description": "A twisted garden where roses painted red drip ominously. Playing card guards stand at attention while croquet mallets shaped like flamingos rest against hedges.",
+    "exits": {
+        "west": "level_two/mad_hatters_temporal_trap",
+        "east": "level_two/walles_wonderful_world"
+    },
+    "items": [
+        "red_paint",
+        "flamingo_mallet",
+        "tarts_recipe"
+    ],
+    "npcs": [
+        "queen_of_hearts",
+        "white_rabbit"
+    ],
+    "stairs_up": "level_three/the_brave_little_toasters_appliance_uprising"
+}

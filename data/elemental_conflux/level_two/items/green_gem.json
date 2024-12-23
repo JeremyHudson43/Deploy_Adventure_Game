@@ -1,0 +1,15 @@
+{
+    "id": "green_gem",
+    "name": "Green Gem",
+    "description": "A mystical green gem that glows with earth energy. It seems to resonate with crystal formations and natural forces.",
+    "type": "catalyst",
+    "properties": {
+        "element": "earth",
+        "usage": "Crystal sight",
+        "origin": "Earth Kingdom mines",
+        "effects": [
+            "crystal sight",
+            "earth attunement"
+        ]
+    }
+} 

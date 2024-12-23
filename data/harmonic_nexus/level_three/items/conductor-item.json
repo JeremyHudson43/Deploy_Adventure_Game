@@ -1,0 +1,13 @@
+{
+    "name": "Chronometric Conductor",
+    "description": "A conductor's baton with intricate clockwork mechanisms and glowing temporal crystals. Can conduct both musicians and the flow of time itself.",
+    "properties": {
+        "type": "tool",
+        "usage": "Time and music conducting",
+        "origin": "The Cog is Dead's workshop",
+        "effects": [
+            "temporal orchestration",
+            "paradox harmonization"
+        ]
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "name": "Chandras Flame Sanctuary",
+    "description": "A blazing arena where fierce flames roar in battle-ready formations. The air crackles with intense heat, and ancient fire runes pulse with raw power on the walls.",
+    "exits": {
+        "east": "level_three/irohs_dragon_tea_garden"
+    },
+    "items": [
+        "phoenix_feather",
+        "ritual_candle",
+        "flame_essence"
+    ],
+    "npcs": [
+        "flame_guardian_chandra"
+    ],
+    "puzzle_elements": {
+        "fire_resonance_puzzle": {
+            "status": "inactive",
+            "required_items": [
+                "Phoenix Feather",
+                "Dragon Scale"
+            ],
+            "activation_phrase": "unleash flames",
+            "completion_message": "The eternal flames surge with explosive power, creating a tempest of fire!"
+        }
+    },
+    "stairs_down": "level_two/torbrans_forge_hall"
+}

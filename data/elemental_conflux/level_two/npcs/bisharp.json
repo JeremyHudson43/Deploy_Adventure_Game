@@ -1,0 +1,22 @@
+{
+    "name": "Bisharp",
+    "description": "A regal Pokémon warrior stands at attention, its blade-adorned body gleaming in the chamber's light. The sharp edges of its armor catch the strategic energies of the room.",
+    "dialogue": {
+        "greeting": "*Bisharp salutes with its blade*",
+        "topics": {
+            "about_strategy": {
+                "initial": "*It taps the chessboard sharply, hinting at careful maneuvers.*",
+                "purpose": "*Bisharp shifts a piece forward, as though testing your nerve.*",
+                "warning": "*It drags a piece away to show how one misstep can lead to defeat.*"
+            },
+            "about_training": {
+                "pieces": "*Bisharp aligns the stone pawns, each one poised for a decisive move.*",
+                "tactics": "*Crossing its blades, it demonstrates how attack and defense must flow together.*"
+            },
+            "about_mastery": {
+                "trophy": "*It taps a stone trophy at the board's edge, as if suggesting victory can be claimed by the bold.*"
+            }
+        }
+    }
+}
+  

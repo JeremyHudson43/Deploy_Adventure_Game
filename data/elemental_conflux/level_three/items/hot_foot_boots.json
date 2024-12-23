@@ -1,0 +1,13 @@
+{
+    "name": "Hot Foot Boots",
+    "description": "Boots that leave trails of flame with each step. They protect the wearer from intense heat.",
+    "properties": {
+        "element": "fire",
+        "usage": "Fire walking",
+        "origin": "Fire Nation artificers",
+        "effects": [
+            "heat resistance",
+            "flame trail creation"
+        ]
+    }
+} 

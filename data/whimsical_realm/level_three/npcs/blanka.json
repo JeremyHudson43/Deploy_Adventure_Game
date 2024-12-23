@@ -1,0 +1,21 @@
+{
+    "name": "Blanka",
+    "description": "The wild man of the jungle crackles with electric energy, his orange hair standing on end as he performs acrobatic moves through the trees.",
+    "dialogue": {
+        "greeting": "*excited growl* GROOOOOOWL! (Welcome to my electrifying jungle, Isaac!)",
+        "topics": {
+            "about_jungle": {
+                "initial": "*sparks flying* RAAAWR! (The energy here flows freely through everything!)",
+                "power": "*electric crackle* Grr-ZAAP! (Learn to channel the power, become one with it!)",
+                "training": "*energetic roar* (The jungle teaches those who listen with their lightning!)"
+            },
+            "about_items": {
+                "shock_absorbing_boots": "*playful growl* (These help beginners handle the power. I don't need them!)",
+                "energy_fruit": "*enthusiastic chomp* ZAAP! (Nature's battery! Makes your hair stand up like mine!)"
+            },
+            "about_technique": {
+                "hint": "*demonstrative roll* BZZZZT! (Roll forward, embrace the shock, become the lightning!)"
+            }
+        }
+    }
+}

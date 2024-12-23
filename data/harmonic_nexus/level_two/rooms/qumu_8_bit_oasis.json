@@ -1,0 +1,17 @@
+{
+    "name": "Qumu 8 Bit Oasis",
+    "description": "A pixelated paradise where retro game sounds blend with modern beats. Chiptune melodies float through the air.",
+    "exits": {
+        "west": "level_two/darren_korb_supergiant_studio",
+        "east": "level_two/snails_house_beep_boop_arcade"
+    },
+    "items": [
+        "chiptune_synthesizer",
+        "pixel_art_canvas"
+    ],
+    "npcs": [
+        "qumu"
+    ],
+    "stairs_up": "level_three/steam_powered_giraffe_clockwork_carnival",
+    "stairs_down": "level_one/ajr_bang_boulevard"
+}

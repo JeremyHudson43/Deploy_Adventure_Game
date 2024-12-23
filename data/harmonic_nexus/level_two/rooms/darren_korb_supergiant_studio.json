@@ -1,0 +1,16 @@
+{
+    "name": "Darren Korb Supergiant Studio",
+    "description": "A cozy recording studio filled with various instruments and gaming memorabilia. The walls are adorned with artwork from Supergiant games.",
+    "exits": {
+        "east": "level_two/qumu_8_bit_oasis"
+    },
+    "items": [
+        "guitar",
+        "bastion_shield"
+    ],
+    "npcs": [
+        "darren_korb"
+    ],
+    "stairs_up": "level_three/scary_pockets_funky_groove",
+    "stairs_down": "level_one/twenty_one_pilots_trench_terminal"
+}

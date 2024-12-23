@@ -1,0 +1,13 @@
+{
+    "name": "Sun Warrior Flame",
+    "description": "A small, eternal flame in a special lamp that burns with all the colors of the original dragons' fire. It responds to the energy and intent of those nearby.",
+    "properties": {
+        "element": "fire",
+        "usage": "Understanding fire's true nature",
+        "origin": "Ran and Shaw's eternal flame",
+        "effects": [
+            "reveals firebending truth",
+            "reflects inner balance"
+        ]
+    }
+}

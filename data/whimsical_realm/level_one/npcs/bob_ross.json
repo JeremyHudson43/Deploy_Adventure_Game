@@ -1,0 +1,29 @@
+{
+    "name": "Bob Ross",
+    "description": "The gentle artist stands at his easel, his iconic afro and peaceful smile perfectly framed by a backdrop that seems to be painting itself. Little trees appear around him as he talks, each one needing a friend.",
+    "dialogue": {
+        "greeting": "Welcome, Isaac, to our world of happy accidents! Remember, in painting - and in life - there are no mistakes, just happy accidents waiting to become trees.",
+        "topics": {
+            "about_painting": {
+                "initial": "Let's start with a nice Titanium White dream... *the air literally becomes canvas-like*",
+                "philosophy": "You know, every day's a good day when you paint. And in here, we're always painting something.",
+                "technique": "Just let your brush dance on the canvas... or the air... or reality itself. They're all the same here."
+            },
+            "about_items": {
+                "reality_brush": "This brush knows what it wants to be. Give it some freedom, and watch what happens - just a nice, easy stroke...",
+                "happy_palette": "Every color has a friend on this palette. Mix them together, and they'll tell you wonderful stories."
+            },
+            "about_world": {
+                "hint": "Sometimes you look at your world and think it needs something. Maybe... *whispers* ...it needs a happy little tree right there.",
+                "wisdom": "In our world, you can make clouds float wherever you want them to. Who's to say they're wrong?",
+                "creativity": "Let your imagination run free. If you want that mountain to be purple, then it's your mountain, and it's a happy purple mountain."
+            }
+        }
+    },
+    "idle_actions": [
+        "*Gently taps brush, creating tiny happy trees in mid-air*",
+        "*Softly encourages a painting that's painting itself*",
+        "*Pets a happy little cloud that's drifted by*",
+        "*Quietly hums while mixing impossible colors*"
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "id": "plant_boot",
+    "name": "Plant Boot",
+    "description": "An old boot with a tiny plant growing inside. WALL-E's proudest discovery.",
+    "portable": true,
+    "usable": true,
+    "properties": {
+        "contents": "growing plant",
+        "condition": "well-worn"
+    }
+} 

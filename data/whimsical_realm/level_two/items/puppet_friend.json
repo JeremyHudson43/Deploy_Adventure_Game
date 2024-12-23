@@ -1,0 +1,12 @@
+{
+    "id": "puppet_friend",
+    "name": "Puppet Friend",
+    "description": "A friendly puppet that helps express feelings and imagination. Perfect for making believe together.",
+    "portable": true,
+    "properties": {
+        "type": "companion",
+        "imagination_boost": 4,
+        "emotional_expression": true,
+        "friendship_power": "infinite"
+    }
+} 

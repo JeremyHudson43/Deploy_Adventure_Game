@@ -1,0 +1,21 @@
+{
+    "id": "crystal_master_toph",
+    "name": "Crystal Master Toph",
+    "description": "A powerful earthbender who has mastered the art of crystal manipulation. She stands confidently, unseeing eyes turned to the crystal formations.",
+    "type": "mentor",
+    "dialogue": {
+        "greeting": "Isaac, I can sense your footsteps through the crystals. Let's see if you can feel the earth as clearly as it feels you.",
+        "topics": {
+            "about_crystals": {
+                "initial": "These caverns sing with power. Each formation resonates in a unique way.",
+                "connection": "If you listen close enough, you'll hear the crystal symphony guiding your bending.",
+                "understanding": "Don't just look at them – feel them under your feet, under your skin."
+            },
+            "about_earth": {
+                "initial": "The earth is alive, full of subtle vibrations. Those vibrations can become your greatest ally.",
+                "wisdom": "If you want to bend these crystals, you have to respect them first.",
+                "power": "Raw force isn't everything – it's knowing exactly where to apply it."
+            }
+        }
+    }
+}

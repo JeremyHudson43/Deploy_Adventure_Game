@@ -1,0 +1,21 @@
+{
+    "name": "Madeline",
+    "description": "A determined young climber, red hair drifting in the mountain breeze. Her eyes glow with confidence after conquering so many heights.",
+    "dialogue": {
+        "greeting": "Hey Isaac! Looks like we both made it here. These heights have a way of showing us who we are.",
+        "topics": {
+            "about_mountain": {
+                "initial": "Celeste Mountain challenges more than your body. It digs into your mind, revealing inner truths.",
+                "challenge": "Sometimes the hardest part of the climb is facing your own doubts.",
+                "achievement": "Every step forward matters, even if you slip back now and then."
+            },
+            "about_items": {
+                "golden_feather": "This feather grants you a moment to catch your breath mid-jump—like a brief pause in the chaos.",
+                "crystal_heart": "Fragile yet beautiful—kind of like our barriers, right?"
+            },
+            "about_climbing": {
+                "hint": "Breathe deep. The mountain isn't going anywhere, so take your time."
+            }
+        }
+    }
+}

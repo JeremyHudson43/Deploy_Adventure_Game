@@ -1,0 +1,24 @@
+{
+    "id": "chess_piece",
+    "name": "Chess Piece",
+    "description": "A masterfully crafted chess piece made of living stone. It pulses with earth energy and seems to respond to your strategic thoughts.",
+    "type": "quest_item",
+    "properties": {
+        "material": "living_stone",
+        "magical": true,
+        "strategic": true
+    },
+    "use_text": "The chess piece resonates with earth energy, ready to be positioned.",
+    "examine_text": "This magical chess piece is crucial for mastering the strategic aspects of earth manipulation. It can be used in the chess chambers.",
+    "puzzle_properties": {
+        "valid_moves": [
+            "e2-e4",
+            "d2-d4",
+            "c2-c4",
+            "f2-f4",
+            "g1-f3",
+            "b1-c3"
+        ],
+        "strategic_value": "high"
+    }
+} 

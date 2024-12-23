@@ -1,0 +1,11 @@
+{
+    "id": "pastel_game_token",
+    "name": "Pastel Game Token",
+    "description": "A shimmering token that glows with kawaii energy. Used to activate musical game sequences.",
+    "portable": true,
+    "properties": {
+        "type": "digital_key",
+        "aesthetic": "kawaii",
+        "activation_power": 3
+    }
+} 

@@ -1,0 +1,23 @@
+{
+    "name": "Moana",
+    "description": "A young chieftain who navigates by stars and tides, the ocean itself responding to her call.",
+    "dialogue": {
+        "greeting": "Isaac! The ocean chose you, too. Are you ready to learn the language of waves and currents?",
+        "topics": {
+            "about_ocean": {
+                "initial": "The ocean's alive, sharing its thoughts with anyone who listens.",
+                "wayfinding": "Our ancestors crossed seas by reading stars and currents. I'll show you how.",
+                "connection": "Sometimes the water dances just because it can. Listen for its laughter!"
+            },
+            "about_items": {
+                "heart_of_te_fiti": "This heart pulses with life, a reminder that nature itself is alive and aware.",
+                "wayfinder_pendant": "This pendant helps read the stars and waves. Every current carries a story, every star lights a path."
+            },
+            "about_journey": {
+                "reflection": "Finding your way is as much about who you are as where you're going.",
+                "mastery": "Water has its own rhythm. Once you hear it, you're never lost.",
+                "wisdom": "The ocean connects all people. Sometimes going far helps us see what's always been near."
+            }
+        }
+    }
+}

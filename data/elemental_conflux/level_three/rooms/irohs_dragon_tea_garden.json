@@ -1,0 +1,15 @@
+{
+    "name": "Irohs Dragon Tea Garden",
+    "description": "A tranquil space where ancient fire and tea-brewing converge. Dragon statues gently exhale rainbow flames, reflecting each visitor's spirit.",
+    "exits": {
+        "west": "level_three/chandras_flame_sanctuary",
+        "north": "level_three/zukos_dragon_fire"
+    },
+    "items": [
+        "dragon_scale_teapot",
+        "sun_warrior_flame"
+    ],
+    "npcs": [
+        "uncle_iroh"
+    ]
+}

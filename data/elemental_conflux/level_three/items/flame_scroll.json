@@ -1,0 +1,13 @@
+{
+    "name": "Flame Scroll",
+    "description": "An ancient scroll containing powerful fire magic techniques.",
+    "properties": {
+        "element": "fire",
+        "usage": "Advanced firebending",
+        "origin": "Sun Warriors",
+        "effects": [
+            "fire techniques",
+            "dragon wisdom"
+        ]
+    }
+}

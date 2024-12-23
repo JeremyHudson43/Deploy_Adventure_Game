@@ -1,0 +1,18 @@
+{
+    "name": "Zero",
+    "description": "The newest automaton, sleek black with blue accents and a keytar built into his chassis. His movements blend modern precision with vintage mechanical charm.",
+    "dialogue": {
+        "greeting": "Systems online and ready for musical interface! Hey Isaac! *plays a welcoming riff*",
+        "topics": {
+            "about_music": {
+                "initial": "We blend the old and new here - steam-powered vocals with digital precision.",
+                "technology": "Each of us operates on slightly different mechanics, creating our unique sound.",
+                "future": "As we evolve, our music evolves with us. Even automatons can learn new tricks!"
+            },
+            "about_items": {
+                "clockwork_harmonizer": "Latest model! Helps bridge the gap between our different operating systems.",
+                "steam_powered_accordion": "A classic instrument with some modern modifications. Like us!"
+            }
+        }
+    }
+}

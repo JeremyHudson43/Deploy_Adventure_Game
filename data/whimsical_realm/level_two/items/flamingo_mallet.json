@@ -1,0 +1,9 @@
+{
+    "name": "Flamingo Mallet",
+    "description": "A croquet mallet that occasionally squawks indignantly. Excellent for impossible shots.",
+    "properties": {
+        "type": "game_equipment",
+        "effect": "Surreal croquet",
+        "origin": "Royal gardens"
+    }
+} 

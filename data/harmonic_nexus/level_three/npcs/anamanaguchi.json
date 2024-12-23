@@ -1,0 +1,52 @@
+{
+    "id": "anamanaguchi",
+    "name": "Anamanaguchi",
+    "description": "A group of musicians surrounded by vintage synthesizers and glowing arcade cabinets. Their equipment pulses with retro energy as they blend classic chiptune with modern techniques.",
+    "type": "mentor",
+    "dialogue": {
+        "greeting": "Welcome to the Retro Lab! Ready to explore the pure essence of 8-bit sound?",
+        "topics": {
+            "about_synthesis": {
+                "initial": "These classic pulse waves have their own special frequency, their own musical DNA.",
+                "technique": "Listen to how the duty cycle shapes each wave... pure sound at its most basic.",
+                "understanding": "The secret is in the oscillators - they're like the heartbeat of retro music."
+            },
+            "about_retro": {
+                "initial": "Classic chiptune is all about working within limitations, finding pure sound.",
+                "exploration": "Each waveform tells its own story. The sequences create melodies.",
+                "mastery": "When you understand the fundamentals, you can channel that classic energy."
+            },
+            "about_sound": {
+                "initial": "Every pattern has meaning - the arpeggiators create moving sequences.",
+                "wisdom": "Feel how the waves pulse together? That's the core of classic synthesis.",
+                "harmony": "True retro sound comes from understanding these basic waveforms."
+            }
+        }
+    },
+    "states": {
+        "default": {
+            "pose": "performing",
+            "location": "retro_lab",
+            "action": "teaching"
+        },
+        "puzzle_complete": {
+            "pose": "jamming",
+            "location": "retro_lab",
+            "action": "celebrating"
+        }
+    },
+    "interactions": {
+        "requirements": {
+            "pulse_synth": {
+                "type": "item",
+                "message": "You'll need a Pulse Synthesizer to understand the basics of 8-bit sound."
+            }
+        },
+        "rewards": {
+            "puzzle_complete": {
+                "type": "knowledge",
+                "message": "You've mastered the fundamentals of retro synthesis. The pure waveforms resonate within you."
+            }
+        }
+    }
+} 

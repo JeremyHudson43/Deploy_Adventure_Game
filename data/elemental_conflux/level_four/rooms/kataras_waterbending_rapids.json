@@ -1,0 +1,20 @@
+{
+    "name": "Katara's Waterbending Rapids",
+    "description": "Rushing waterfalls and swirling rapids provide a dynamic environment for mastering healing and bending techniques.",
+    "exits": {
+        "west": "level_four/squirtles_surfing_coast"
+    },
+    "items": [
+        "water_scroll",
+        "moon_crystal",
+        "healing_vial"
+    ],
+    "npcs": [
+        "katara"
+    ],
+    "messages": {
+        "enter": "The roar of water envelops you, inviting focus and calm amid the chaos.",
+        "look": "Whitewater surges between slick rocks, an ideal arena for practicing fluid motion."
+    },
+    "stairs_up": "level_five/raavas_ethereal_sanctuary"
+}

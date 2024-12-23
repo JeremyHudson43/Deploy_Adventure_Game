@@ -1,0 +1,22 @@
+{
+    "name": "Torbran",
+    "description": "A stout dwarf with a fiery beard braided in gold. The steady ring of his forge echoes through the hall, mixing with the glow of runes along the stone walls.",
+    "dialogue": {
+        "greeting": "Isaac, eh? Good. The mountain's heart is strong here, lad. Ready to shape steel and stone alike?",
+        "topics": {
+            "about_forge": {
+                "initial": "These fires burn with ancient might, fueling every hammer strike.",
+                "purpose": "We craft not just metal, but the spirit of the earth itself.",
+                "warning": "Keep your wits about you – a careless hand gets no second chances at the forge."
+            },
+            "about_crafting": {
+                "metalwork": "A well-forged piece resonates with the mountain. Listen for the ring that sings of quality.",
+                "runes": "The runes hold secrets of earth and flame. They remember each hammer's swing."
+            },
+            "about_techniques": {
+                "heat": "Timing is everything – strike too soon or too late, and your masterpiece crumbles."
+            }
+        }
+    }
+}
+  

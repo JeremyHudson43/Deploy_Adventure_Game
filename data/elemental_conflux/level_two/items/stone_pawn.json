@@ -1,0 +1,13 @@
+{
+    "name": "Stone Pawn",
+    "description": "A chess piece carved from living stone, pulsing with earth energy.",
+    "properties": {
+        "element": "earth",
+        "usage": "Earth manipulation",
+        "origin": "Rock Solid Chess Dojo",
+        "effects": [
+            "controls stone",
+            "tactical insight"
+        ]
+    }
+}

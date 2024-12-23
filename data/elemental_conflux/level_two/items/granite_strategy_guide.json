@@ -1,0 +1,13 @@
+{
+    "name": "Granite Strategy Guide",
+    "description": "A book carved from living stone, containing ancient earth-moving techniques.",
+    "properties": {
+        "element": "earth",
+        "usage": "Earth manipulation",
+        "origin": "Rock Solid Chess Dojo",
+        "effects": [
+            "tactical insight",
+            "earth control"
+        ]
+    }
+} 

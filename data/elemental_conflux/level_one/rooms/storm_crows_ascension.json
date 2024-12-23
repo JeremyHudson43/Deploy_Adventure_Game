@@ -1,0 +1,24 @@
+{
+    "name": "Storm Crow's Ascension",
+    "description": "High above, thunderclouds surge with electricity. A Storm Crow perches on a jagged spire while lightning arcs between dark clouds. The air crackles with potential.",
+    "exits": {
+        "west": "marios_wing_cap_heights"
+    },
+    "items": [
+        "storm_crystal",
+        "storm_feather",
+        "lightning_rod"
+    ],
+    "npcs": [
+        "storm_crow"
+    ],
+    "puzzle_elements": {
+        "air_currents_puzzle": {
+            "status": "inactive",
+            "required_items": ["Lightning Rod", "Storm Feather"],
+            "activation_phrase": "channel storm",
+            "completion_message": "Lightning flares and the storm's roar calms, revealing a stable passage beyond the clouds."
+        }
+    },
+    "stairs_up": "level_two/torbrans_forge_hall"
+}

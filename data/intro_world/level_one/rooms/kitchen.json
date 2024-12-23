@@ -1,0 +1,10 @@
+{
+    "name": "Kitchen",
+    "description": "A clean kitchen with the faint smell of coffee lingering in the air.",
+    "exits": {
+        "east": "living_room"
+    },
+    "items": [
+    ],
+    "npcs": []
+}

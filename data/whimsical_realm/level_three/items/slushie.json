@@ -1,0 +1,11 @@
+{
+    "id": "slushie",
+    "name": "Slushie",
+    "description": "A magical Sheetz slushie that never runs dry, constantly swirling with ever-changing flavors.",
+    "portable": true,
+    "usable": true,
+    "properties": {
+        "flavor": "eternal",
+        "temperature": "perfectly frozen"
+    }
+}

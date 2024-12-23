@@ -1,0 +1,14 @@
+{
+    "name": "Friendly Cashier",
+    "description": "A Sheetz employee whose nametag keeps changing to different impossible names.",
+    "dialogue": {
+        "greeting": "Welcome to infinite convenience! What impossible flavor would you like today?",
+        "topics": {
+            "about_food": {
+                "initial": "Every MTO is made with a dash of impossibility!",
+                "menu": "The menu changes based on your deepest cravings...",
+                "special": "Today's special? Time-twisted tacos that are always fresh!"
+            }
+        }
+    }
+} 

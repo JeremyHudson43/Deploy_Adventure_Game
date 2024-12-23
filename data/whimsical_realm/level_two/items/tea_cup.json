@@ -1,0 +1,12 @@
+{
+    "id": "tea_cup",
+    "name": "Tea Cup",
+    "description": "A delicate porcelain cup that never runs empty of impossible tea. Sometimes the tea defies gravity.",
+    "portable": true,
+    "properties": {
+        "type": "container",
+        "impossible_physics": true,
+        "tea_variety": "infinite",
+        "unbirthday_power": 5
+    }
+} 

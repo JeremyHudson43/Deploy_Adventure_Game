@@ -1,0 +1,9 @@
+{
+    "name": "Instruction Manual",
+    "description": "A guide that makes anything seem buildable with enough bricks.",
+    "properties": {
+        "type": "knowledge",
+        "effect": "Master building insights",
+        "origin": "Lego City Archives"
+    }
+}

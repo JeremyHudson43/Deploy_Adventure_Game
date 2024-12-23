@@ -1,0 +1,18 @@
+{
+    "name": "Megamind's Misguided Mansion",
+    "description": "A sprawling blue mansion filled with eccentric inventions and dramatic presentation spaces. Minion's bowls are scattered about.",
+    "exits": {
+        "west": "level_one/bob_ross_haven",
+        "east": "level_one/utopian_lego_city"
+    },
+    "items": [
+        "presentation_cape",
+        "dehydration_gun",
+        "minion_cookie"
+    ],
+    "npcs": [
+        "megamind",
+        "minion"
+    ],
+    "stairs_up": "level_two/mad_hatters_temporal_trap"
+}

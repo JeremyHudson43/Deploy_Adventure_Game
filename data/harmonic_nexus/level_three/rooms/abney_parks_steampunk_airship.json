@@ -1,0 +1,16 @@
+{
+    "name": "Abney Park's Steampunk Airship",
+    "description": "A magnificent steampunk airship's deck, where brass instruments and steam-powered machinery create a symphony of mechanical music. Navigation instruments double as musical devices, and the sails catch both wind and sound.",
+    "exits": {
+        "west": "level_three/the_cog_is_deads_temporal_laboratory",
+        "east": "level_three/steam_powered_giraffes_clockwork_stage"
+    },
+    "items": [
+        "resonance_fragment"
+    ],
+    "npcs": [
+        "captain_robert"
+    ],
+    "stairs_up": "level_four/fall_out_boy_centuries_coliseum",
+    "stairs_down": "level_two/snails_house_beep_boop_arcade"
+}

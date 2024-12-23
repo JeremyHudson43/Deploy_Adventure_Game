@@ -1,0 +1,17 @@
+{
+    "name": "Twenty One Pilots Trench Terminal",
+    "description": "A neon-lit terminal where alternative rock energy pulses through the walls. Yellow tape and black paint create intricate patterns.",
+    "exits": {
+        "east": "level_one/ajr_bang_boulevard"
+    },
+    "items": [
+        "yellow_tape",
+        "black_paint",
+        "trench_coat"
+    ],
+    "npcs": [
+        "tyler_joseph",
+        "josh_dun"
+    ],
+    "stairs_up": "level_two/darren_korb_supergiant_studio"
+}

@@ -1,0 +1,9 @@
+{
+    "name": "Presentation Cape",
+    "description": "A dramatically flowing cape that makes everything more theatrical.",
+    "properties": {
+        "type": "clothing",
+        "effect": "Enhanced dramatics",
+        "origin": "Megamind's wardrobe"
+    }
+} 

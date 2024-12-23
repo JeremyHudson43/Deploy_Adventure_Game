@@ -1,0 +1,11 @@
+{
+    "id": "clockwork_harmonizer",
+    "name": "Clockwork Harmonizer",
+    "description": "A complex mechanical device that synchronizes gears and steam valves to create musical harmony.",
+    "portable": true,
+    "properties": {
+        "type": "instrument",
+        "mechanical_precision": 5,
+        "steam_compatibility": true
+    }
+} 

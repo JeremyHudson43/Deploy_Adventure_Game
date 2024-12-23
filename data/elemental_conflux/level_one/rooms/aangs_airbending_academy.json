@@ -1,0 +1,25 @@
+{
+    "name": "Aang's Airbending Academy",
+    "description": "Ancient scrolls and wind chimes line this tranquil chamber. Adult Aang stands at the center, mild breezes circling around him. A pair of ornate stands hold an Air Glider and a set of Wind Resonance Crystals.",
+    "items": [
+        "air_glider",
+        "wind_resonance_crystals"
+    ],
+    "exits": {
+        "east": "marios_wing_cap_heights"
+    },
+    "npcs": [
+        "adult_aang"
+    ],
+    "puzzle_elements": {
+        "air_currents_puzzle": {
+            "status": "inactive",
+            "required_items": [
+                "Air Glider",
+                "Wind Resonance Crystals"
+            ],
+            "activation_phrase": "observe currents",
+            "completion_message": "A gentle gale stirs in harmony with your spirit, revealing a hidden path of wind."
+        }
+    }
+}

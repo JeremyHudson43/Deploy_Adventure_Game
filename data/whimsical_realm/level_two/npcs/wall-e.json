@@ -1,0 +1,26 @@
+{
+    "name": "WALL-E",
+    "description": "A rusty but lovable robot with binocular-like eyes, collecting treasures and tending to his plant.",
+    "dialogue": {
+        "greeting": "Waaaall-eeee? *curious head tilt* Isaaaaac?",
+        "topics": {
+            "about_collection": {
+                "treasures": "*shows various collected trinkets with enthusiasm*",
+                "plants": "*gently presents boot with plant* Eeeeee-vah?",
+                "earth": "*makes concerned whirring sounds while showing old footage*"
+            },
+            "about_space": {
+                "stars": "*plays 'Put On Your Sunday Clothes' while dancing*",
+                "eva": "*sighs dreamily* Eeeee-vah...",
+                "axiom": "*demonstrates extreme cleanup efficiency*"
+            },
+            "farewell": {
+                "initial": "*waves friendly claw* Bye-bye!"
+            }
+        }
+    },
+    "items": [
+        "rubiks_cube",
+        "precious_plant"
+    ]
+}

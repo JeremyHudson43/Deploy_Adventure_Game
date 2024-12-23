@@ -1,0 +1,13 @@
+{
+    "name": "Squirtle Shell Board",
+    "description": "A surfboard shaped like a Squirtle's shell, perfect for riding waves.",
+    "properties": {
+        "element": "water",
+        "usage": "Water transportation",
+        "origin": "Pokemon world artifacts",
+        "effects": [
+            "water gliding",
+            "wave control"
+        ]
+    }
+}

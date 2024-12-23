@@ -1,0 +1,11 @@
+{
+    "id": "top_hat",
+    "name": "Top Hat",
+    "description": "An elegant top hat with a theatrical flair. Essential for any dramatic musical performance.",
+    "portable": true,
+    "properties": {
+        "type": "costume",
+        "style": "theatrical",
+        "dramatic_bonus": 3
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "name": "Rock Solid Chess Dojo",
+    "description": "A grand chamber dominated by a massive chessboard carved from living stone. The pieces seem almost alive with earth energy, each poised for a strategic showdown.",
+    "exits": {
+        "west": "level_two/tophs_crystal_caverns",
+        "east": "level_two/torbrans_forge_hall"
+    },
+    "items": [
+        "chess_piece",
+        "granite_strategy_guide"
+    ],
+    "npcs": [
+        "bisharp"
+    ],
+    "messages": {
+        "enter": "The living stone underfoot vibrates as though testing your strategic spirit.",
+        "look": "Each carved piece stands ready, and Bisharp's keen gaze follows your every move."
+    }
+}

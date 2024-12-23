@@ -1,0 +1,21 @@
+{
+    "name": "Megamind",
+    "description": "A blue-skinned genius in a dramatic cape and spiky collar, gesturing enthusiastically as he shows off his latest inventions.",
+    "dialogue": {
+        "greeting": "Welcome, Isaac, to my incredibly evil- I mean, incredibly AWESOME lair! *presentation cue missed*",
+        "topics": {
+            "about_mansion": {
+                "initial": "Behold my amazing mansion of mayhem! *dramatic cape swish*",
+                "technology": "Everything here is powered by my incredibly advanced intellect! And also electricity.",
+                "style": "The key to being a supervillain- er, superhero, is presentation!"
+            },
+            "about_items": {
+                "shrink_ray": "Ah yes, my latest invention! Much more practical than the giant death ray... less property damage.",
+                "invisible_car_keys": "Now if I could just remember where I parked... being invisible has its downsides."
+            },
+            "about_plans": {
+                "philosophy": "Remember: the difference between a villain and a supervillain is PRESENTATION!"
+            }
+        }
+    }
+}

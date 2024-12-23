@@ -1,0 +1,14 @@
+{
+    "name": "Steam Powered Accordion",
+    "description": "A magnificent brass and copper accordion with visible gears and steam valves. Its bellows are powered by steam pressure, creating music that bridges the gap between mechanical and organic sound.",
+    "properties": {
+        "type": "instrument",
+        "usage": "Steam-powered music generation",
+        "origin": "Steam Powered Giraffe's collection",
+        "effects": [
+            "automatic playing",
+            "steam harmonics",
+            "mechanical accompaniment"
+        ]
+    }
+}

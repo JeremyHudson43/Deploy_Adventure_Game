@@ -1,0 +1,28 @@
+{
+    "id": "crystal_seed",
+    "name": "Crystal Seed",
+    "description": "A small, perfectly formed crystal that pulses with growth potential. It resonates with earth energy and seems eager to grow.",
+    "type": "quest_item",
+    "properties": {
+        "material": "pure_crystal",
+        "magical": true,
+        "growth_potential": "high"
+    },
+    "use_text": "The crystal seed vibrates with earth energy, ready to grow into new formations.",
+    "examine_text": "This magical seed is the foundation of crystal growth manipulation. It can be used in the crystal caverns to create various formations.",
+    "puzzle_properties": {
+        "growth_stages": [
+            "dormant",
+            "sprouting",
+            "forming",
+            "resonating",
+            "harmonizing"
+        ],
+        "crystal_types": [
+            "quartz",
+            "emerald",
+            "amethyst"
+        ],
+        "energy_requirement": "moderate"
+    }
+} 

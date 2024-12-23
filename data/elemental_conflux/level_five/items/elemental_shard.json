@@ -1,0 +1,8 @@
+{
+    "id": "elemental_shard",
+    "name": "Elemental Shard",
+    "description": "A mystical crystal fragment pulsing with pure elemental energy. The forces of fire, water, earth, and air swirl within its crystalline structure.",
+    "portable": true,
+    "usable": false,
+    "examine_text": "The shard resonates with primal power, shifting through each element in turn. Ancient runes glimmer across its surface."
+} 

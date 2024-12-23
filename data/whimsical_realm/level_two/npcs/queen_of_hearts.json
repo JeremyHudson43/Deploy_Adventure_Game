@@ -1,0 +1,25 @@
+{
+    "name": "Queen of Hearts",
+    "description": "A regal figure in red and black, wielding a flamingo croquet mallet and wearing a crown slightly askew.",
+    "dialogue": {
+        "greeting": "OFF WITH- oh, it's Isaac! Welcome to my garden party!",
+        "topics": {
+            "about_croquet": {
+                "rules": "The rules are simple - I win, or it's off with someone's head!",
+                "flamingos": "They make excellent mallets, once you get them to stop laughing.",
+                "hedgehogs": "Best balls in the game, though they do tend to wander off."
+            },
+            "about_roses": {
+                "color": "RED! Everything must be RED! The white roses were clearly a mistake.",
+                "painting": "Paint faster! These roses won't redden themselves!"
+            },
+            "farewell": {
+                "initial": "Remember: red roses, clean paint brushes, and NO BEHEADINGS... today."
+            }
+        }
+    },
+    "items": [
+        "royal_crown",
+        "flamingo_mallet"
+    ]
+}

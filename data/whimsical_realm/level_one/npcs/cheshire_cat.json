@@ -1,0 +1,21 @@
+{
+    "name": "Cheshire Cat",
+    "description": "A mysterious feline whose body appears and disappears at will, leaving only its distinctive grin hanging in the air. Its stripes shimmer with impossible colors.",
+    "dialogue": {
+        "greeting": "Ohhh, how curious! Isaac, a visitor who's neither here nor there... how delightfully mad!",
+        "topics": {
+            "about_abyss": {
+                "initial": "Every direction is the right way here, if you walk long enough...",
+                "riddle": "Sometimes I'm here, sometimes I'm there, sometimes I'm everywhere - but where is here?",
+                "advice": "If you think you're going mad, you're probably going the right way!"
+            },
+            "about_items": {
+                "vanishing_potion": "Now you see it, now you don't! But the real question is - did it ever exist?",
+                "grin_in_a_bottle": "A smile without a cat! Or perhaps it's a cat without a smile? How wonderfully confused!"
+            },
+            "about_navigation": {
+                "paradox": "To find your way, you must first be thoroughly lost. It's the only sensible approach!"
+            }
+        }
+    }
+}

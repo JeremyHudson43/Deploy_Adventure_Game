@@ -1,0 +1,21 @@
+{
+    "name": "Sheetz Master",
+    "description": "A mystical convenience store sage in red employee attire, who knows the secret recipe of every MTO item ever created.",
+    "dialogue": {
+        "greeting": "Isaac! Welcome to infinite convenience! What masterpiece of snackery shall I craft for you today?",
+        "topics": {
+            "about_store": {
+                "initial": "Every snack you can imagine, and many you can't, all available 24/7/\u221e!",
+                "philosophy": "In infinite convenience, there is infinite possibility. And infinite sauce options.",
+                "secret": "The real secret isn't in the ingredients - it's in the way time stops when you're deciding what to order."
+            },
+            "about_items": {
+                "mto_sandwich": "Ah, the Made-To-Order of destiny! Each bite contains a different flavor combination!",
+                "slushie": "A quantum slushie - it exists in all flavors simultaneously until you take a sip!"
+            },
+            "about_service": {
+                "insight": "Remember: the touchscreen ordering system knows what you want before you do!"
+            }
+        }
+    }
+}

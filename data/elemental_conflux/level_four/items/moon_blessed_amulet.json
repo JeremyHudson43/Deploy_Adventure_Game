@@ -1,0 +1,13 @@
+{
+    "name": "Moon Blessed Amulet",
+    "description": "An amulet that strengthens waterbending abilities under moonlight.",
+    "properties": {
+        "element": "water",
+        "usage": "Enhanced waterbending",
+        "origin": "Spirit Oasis",
+        "effects": [
+            "lunar power",
+            "healing abilities"
+        ]
+    }
+}

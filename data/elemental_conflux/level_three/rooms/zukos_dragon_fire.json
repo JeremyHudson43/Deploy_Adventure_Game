@@ -1,0 +1,15 @@
+{
+    "name": "Zukos Dragon Fire",
+    "description": "A volcanic training ground where heat distorts the air. Dragon statues line the path, breathing harmless flames in rhythmic patterns.",
+    "exits": {
+        "south": "level_three/irohs_dragon_tea_garden"
+    },
+    "items": [
+        "dual_dao_swords",
+        "dragon_scale_teapot"
+    ],
+    "npcs": [
+        "prince_zuko"
+    ],
+    "stairs_up": "level_four/kataras_waterbending_rapids"
+}

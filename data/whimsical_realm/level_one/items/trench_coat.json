@@ -1,0 +1,9 @@
+{
+    "name": "Trench Coat",
+    "description": "A tactical coat with yellow tape accents. Essential for navigating the underground.",
+    "properties": {
+        "type": "clothing",
+        "effect": "Blends with shadows",
+        "origin": "Bandito uniform"
+    }
+} 

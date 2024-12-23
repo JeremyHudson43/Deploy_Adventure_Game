@@ -1,0 +1,13 @@
+{
+    "name": "Captain's Chronometer",
+    "description": "A complex brass timepiece that measures both temporal flow and musical timing. Occasionally emits small puffs of steam in rhythm.",
+    "properties": {
+        "type": "device",
+        "usage": "Time manipulation and rhythm keeping",
+        "origin": "Abney Park's workshop",
+        "effects": [
+            "temporal synchronization",
+            "rhythm stabilization"
+        ]
+    }
+}

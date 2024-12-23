@@ -1,0 +1,7 @@
+{
+    "id": "tea_cup",
+    "name": "Tea Cup",
+    "description": "A whimsical tea cup that never seems to empty, defying the laws of physics.",
+    "portable": true,
+    "usable": true
+} 

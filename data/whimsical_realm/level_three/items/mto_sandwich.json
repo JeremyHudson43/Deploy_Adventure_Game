@@ -1,0 +1,9 @@
+{
+    "name": "MTO Sandwich",
+    "description": "A perfectly crafted sandwich that never runs out of bites.",
+    "properties": {
+        "type": "food",
+        "effect": "Endless sustenance",
+        "origin": "Sheetz Infinite Kitchen"
+    }
+}

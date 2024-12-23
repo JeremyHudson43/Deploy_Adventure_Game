@@ -1,0 +1,9 @@
+{
+    "name": "Shrink Ray",
+    "description": "A sleek ray gun with a dial for precise size adjustment. Has a 'dramatically oversized head' setting.",
+    "properties": {
+        "type": "gadget",
+        "effect": "Size manipulation",
+        "origin": "Megamind's inventions"
+    }
+} 

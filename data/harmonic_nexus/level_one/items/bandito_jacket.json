@@ -1,0 +1,9 @@
+{
+    "name": "Bandito Jacket",
+    "description": "A military-style jacket with yellow tape accents.",
+    "properties": {
+        "genre": "alternative rock",
+        "usage": "Camouflage in musical environments",
+        "origin": "Trench era"
+    }
+}

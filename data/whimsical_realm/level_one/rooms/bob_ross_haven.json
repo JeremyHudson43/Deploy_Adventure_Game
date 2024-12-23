@@ -1,0 +1,16 @@
+{
+    "name": "Bob Ross Haven",
+    "description": "A cozy studio space where reality seems to blur at the edges like wet paint. Half-finished landscapes on easels occasionally shift when no one's looking, and happy little clouds drift past indoors. The air smells of oil paint and joy.",
+    "exits": {
+        "west": "level_one/cheshire_cats_grinning_abyss",
+        "east": "level_one/megaminds_misguided_mansion"
+    },
+    "items": [
+        "reality_brush",
+        "happy_palette"
+    ],
+    "npcs": [
+        "bob_ross"
+    ],
+    "stairs_up": "level_two/mad_hatters_temporal_trap"
+}

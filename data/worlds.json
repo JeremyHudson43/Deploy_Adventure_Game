@@ -1,0 +1,22 @@
+{
+    "Intro World": {
+        "name": "Intro World",
+        "description": "A familiar yet unsettling version of your own home, where reality starts to bend and the journey begins.",
+        "starting_room": "bedroom"
+    },
+    "Elemental Conflux": {
+        "name": "Elemental Conflux",
+        "description": "A grand monastery at the intersection of elemental planes, where spiritual and physical mastery over the forces of nature is essential for survival.",
+        "starting_room": "level_one/aangs_airbending_academy"
+    },
+    "Harmonic Nexus": {
+        "name": "Harmonic Nexus",
+        "description": "A surreal, rhythm-driven world where music shapes reality, and the power of sound and rhythm guides every move.",
+        "starting_room": "level_one/twenty_one_pilots_trench_terminal"
+    },
+    "Whimsical Realm": {
+        "name": "Whimsical Realm",
+        "description": "A bizarre, dreamlike land where thoughts shape reality. Creativity is the key to solving puzzles and navigating surreal environments.",
+        "starting_room": "level_one/bob_ross_haven"
+    }
+}

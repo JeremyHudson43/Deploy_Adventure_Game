@@ -1,0 +1,11 @@
+{
+    "id": "crystal_resonator",
+    "name": "Crystal Resonator",
+    "description": "A finely tuned earth kingdom device that can sense and harmonize with crystal formations. Its surface is etched with intricate patterns that pulse with earth energy.",
+    "type": "tool",
+    "properties": {
+        "use_message": "The Crystal Resonator hums in response to nearby crystal formations...",
+        "durability": "infinite",
+        "origin": "Earth Kingdom technology"
+    }
+} 

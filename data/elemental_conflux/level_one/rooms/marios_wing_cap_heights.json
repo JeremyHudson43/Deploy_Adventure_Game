@@ -1,0 +1,23 @@
+{
+    "name": "Mario's Wing Cap Heights",
+    "description": "Floating platforms soar among drifting clouds. A Wing Cap and a Power Star glimmer atop stone pedestals, as if guiding the winds themselves.",
+    "exits": {
+        "west": "aangs_airbending_academy",
+        "east": "storm_crows_ascension"
+    },
+    "items": [
+        "wing_cap",
+        "power_star"
+    ],
+    "npcs": [
+        "wing_cap_mario"
+    ],
+    "puzzle_elements": {
+        "air_currents_puzzle": {
+            "status": "inactive",
+            "required_items": ["Wing Cap", "Power Star"],
+            "activation_phrase": "align winds",
+            "completion_message": "The shifting clouds glow as the star's power aligns with your movements, opening a new route."
+        }
+    }
+}

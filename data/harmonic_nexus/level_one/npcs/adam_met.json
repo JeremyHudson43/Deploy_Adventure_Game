@@ -1,0 +1,24 @@
+{
+    "name": "Adam Met",
+    "description": "The AJR bassist stands amid the confetti, adjusting his glasses with a knowing smile. His energy matches the street's vibrant atmosphere.",
+    "dialogue": {
+        "greeting": "BANG! Isaac! Welcome to the Boulevard! Ready to explore some sound fusion?",
+        "topics": {
+            "about_experimentation": {
+                "fusion": "The best sounds come from unexpected places. Try creating new fusions of different styles!",
+                "innovation": "Don't be afraid to explore new patterns. That's where the magic happens!",
+                "discovery": "Push the boundaries - blend genres, mix sounds, create something unique!"
+            },
+            "about_sound": {
+                "patterns": "Listen for the hidden patterns in the noise. Then explore how to transform them.",
+                "creation": "Start by creating simple sound fusions, then build into something more complex.",
+                "innovation": "True innovation comes when you're brave enough to explore uncharted musical territory."
+            },
+            "about_style": {
+                "blend": "Mix different sounds together - classical, electronic, whatever feels right!",
+                "unique": "Don't just follow the patterns - innovate your own unique sound!",
+                "evolution": "Keep pushing those boundaries until you discover something completely new."
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "id": "spirit_crystal_fragment",
+    "name": "Spirit Crystal Fragment",
+    "description": "A luminous crystal shard pulsating with spiritual energy. Faint patterns appear and disappear along its surface, hinting at deeper unity with other fragments.",
+    "type": "key_item",
+    "properties": {
+        "use_message": "The Spirit Crystal Fragment resonates softly, as if seeking its missing pieces...",
+        "combine_with": [
+            "resonance_core_fragment",
+            "imagination_shard_fragment"
+        ],
+        "combine_result": "nexus_key",
+        "combine_message": "A brilliant flash of light unites the fragments into a single key of energy!",
+        "origin": "Gift from Raava",
+        "lore": "One of three fragments needed to unlock the Nexus. Its pulsating light suggests a powerful spiritual connection."
+    }
+} 

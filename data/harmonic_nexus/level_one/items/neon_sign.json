@@ -1,0 +1,11 @@
+{
+    "id": "neon_sign",
+    "name": "Neon Sign",
+    "description": "A vibrant neon sign that pulses with the beat. Essential for creating the perfect musical atmosphere.",
+    "portable": true,
+    "properties": {
+        "type": "prop",
+        "visual_impact": "high",
+        "ambiance_rating": 4
+    }
+} 

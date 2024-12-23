@@ -1,0 +1,9 @@
+{
+    "name": "Pixel Heart",
+    "description": "A floating 8-bit heart that pulses in time with chiptune beats.",
+    "properties": {
+        "type": "digital_artifact",
+        "effect": "Rhythm enhancement",
+        "origin": "Retro gaming essence"
+    }
+} 

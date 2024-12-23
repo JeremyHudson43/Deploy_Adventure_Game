@@ -1,0 +1,9 @@
+{
+    "name": "Kawaii Plushie",
+    "description": "An impossibly cute plush toy that sparkles with digital energy.",
+    "properties": {
+        "type": "companion",
+        "effect": "Spreads joy",
+        "origin": "Digital dreams"
+    }
+} 

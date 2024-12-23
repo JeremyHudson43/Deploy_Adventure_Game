@@ -1,0 +1,13 @@
+{
+    "name": "Dragon Scale Teapot",
+    "description": "An ancient teapot made from dragon scales that shimmers with rainbow hues. When tea is brewed inside, the steam forms shapes of dancing dragons.",
+    "properties": {
+        "element": "fire",
+        "usage": "Tea brewing and fire understanding",
+        "origin": "Sun Warrior civilization",
+        "effects": [
+            "reveals true fire nature",
+            "enhances inner fire"
+        ]
+    }
+}

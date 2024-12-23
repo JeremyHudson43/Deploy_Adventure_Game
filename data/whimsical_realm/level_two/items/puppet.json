@@ -1,0 +1,9 @@
+{
+    "name": "Puppet",
+    "description": "A friendly puppet that helps express feelings.",
+    "properties": {
+        "type": "emotional",
+        "effect": "Emotional expression",
+        "origin": "Mr. Rogers' Neighborhood"
+    }
+}

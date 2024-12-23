@@ -1,0 +1,23 @@
+{
+    "name": "AJ Jackson",
+    "description": "The Saint Motel frontman observes the scene through various vintage camera lenses, his retro-styled outfit perfectly matching the vista's aesthetic. Musical notes seem to blend and transform as they float around him.",
+    "dialogue": {
+        "greeting": "Hey Isaac! Welcome to the Vista! Ready to explore some unconventional sound combinations?",
+        "topics": {
+            "about_vista": {
+                "initial": "Every window here shows how different sounds can merge into something entirely new.",
+                "style": "We take familiar melodies and transform them into something unexpected - like filming a sunset through a kaleidoscope.",
+                "vision": "The best innovations come from combining things that shouldn't work together... but somehow do."
+            },
+            "about_items": {
+                "vintage_camera": "Just like this camera can capture light in unique ways, we can capture and transform sound itself.",
+                "film_reel": "Each frame blends into the next, just like how we layer different musical elements to create something fresh."
+            },
+            "about_perspective": {
+                "philosophy": "Sometimes the most groundbreaking discoveries happen when you deliberately break all the rules.",
+                "approach": "I love taking perfectly good sounds and warping them until they become something completely different.",
+                "innovation": "The key is finding unexpected connections - like how a broken projector might create the perfect visual effect."
+            }
+        }
+    }
+}

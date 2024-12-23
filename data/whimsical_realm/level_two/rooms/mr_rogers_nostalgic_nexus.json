@@ -1,0 +1,16 @@
+{
+    "name": "Mr Rogers Nostalgic Nexus",
+    "description": "A cozy, warm space reminiscent of Mr. Rogers' Neighborhood. Nostalgia fills the air.",
+    "exits": {
+        "west": "level_two/walles_wonderful_world"
+    },
+    "items": [
+        "cardigan_sweater",
+        "puppet_friend"
+    ],
+    "npcs": [
+        "mr_rogers"
+    ],
+    "stairs_up": "level_three/the_brave_little_toasters_appliance_uprising",
+    "stairs_down": "level_one/utopian_lego_city"
+}

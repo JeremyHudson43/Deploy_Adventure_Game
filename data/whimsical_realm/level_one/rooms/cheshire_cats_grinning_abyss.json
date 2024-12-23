@@ -1,0 +1,15 @@
+{
+    "name": "Cheshire Cats Grinning Abyss",
+    "description": "A surreal, ever-changing space where reality seems to bend. The Cheshire Cat's grin floats in the air.",
+    "exits": {
+        "east": "level_one/bob_ross_haven"
+    },
+    "items": [
+        "vanishing_potion",
+        "grin_in_a_bottle"
+    ],
+    "npcs": [
+        "cheshire_cat"
+    ],
+    "stairs_up": "level_two/queen_of_hearts_grim_garden_party"
+}

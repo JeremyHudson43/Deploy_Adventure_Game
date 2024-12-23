@@ -1,0 +1,9 @@
+{
+    "name": "Invisible Car Keys",
+    "description": "Keys that are only visible when you're not looking directly at them. They make a visible car invisible, or vice versa.",
+    "properties": {
+        "type": "gadget",
+        "effect": "Vehicle invisibility",
+        "origin": "Megamind's garage"
+    }
+} 

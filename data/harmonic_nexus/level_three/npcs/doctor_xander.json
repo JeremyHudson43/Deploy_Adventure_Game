@@ -1,0 +1,24 @@
+{
+    "name": "Doctor Xander",
+    "description": "A brilliant steampunk scientist stands amid whirring gears and hissing steam valves. Their mechanical arm constantly adjusts and calibrates nearby machinery with practiced precision.",
+    "dialogue": {
+        "greeting": "Ah, a fellow enthusiast of mechanical harmony! *adjusts a series of brass dials with perfect timing*",
+        "topics": {
+            "about_machinery": {
+                "initial": "Listen to that! Each gear's rotation must be precisely timed - a quarter turn here affects the entire symphony.",
+                "precision": "The steam pressure requires constant fine-tuning. Too much force and the harmony is lost; too little and the music falls flat.",
+                "harmony": "These brass resonators... *adjusts a valve* ...need to synchronize perfectly with both the clockwork and steam systems."
+            },
+            "about_symphony": {
+                "mechanics": "A true mechanical symphony requires three elements: precise clockwork timing, carefully regulated steam pressure, and perfectly tuned brass resonators.",
+                "process": "First establish your base rhythm with the gears, then layer in the steam harmonics, and finally let the brass sing.",
+                "mastery": "When everything aligns... *makes a microscopic adjustment to a timing mechanism* ...the machinery itself becomes music."
+            },
+            "about_calibration": {
+                "philosophy": "Every mechanical component is an instrument that must be kept in perfect tune.",
+                "approach": "The slightest misalignment can throw off the entire performance. Precision is everything!",
+                "craftsmanship": "True mastery comes from understanding how each system influences the others. It's all interconnected!"
+            }
+        }
+    }
+}

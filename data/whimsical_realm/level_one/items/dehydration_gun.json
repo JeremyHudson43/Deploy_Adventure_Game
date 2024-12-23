@@ -1,0 +1,9 @@
+{
+    "name": "Dehydration Gun",
+    "description": "A weapon that turns objects into tiny blue cubes. For evil... presentation purposes only.",
+    "properties": {
+        "type": "gadget",
+        "effect": "Object compression",
+        "origin": "Megamind's inventions"
+    }
+} 

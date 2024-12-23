@@ -1,0 +1,13 @@
+{
+    "name": "Wing Cap",
+    "description": "A magical cap that grants the power of flight when activated.",
+    "properties": {
+        "element": "air",
+        "usage": "Temporary flight ability",
+        "origin": "Mushroom Kingdom artifacts",
+        "effects": [
+            "temporary flight",
+            "enhanced jumping"
+        ]
+    }
+}

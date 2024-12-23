@@ -1,0 +1,9 @@
+{
+    "name": "Red Paint",
+    "description": "Paint that turns anything the perfect shade of royal red. Or else.",
+    "properties": {
+        "type": "art_supply",
+        "effect": "Royal transformation",
+        "origin": "Queen's personal collection"
+    }
+} 

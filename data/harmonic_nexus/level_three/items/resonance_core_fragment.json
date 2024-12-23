@@ -1,0 +1,14 @@
+{
+    "id": "resonance_core_fragment",
+    "name": "Resonance Core Fragment",
+    "description": "A crystalline shard that hums with musical energy. Tiny gears and musical notes seem to float within its structure, moving in perfect harmony.",
+    "type": "key_item",
+    "properties": {
+        "use_message": "The Resonance Core Fragment vibrates with harmonic energy, but seems incomplete without its companion pieces...",
+        "combine_with": ["spirit_crystal_fragment", "imagination_shard_fragment"],
+        "combine_result": "nexus_key",
+        "combine_message": "The three fragments harmonize perfectly, forming a key of pure energy!",
+        "origin": "Gift from Doctor Xander",
+        "lore": "One of three mystical fragments that, when united, will unlock the path to the Nexus Hub."
+    }
+} 

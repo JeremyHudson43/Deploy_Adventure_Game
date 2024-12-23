@@ -1,0 +1,13 @@
+{
+    "id": "flame_essence",
+    "name": "Flame Essence",
+    "description": "A swirling orb of pure fire energy, pulsing with inner warmth. Essential for advanced fire manipulation techniques.",
+    "type": "quest_item",
+    "properties": {
+        "glow": "bright",
+        "temperature": "very_hot",
+        "magical": true
+    },
+    "use_text": "The flame essence resonates with your inner fire.",
+    "examine_text": "The essence contains pure fire energy, perfect for advanced pyromancy."
+} 

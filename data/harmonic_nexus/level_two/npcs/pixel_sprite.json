@@ -1,0 +1,14 @@
+{
+    "name": "Pixel Sprite",
+    "description": "A living 8-bit character that phase-shifts between different animation frames.",
+    "dialogue": {
+        "greeting": "*Cheerful 8-bit jingle plays*",
+        "topics": {
+            "about_games": {
+                "initial": "*Shows tutorial tooltip in pixelated speech bubble*",
+                "secrets": "*Demonstrates pixel-perfect movement techniques*",
+                "power": "*Transforms into various power-up states*"
+            }
+        }
+    }
+} 

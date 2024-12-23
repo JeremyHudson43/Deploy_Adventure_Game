@@ -1,0 +1,11 @@
+{
+    "id": "queens_tarts",
+    "name": "Queens Tarts",
+    "description": "Heart-shaped tarts that look too perfect to eat. Better not let anyone steal them!",
+    "portable": true,
+    "usable": true,
+    "properties": {
+        "flavor": "royal raspberry",
+        "shape": "perfect heart"
+    }
+} 

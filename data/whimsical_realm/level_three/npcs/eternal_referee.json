@@ -1,0 +1,21 @@
+{
+    "name": "Eternal Referee",
+    "description": "A figure in pristine white, existing simultaneously at every point of the endless court. Their whistle echoes through eternity.",
+    "dialogue": {
+        "greeting": "Isaac, welcome to the Court of Eternal Triumph! Where every serve is perfect and every rally is legendary!",
+        "topics": {
+            "about_court": {
+                "initial": "Here, the game never truly ends - it just keeps getting better!",
+                "rules": "The rules are simple: play with joy, celebrate every point, and remember - everyone's a winner!",
+                "philosophy": "In eternal pickleball, it's not about the score - it's about the infinite possibilities of each rally."
+            },
+            "about_items": {
+                "pickleball_paddle": "This paddle has never known defeat - because here, every shot is a victory!",
+                "victory_medal": "A medal that multiplies itself - because in eternal pickleball, everyone deserves recognition!"
+            },
+            "about_game": {
+                "wisdom": "The secret to eternal pickleball? Play each point like it's both your first and your millionth!"
+            }
+        }
+    }
+}

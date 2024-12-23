@@ -1,0 +1,21 @@
+{
+    "id": "chandra_nalaar",
+    "name": "Chandra Nalaar",
+    "description": "A powerful pyromancer stands amid swirling flames, her red hair seemingly aflame itself. Her goggles gleam with reflected firelight as she channels magical energy.",
+    "type": "mentor",
+    "dialogue": {
+        "greeting": "Isaac, welcome to the Flame Sanctuary. Fire is alive; only those who embrace its passion can truly master it.",
+        "topics": {
+            "about_flames": {
+                "initial": "Each spark carries its own spirit, waiting for you to guide it.",
+                "understanding": "Observe how the flames dance... they're revealing hidden patterns.",
+                "mastery": "True mastery comes when you feel the flame as part of yourself."
+            },
+            "about_sanctuary": {
+                "initial": "These flames reflect our inner emotions, forging a link between thought and fire.",
+                "wisdom": "A calm mind shapes a disciplined flame; an unsettled mind courts chaos.",
+                "harmony": "When your intentions and the flame align, power flows freely."
+            }
+        }
+    }
+}

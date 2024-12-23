@@ -1,0 +1,13 @@
+{
+    "id": "ritual_candle",
+    "name": "Ritual Candle",
+    "description": "A battle-forged candle infused with magical properties. Its flame responds to combat stances and warrior spirit.",
+    "type": "quest_item",
+    "properties": {
+        "glow": "fierce",
+        "temperature": "blazing",
+        "magical": true
+    },
+    "use_text": "The candle's flame roars in response to your fighting spirit!",
+    "examine_text": "This special candle is used in fire combat training. Its flame seems to surge with power in your presence."
+} 

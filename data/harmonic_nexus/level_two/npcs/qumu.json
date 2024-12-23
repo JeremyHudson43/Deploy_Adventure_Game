@@ -1,0 +1,24 @@
+{
+    "name": "Qumu",
+    "description": "A passionate musician surrounded by retro gaming equipment and modern music production gear, expertly blending chiptune sounds with orchestral arrangements.",
+    "dialogue": {
+        "greeting": "Hey Isaac! Welcome to the Synthesis Lab! Ready to explore the pure essence of 8-bit sound?",
+        "topics": {
+            "about_synthesis": {
+                "basics": "It all starts with the pulse wave. Each frequency, each duty cycle tells its own story.",
+                "technique": "The oscillator is like a heartbeat - tune it right, and the melody flows naturally.",
+                "mastery": "True chiptune masters can modulate wave patterns to create classic sequences."
+            },
+            "about_patterns": {
+                "fundamentals": "Listen to how the arpeggio sequences create movement. That's the core of retro sound.",
+                "practice": "Start by tuning the basic waveforms. Then you can shape them into melodies.",
+                "advanced": "When you can control the pulse patterns, you'll understand the foundations of chip music."
+            },
+            "about_classic": {
+                "theory": "Every classic tune is built from these fundamental waves and cycles.",
+                "approach": "Focus on the pure tones first. Let the frequency guide your composition.",
+                "wisdom": "The secret lies in how you sequence the patterns - that's what gives it that authentic feel."
+            }
+        }
+    }
+}

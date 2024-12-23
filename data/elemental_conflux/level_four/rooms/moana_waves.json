@@ -1,0 +1,20 @@
+{
+    "name": "Moana Waves",
+    "description": "A mystical stretch of ocean guided by starry skies and living currents. Each crest seems eager to show you something new.",
+    "exits": {
+        "south": "level_four/squirtles_surfing_coast"
+    },
+    "items": [
+        "heart_of_te_fiti",
+        "wayfinder_pendant"
+    ],
+    "npcs": [
+        "moana"
+    ],
+    "messages": {
+        "enter": "Gentle waves roll in, almost greeting your arrival. The sky overhead twinkles with possibility.",
+        "look": "The water subtly shifts hue with the starlight, like a cosmic tapestry mirrored on the sea."
+    },
+    "stairs_up": "level_five/celeste_mountains_astral_ascent",
+    "stairs_down": "level_three/chandras_flame_sanctuary"
+}

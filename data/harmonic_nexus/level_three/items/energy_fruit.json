@@ -1,0 +1,7 @@
+{
+    "id": "energy_fruit",
+    "name": "Energy Fruit",
+    "description": "A crackling fruit that pulses with electrical energy. Perfect for powering up.",
+    "portable": true,
+    "usable": true
+} 

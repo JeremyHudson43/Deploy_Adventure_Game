@@ -1,0 +1,14 @@
+{
+    "id": "imagination_shard_fragment",
+    "name": "Imagination Shard Fragment",
+    "description": "A whimsical crystal shard that sparkles with creative energy. Images and dreams seem to swirl within its facets, each one more fantastical than the last.",
+    "type": "key_item",
+    "properties": {
+        "use_message": "The Imagination Shard Fragment glows with creative potential, but yearns for its companion pieces...",
+        "combine_with": ["spirit_crystal_fragment", "resonance_core_fragment"],
+        "combine_result": "nexus_key",
+        "combine_message": "The three fragments dance together in a display of pure imagination, forming a key of boundless possibility!",
+        "origin": "Gift from The Brave Little Toaster",
+        "lore": "One of three mystical fragments that, when united, will unlock the path to the Nexus Hub."
+    }
+} 

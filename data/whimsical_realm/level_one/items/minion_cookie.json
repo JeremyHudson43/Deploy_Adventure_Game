@@ -1,0 +1,9 @@
+{
+    "name": "Minion Cookie",
+    "description": "A cookie shaped like a loyal minion. Makes happy gurgling sounds when bitten.",
+    "properties": {
+        "type": "food",
+        "effect": "Loyalty boost",
+        "origin": "Evil lair kitchen"
+    }
+} 

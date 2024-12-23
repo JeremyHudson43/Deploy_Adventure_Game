@@ -1,0 +1,13 @@
+{
+    "name": "Aetheric Resonator",
+    "description": "A brass and copper device covered in delicate tuning forks and crystal resonance chambers. Captures and amplifies the music of the spheres.",
+    "properties": {
+        "type": "instrument",
+        "usage": "Ethereal sound manipulation",
+        "origin": "Abney Park's laboratory",
+        "effects": [
+            "aetheric harmonization",
+            "sound visualization"
+        ]
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "name": "Happy Palette",
+    "description": "A paint palette whose colors seem to mix themselves. The colors occasionally whisper encouraging things to each other.",
+    "properties": {
+        "type": "artistic",
+        "usage": "Color manipulation",
+        "origin": "Bob Ross's personal collection",
+        "effects": [
+            "color manifestation",
+            "emotional enhancement"
+        ]
+    }
+}

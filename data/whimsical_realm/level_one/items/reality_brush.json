@@ -1,0 +1,13 @@
+{
+    "name": "Reality Brush",
+    "description": "A paint brush that leaves strokes in the air itself. Everything it paints becomes real, if only for a little while.",
+    "properties": {
+        "type": "artistic",
+        "usage": "Reality alteration",
+        "origin": "Bob Ross's personal collection",
+        "effects": [
+            "creates temporary landscapes",
+            "paints pathways into being"
+        ]
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "name": "Saint Motel Voyeur Vista",
+    "description": "A retro-styled room with large windows overlooking a bustling city. Vintage cameras and film reels decorate the space.",
+    "exits": {
+        "west": "level_one/ajr_bang_boulevard",
+        "east": "level_one/panic_at_the_disco_boom_boom_ballroom"
+    },
+    "items": [
+        "vintage_camera",
+        "film_reel"
+    ],
+    "npcs": [
+        "aj_jackson"
+    ],
+    "stairs_up": "level_two/snails_house_beep_boop_arcade"
+}

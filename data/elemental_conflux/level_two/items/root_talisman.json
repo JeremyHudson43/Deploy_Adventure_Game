@@ -1,0 +1,13 @@
+{
+    "name": "Root Talisman",
+    "description": "An ancient talisman made from petrified roots.",
+    "properties": {
+        "element": "earth",
+        "usage": "Plant and earth control",
+        "origin": "Trevenant's wisdom",
+        "effects": [
+            "plant growth",
+            "earth sensing"
+        ]
+    }
+}

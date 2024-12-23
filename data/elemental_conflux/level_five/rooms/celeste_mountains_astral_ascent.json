@@ -1,0 +1,18 @@
+{
+    "name": "Celeste Mountains Astral Ascent",
+    "description": "A mystical peak where physical reality thins, revealing cosmic horizons. Aurora ribbons dance overhead, hinting at unseen realms.",
+    "exits": {
+        "east": "level_five/mount_pyres_ancestral_summit"
+    },
+    "items": [
+        "elemental_shard"
+    ],
+    "npcs": [
+        "madeline"
+    ],
+    "messages": {
+        "enter": "Biting winds carry distant whispers of starlight, urging you to ascend into the unknown.",
+        "look": "In the thin air, the world shimmers with dreamlike quality, and every step feels lighter."
+    },
+    "stairs_down": "level_four/bob_ross_sunset_ocean"
+}

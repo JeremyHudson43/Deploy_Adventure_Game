@@ -1,0 +1,18 @@
+{
+    "name": "The Spine",
+    "description": "A tall, silver automaton with a titanium alloy spine, dressed in a dapper black suit. His photoreceptors glow a gentle green as he moves with impossible smoothness between robotic precision and human grace.",
+    "dialogue": {
+        "greeting": "Welcome, Isaac, to our little carnival of clockwork wonders! *tips hat with mechanically perfect timing*",
+        "topics": {
+            "about_performance": {
+                "initial": "Every gear, every piston moves in perfect harmony here.",
+                "technique": "The secret is in the steam pressure - too much and we talk too fast, too little and we wind down.",
+                "harmony": "Three automatons, three distinct harmonic frequencies, one perfect show."
+            },
+            "about_items": {
+                "clockwork_harmonizer": "Helps keep our gears synchronized. Quite essential when you're performing with other automatons.",
+                "steam_powered_accordion": "A marvelous instrument - runs on the same steam that powers our vocal processors!"
+            }
+        }
+    }
+}
