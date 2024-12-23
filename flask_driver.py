@@ -1,32 +1,23 @@
 from flask import Flask, render_template, request
-import os
 
-# Import your game's core logic
-# from adventure_game_adventure_lib.src.core.Game import Game
-
-# Create the Flask application
+# Create Flask app
 app = Flask(__name__)
 
-# Initialize the game
-# game = Game()
-
 @app.route('/', methods=['GET', 'POST'])
-def adventure():
+def home():
     """
-    Main route for Tezzeret's Surreal Adventure.
-    Handles user input and game state.
+    Render the main page and handle user input.
     """
     if request.method == 'POST':
-        # Get user input
         user_input = request.form['message']
-
-        # Process the input through your game's logic
-        # response = game.process_command(user_input)
-
-        # Return the updated game state and response to the template
-        return render_template('adventure.html', user_input=user_input, response=response)
+        # Placeholder response; replace with your logic later
+        response = f"You entered: {user_input}"
+        return render_template('index.html', user_input=user_input, response=response)
+    else:
+        # Initial load
+        return render_template('index.html', user_input=None, response=None)
 
 if __name__ == '__main__':
-    # On Railway, the port is usually set in the PORT environment variable
-    port = int(os.environ.get('PORT', 8080))
+    import os
+    port = int(os.environ.get('PORT', 8080))  # Use PORT env variable for Railway
     app.run(host='0.0.0.0', port=port)
