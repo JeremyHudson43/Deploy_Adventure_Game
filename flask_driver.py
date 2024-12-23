@@ -25,10 +25,6 @@ def adventure():
 
         # Return the updated game state and response to the template
         return render_template('adventure.html', user_input=user_input, response=response)
-    else:
-        # Render the initial game state
-        intro_message = game.get_intro()
-        return render_template('adventure.html', user_input=None, response=intro_message)
 
 if __name__ == '__main__':
     # On Railway, the port is usually set in the PORT environment variable
