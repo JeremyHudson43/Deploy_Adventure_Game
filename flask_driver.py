@@ -8,7 +8,7 @@ import os
 app = Flask(__name__)
 
 # Initialize the game
-game = Game()
+# game = Game()
 
 @app.route('/', methods=['GET', 'POST'])
 def adventure():
@@ -21,7 +21,7 @@ def adventure():
         user_input = request.form['message']
 
         # Process the input through your game's logic
-        response = game.process_command(user_input)
+        # response = game.process_command(user_input)
 
         # Return the updated game state and response to the template
         return render_template('adventure.html', user_input=user_input, response=response)
