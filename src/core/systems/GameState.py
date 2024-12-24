@@ -121,17 +121,16 @@ class GameState:
             'saves_directory': str(self.saves_directory)
         }
 
-    def _serialize_player(self) -> Dict[str, Any]:
-        """Serialize player state."""
+    def _serialize_player(self):
         return {
-            "current_room": self.game.player.current_room.name,
+            "current_room": self.game.player.current_room.name if self.game.player.current_room else "No Room",
             "inventory": [item.name for item in self.game.player.inventory],
             "position": {
-                "world": self.game.current_world.name,
-                "room": self.game.player.current_room.name
+                "world": self.game.current_world.name if self.game.current_world else "No World",
+                "room": self.game.player.current_room.name if self.game.player.current_room else "No Room"
             }
         }
-
+    
     def _serialize_world_state(self) -> Dict[str, Any]:
         """Serialize current world state."""
         return {
