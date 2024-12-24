@@ -9,6 +9,10 @@ import pickle
 import logging
 import traceback
 
+current_dir = Path(__file__).parent
+src_dir = current_dir / 'src'
+sys.path.append(str(src_dir))
+
 # Import the Game class
 from core.Game import Game
 
