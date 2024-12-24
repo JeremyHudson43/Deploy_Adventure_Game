@@ -90,16 +90,24 @@ class GameWorld:
 
     def _serialize_room(self, room):
         return {
-            'name': room.name,
-            'description': room.description,
-            'items': [item.name for item in room.items],
+            'name': room.name if hasattr(room, 'name') else None,
+            'description': room.description if hasattr(room, 'description') else None,
+            'items': [item.name for item in room.items] if hasattr(room, 'items') else [],
             'npcs': [npc.name for npc in getattr(room, 'npcs', [])],
-            'exits': {dir: getattr(room, dir).name if hasattr(getattr(room, dir), 'name') else getattr(room, dir) 
-                     for dir in room.exits()},
-            'stairs_up': room.stairs_up.name if hasattr(getattr(room, 'stairs_up', None), 'name') else getattr(room, 'stairs_up', None),
-            'stairs_down': room.stairs_down.name if hasattr(getattr(room, 'stairs_down', None), 'name') else getattr(room, 'stairs_down', None)
+            'exits': {
+                dir: (getattr(room, dir).name 
+                     if getattr(room, dir) and hasattr(getattr(room, dir), 'name') 
+                     else getattr(room, dir))
+                for dir in room.exits()
+            },
+            'stairs_up': (getattr(room, 'stairs_up', None).name 
+                         if getattr(room, 'stairs_up', None) and hasattr(getattr(room, 'stairs_up'), 'name')
+                         else getattr(room, 'stairs_up', None)),
+            'stairs_down': (getattr(room, 'stairs_down', None).name 
+                           if getattr(room, 'stairs_down', None) and hasattr(getattr(room, 'stairs_down'), 'name')
+                           else getattr(room, 'stairs_down', None))
         }
-    
+        
     def _serialize_item(self, item):
         return {
             'name': item.name,
