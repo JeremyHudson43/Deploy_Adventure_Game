@@ -14,6 +14,8 @@ sys.path.append(str(src_dir))
 from core.Game import Game
 
 app = Flask(__name__, template_folder=str(current_dir / 'templates'))
+app.debug = True
+
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 games = {}
