@@ -94,10 +94,10 @@ class GameWorld:
             'description': room.description,
             'items': [item.name for item in room.items],
             'npcs': [npc.name for npc in getattr(room, 'npcs', [])],
-            'exits': {dir: getattr(room, dir).name if getattr(room, dir) else None 
+            'exits': {dir: getattr(room, dir).name if hasattr(getattr(room, dir), 'name') else getattr(room, dir) 
                      for dir in room.exits()},
-            'stairs_up': room.stairs_up.name if getattr(room, 'stairs_up', None) else None,
-            'stairs_down': room.stairs_down.name if getattr(room, 'stairs_down', None) else None
+            'stairs_up': room.stairs_up.name if hasattr(getattr(room, 'stairs_up', None), 'name') else getattr(room, 'stairs_up', None),
+            'stairs_down': room.stairs_down.name if hasattr(getattr(room, 'stairs_down', None), 'name') else getattr(room, 'stairs_down', None)
         }
     
     def _serialize_item(self, item):
