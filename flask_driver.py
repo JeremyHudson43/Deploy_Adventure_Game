@@ -56,34 +56,40 @@ def capture_output(output_queue):
    return flush_output, restore_stdout
 
 def save_game_state(session_id):
-   """Save game state to file"""
-   try:
-       if session_id in games:
-           game = games[session_id]
-           saves_dir = Path('saves')
-           saves_dir.mkdir(exist_ok=True)
+    try:
+        if session_id in games:
+            game = games[session_id]
+            saves_dir = Path('saves')
+            saves_dir.mkdir(exist_ok=True)
 
-           state = {
-               'player': {
-                   'inventory': [item.name for item in game.player.inventory],
-                   'current_room': game.player.current_room.name if game.player.current_room else None
-               },
-               'current_world': game.current_world.name if game.current_world else None,
-               'puzzles': {
-                   puzzle_id: {
-                       'completed': puzzle.completed,
-                       'completed_groups': list(getattr(puzzle, '_completed_groups', set()))
-                   }
-                   for puzzle_id, puzzle in game.current_world.puzzles.items()
-               } if game.current_world else {}
-           }
+            # Get full room path/ID instead of just name
+            current_room_id = None
+            if game.current_world and game.player.current_room:
+                for room_id, room in game.current_world.rooms.items():
+                    if room == game.player.current_room:
+                        current_room_id = room_id
+                        break
 
-           with open(saves_dir / f"{session_id}.save", 'wb') as f:
-               pickle.dump(state, f)
+            state = {
+                'player': {
+                    'inventory': [item.name for item in game.player.inventory],
+                    'current_room': current_room_id  # Store full room ID
+                },
+                'current_world': game.current_world.name if game.current_world else None,
+                'puzzles': {
+                    puzzle_id: {
+                        'completed': puzzle.completed,
+                        'completed_groups': list(getattr(puzzle, '_completed_groups', set()))
+                    }
+                    for puzzle_id, puzzle in game.current_world.puzzles.items()
+                } if game.current_world else {}
+            }
 
-   except Exception as e:
-       logger.error(f"Error saving game state: {str(e)}")
-       logger.error(traceback.format_exc())
+            with open(saves_dir / f"{session_id}.save", 'wb') as f:
+                pickle.dump(state, f)
+
+    except Exception as e:
+        logger.error(f"Error saving game state: {str(e)}")
 
 def load_game_state(session_id):
    """Load game state from file"""
