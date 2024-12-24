@@ -147,41 +147,44 @@ def home():
 
 @app.route('/init_game', methods=['POST'])
 def init_game():
-   try:
-       client_id = get_client_id()
-       session_id = f"session_{client_id}"
-       output_queue = queue.Queue()
+    try:
+        client_id = get_client_id()
+        session_id = f"session_{client_id}"
+        output_queue = queue.Queue()
+        
+        game_exists = load_game_state(session_id)
+        if not game_exists:
+            game = Game()
+            games[session_id] = game
+            game.setup()
+        else:
+            game = games[session_id]
 
-       if load_game_state(session_id):
-           game = games[session_id]
-       else:
-           game = Game()
-           games[session_id] = game
-           game.setup()
+        output_queues[session_id] = output_queue
+        flush_output, restore_stdout = capture_output(output_queue)
 
-       output_queues[session_id] = output_queue
-       flush_output, restore_stdout = capture_output(output_queue)
+        try:
+            if not game_exists:
+                game.intro()
+            game.command_processor.look()
+            flush_output()
+        finally:
+            restore_stdout()
 
-       try:
-           game.command_processor.look()
-           flush_output()
-       finally:
-           restore_stdout()
+        output = ""
+        while not output_queue.empty():
+            output += output_queue.get()
 
-       output = ""
-       while not output_queue.empty():
-           output += output_queue.get()
+        save_game_state(session_id)
 
-       save_game_state(session_id)
+        return jsonify({
+            'sessionId': session_id,
+            'output': output
+        })
 
-       return jsonify({
-           'sessionId': session_id,
-           'output': output
-       })
-
-   except Exception as e:
-       logger.error(f"Error in init_game: {str(e)}")
-       return jsonify({'error': str(e)}), 500
+    except Exception as e:
+        logger.error(f"Error in init_game: {str(e)}")
+        return jsonify({'error': str(e)}), 500
 
 @app.route('/command', methods=['POST'])
 def process_command():
