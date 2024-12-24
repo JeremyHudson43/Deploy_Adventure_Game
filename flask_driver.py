@@ -47,28 +47,24 @@ def home():
 def init_game():
     try:
         data = request.get_json()
-        session_id = str(uuid.uuid4())
-        game = Game()
-        games[session_id] = game
+        session_id = data.get('sessionId')
         
         output_queue = queue.Queue()
-        output_queues[session_id] = output_queue
         
+        if session_id and load_game_state(session_id):
+            game = games[session_id]
+            game.command_processor.look()
+        else:
+            session_id = str(uuid.uuid4())
+            game = Game()
+            games[session_id] = game
+            game.setup()
+        
+        output_queues[session_id] = output_queue
         flush_output, restore_stdout = capture_output(output_queue)
         
         try:
-            # Initialize the game synchronously 
-            game.display = game.display  # Ensure display is set
-            game.setup()
-            game.intro()  # Explicitly call intro
-            game.command_processor.look()
             flush_output()
-        except Exception as e:
-            app.logger.error(f"Game initialization error: {str(e)}")
-            return jsonify({
-                'error': str(e),
-                'output': f"Error initializing game: {str(e)}"
-            }), 500
         finally:
             restore_stdout()
         
@@ -76,7 +72,6 @@ def init_game():
         while not output_queues[session_id].empty():
             output += output_queues[session_id].get()
         
-        # Save initial state
         save_game_state(session_id)
         
         return jsonify({
@@ -85,44 +80,42 @@ def init_game():
         })
 
     except Exception as e:
-        app.logger.error(f"Outer initialization error: {str(e)}")
-        return jsonify({
-            'error': str(e),
-            'output': f"Failed to start game: {str(e)}"
-        }), 500
+        app.logger.error(f"Error: {str(e)}")
+        return jsonify({'error': str(e), 'output': f"Error: {str(e)}"})
+
 def save_game_state(session_id):
-    """Save game state using the game's built-in save system"""
     if session_id in games:
         game = games[session_id]
         saves_dir = Path('saves')
         saves_dir.mkdir(exist_ok=True)
-        save_path = saves_dir / f"{session_id}.dat"
         
-        game_state = {
-            'player_state': game.player.serialize(),
-            'world_state': {
-                'current_world': game.current_world.name,
-                'world_progress': game.game_state.world_progress
-            }
+        state = {
+            'player': game.player.serialize(),
+            'current_world': game.current_world.name if game.current_world else None,
+            'worlds': {name: world.serialize() for name, world in game.worlds.items()},
+            'game_state': game.game_state.serialize() if hasattr(game.game_state, 'serialize') else None
         }
         
-        with open(save_path, 'wb') as f:
-            pickle.dump(game_state, f)
+        with open(saves_dir / f"{session_id}.save", 'wb') as f:
+            pickle.dump(state, f)
 
 def load_game_state(session_id):
-    """Load game state using the game's built-in save system"""
-    save_path = Path('saves') / f"{session_id}.dat"
-    if save_path.exists():
-        with open(save_path, 'rb') as f:
-            game_state = pickle.load(f)
-            
-        game = games[session_id]
-        game.player.deserialize(game_state['player_state'])
-        game.current_world = game.worlds[game_state['world_state']['current_world']]
-        game.game_state.world_progress = game_state['world_state']['world_progress']
+    save_path = Path('saves') / f"{session_id}.save"
+    if not save_path.exists():
+        return False
+        
+    with open(save_path, 'rb') as f:
+        state = pickle.load(f)
+        
+    game = Game()
+    game.player.deserialize(state['player'])
+    
+    if state['current_world']:
+        game.current_world = game.worlds[state['current_world']]
         game.current_world.initialize(game.game_state)
-        return True
-    return False
+    
+    games[session_id] = game
+    return True
 
 @app.route('/command', methods=['POST'])
 def process_command():
