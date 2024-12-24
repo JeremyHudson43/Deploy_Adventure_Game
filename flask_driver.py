@@ -3,12 +3,12 @@ import sys
 import os
 import uuid
 import queue
-import threading
-from pathlib import Path
-import pickle
 import logging
 import traceback
+from pathlib import Path
+import pickle
 
+# Add the source directory to sys.path
 current_dir = Path(__file__).parent
 src_dir = current_dir / 'src'
 sys.path.append(str(src_dir))
@@ -17,10 +17,10 @@ sys.path.append(str(src_dir))
 from core.Game import Game
 
 # Initialize Flask app
-app = Flask(__name__, template_folder=str(Path(__file__).parent / 'templates'))
+app = Flask(__name__, template_folder=str(current_dir / 'templates'))
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
-# Enable or disable debug mode
+# Enable debug mode based on environment
 app.debug = os.getenv("FLASK_ENV") == "development"
 
 # Configure logging
@@ -30,11 +30,11 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Global variables
+# Globals for managing game sessions
 games = {}
 output_queues = {}
 
-# Utility function to capture output
+# Utility: Capture stdout for game output
 def capture_output(output_queue):
     from io import StringIO
     old_stdout = sys.stdout
@@ -53,10 +53,12 @@ def capture_output(output_queue):
 
     return flush_output, restore_stdout
 
+# Route: Home Page
 @app.route('/', methods=['GET'])
 def home():
     return render_template('index.html')
 
+# Route: Initialize Game
 @app.route('/init_game', methods=['POST'])
 def init_game():
     try:
@@ -64,10 +66,12 @@ def init_game():
         session_id = data.get('sessionId')
         output_queue = queue.Queue()
 
+        # Attempt to load existing game state
         if session_id and load_game_state(session_id):
             game = games[session_id]
             game.command_processor.look()
         else:
+            # Start a new game session
             session_id = str(uuid.uuid4())
             game = Game()
             games[session_id] = game
@@ -81,6 +85,7 @@ def init_game():
         finally:
             restore_stdout()
 
+        # Collect output from the game
         output = ""
         while not output_queue.empty():
             output += output_queue.get()
@@ -96,6 +101,7 @@ def init_game():
         logger.error("Error in init_game: %s", traceback.format_exc())
         return jsonify({'error': str(e), 'output': f"Error: {str(e)}"}), 500
 
+# Utility: Save Game State
 def save_game_state(session_id):
     try:
         if session_id in games:
@@ -115,6 +121,7 @@ def save_game_state(session_id):
     except Exception as e:
         logger.error("Error in save_game_state: %s", traceback.format_exc())
 
+# Utility: Load Game State
 def load_game_state(session_id):
     try:
         save_path = Path('saves') / f"{session_id}.save"
@@ -128,8 +135,9 @@ def load_game_state(session_id):
         game.player.deserialize(state['player'])
 
         if state['current_world']:
-            game.current_world = game.worlds[state['current_world']]
-            game.current_world.initialize(game.game_state)
+            game.current_world = game.worlds.get(state['current_world'])
+            if game.current_world:
+                game.current_room = game.current_world.rooms.get(state.get('current_room'))
 
         games[session_id] = game
         return True
@@ -137,6 +145,7 @@ def load_game_state(session_id):
         logger.error("Error in load_game_state: %s", traceback.format_exc())
         return False
 
+# Route: Process Command
 @app.route('/command', methods=['POST'])
 def process_command():
     try:
@@ -175,5 +184,6 @@ def process_command():
             'output': f"Error: {str(e)}"
         }), 500
 
+# Main Entry Point
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=int(os.getenv("PORT", 8080)))
