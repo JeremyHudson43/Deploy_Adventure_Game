@@ -114,6 +114,12 @@ class GameState:
             except Exception:
                 continue
         return saves
+    
+    def serialize(self):
+        return {
+            'world_progress': self.world_progress,
+            'saves_directory': str(self.saves_directory)
+        }
 
     def _serialize_player(self) -> Dict[str, Any]:
         """Serialize player state."""

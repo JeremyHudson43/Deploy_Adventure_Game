@@ -78,6 +78,16 @@ class GameWorld:
         self.progression = ProgressionSystem(game_state)
         self.load_world()
 
+    def serialize(self):
+        return {
+            'name': self.name,
+            'world_id': self.world_id,
+            'rooms': {rid: self._serialize_room(room) for rid, room in self.rooms.items()},
+            'items': {iid: self._serialize_item(item) for iid, item in self.items.items()},
+            'npcs': {nid: self._serialize_npc(npc) for nid, npc in self.npcs.items()},
+            'puzzles': {pid: puzzle.serialize() for pid, puzzle in self.puzzles.items()}
+        }
+
     def load_world(self) -> None:
         """Load and initialize the complete world"""
         try:

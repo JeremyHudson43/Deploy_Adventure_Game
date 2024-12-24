@@ -35,6 +35,19 @@ class Game:
         self.is_running = True
         self.boss_battle = BossBattle(self)
 
+    def serialize(self):
+        return {
+            'worlds': {name: world.name for name, world in self.worlds.items()},
+            'current_world': self.current_world.name if self.current_world else None,
+            'is_running': self.is_running
+        }
+
+    def deserialize(self, data):
+        self.is_running = data['is_running']
+        self.load_all_worlds()
+        if data['current_world']:
+            self.current_world = self.worlds[data['current_world']]
+            
     def setup(self):
         """Initialize game state and starting location."""
         self.current_world = self.worlds.get("Intro World")
