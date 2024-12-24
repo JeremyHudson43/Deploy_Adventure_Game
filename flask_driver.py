@@ -3,16 +3,19 @@ import sys
 import os
 from pathlib import Path
 
-# Add the game source directory to Python path
+# Get the absolute path to the src directory
 current_dir = Path(__file__).parent
-src_dir = current_dir.parent / 'src'
+src_dir = current_dir / 'src'
 sys.path.append(str(src_dir))
 
-from main import Game
+# Now we can import from the src directory
+from core.Game import Game
 import threading
 import queue
 
-app = Flask(__name__)
+app = Flask(__name__, 
+           template_folder=str(current_dir / 'templates'))
+
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 # Store game instances per session
@@ -102,7 +105,9 @@ def process_command():
     return output
 
 if __name__ == '__main__':
-    templates_dir = Path(__file__).parent / 'templates'
+    # Ensure templates directory exists
+    templates_dir = current_dir / 'templates'
     templates_dir.mkdir(exist_ok=True)
     
-    app.run(debug=True, port=8080)
+    # For deployment environment, listen on all interfaces
+    app.run(host='0.0.0.0', port=8080)
