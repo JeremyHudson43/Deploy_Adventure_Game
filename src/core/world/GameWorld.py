@@ -88,6 +88,36 @@ class GameWorld:
             'puzzles': {pid: puzzle.serialize() for pid, puzzle in self.puzzles.items()}
         }
 
+    def _serialize_room(self, room):
+        return {
+            'name': room.name,
+            'description': room.description,
+            'items': [item.name for item in room.items],
+            'npcs': [npc.name for npc in getattr(room, 'npcs', [])],
+            'exits': {dir: getattr(room, dir).name if getattr(room, dir) else None 
+                     for dir in room.exits()},
+            'stairs_up': room.stairs_up.name if getattr(room, 'stairs_up', None) else None,
+            'stairs_down': room.stairs_down.name if getattr(room, 'stairs_down', None) else None
+        }
+    
+    def _serialize_item(self, item):
+        return {
+            'name': item.name,
+            'description': item.description,
+            'properties': {key: value for key, value in vars(item).items() 
+                          if key not in ['name', 'description']}
+        }
+    
+    def _serialize_npc(self, npc):
+        return {
+            'name': npc.name,
+            'description': npc.description,
+            'dialogue': npc.dialogue,
+            'dialogue_data': getattr(npc, 'dialogue_data', {}),
+            'inventory': [item.name for item in npc.inventory],
+            'state': npc.state
+        }
+
     def load_world(self) -> None:
         """Load and initialize the complete world"""
         try:
