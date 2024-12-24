@@ -92,7 +92,6 @@ def save_game_state(session_id):
         logger.error(f"Error saving game state: {str(e)}")
 
 def load_game_state(session_id):
-   """Load game state from file"""
    try:
        save_path = Path('saves') / f"{session_id}.save"
        if not save_path.exists():
@@ -105,35 +104,41 @@ def load_game_state(session_id):
        game.setup()
 
        if state['current_world']:
+           # Load world
            game.current_world = game.worlds.get(state['current_world'])
            if game.current_world:
                game.current_world.initialize(game.game_state)
                
-               # Restore inventory
-               for item_name in state['player'].get('inventory', []):
-                   for item in game.current_world.items.values():
-                       if item.name == item_name:
-                           game.player.inventory.add(item)
+               # Load inventory
+               saved_items = state['player'].get('inventory', [])
+               for item_name in saved_items:
+                   for world_item in game.current_world.items.values():
+                       if world_item.name == item_name:
+                           game.player.inventory.add(world_item)
+                           break
 
-               # Restore location
-               room_name = state['player'].get('current_room')
-               if room_name in game.current_world.rooms:
-                   game.player.current_room = game.current_world.rooms[room_name]
+               # Load room location 
+               room_id = state['player'].get('current_room')
+               if room_id in game.current_world.rooms:
+                   game.player.current_room = game.current_world.rooms[room_id]
+                   game.player.state.current_room_id = room_id
+                   game.player.state.current_world_id = state['current_world']
 
-               # Restore puzzles
+               # Load puzzle states
                for puzzle_id, puzzle_state in state.get('puzzles', {}).items():
                    if puzzle_id in game.current_world.puzzles:
                        puzzle = game.current_world.puzzles[puzzle_id]
                        puzzle.completed = puzzle_state.get('completed', False)
                        if hasattr(puzzle, '_completed_groups'):
                            puzzle._completed_groups = set(puzzle_state.get('completed_groups', []))
+                       puzzle.game = game
 
        games[session_id] = game
        return True
 
    except Exception as e:
        logger.error(f"Error loading game state: {str(e)}")
-       logger.error(traceback.format_exc())
+       logger.error(traceback.format_exc()) 
        return False
 
 @app.route('/', methods=['GET'])
