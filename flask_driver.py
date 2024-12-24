@@ -47,30 +47,28 @@ def home():
 def init_game():
     try:
         data = request.get_json()
-        session_id = data.get('sessionId')
+        session_id = str(uuid.uuid4())
+        game = Game()
+        games[session_id] = game
         
-        if session_id and session_id in game_states:
-            # Restore saved game
-            game = game_states[session_id]
-            games[session_id] = game
-        else:
-            # Create new game
-            session_id = str(uuid.uuid4())
-            game = Game()
-            games[session_id] = game
-            game_states[session_id] = game
-            
         output_queue = queue.Queue()
         output_queues[session_id] = output_queue
+        
         flush_output, restore_stdout = capture_output(output_queue)
         
         try:
-            if session_id not in game_states:
-                game.setup()
-            else:
-                game.command_processor.look()  
+            # Initialize the game synchronously 
+            game.display = game.display  # Ensure display is set
+            game.setup()
+            game.intro()  # Explicitly call intro
+            game.command_processor.look()
             flush_output()
-            save_game_state(session_id)
+        except Exception as e:
+            app.logger.error(f"Game initialization error: {str(e)}")
+            return jsonify({
+                'error': str(e),
+                'output': f"Error initializing game: {str(e)}"
+            }), 500
         finally:
             restore_stdout()
         
@@ -78,17 +76,20 @@ def init_game():
         while not output_queues[session_id].empty():
             output += output_queues[session_id].get()
         
+        # Save initial state
+        save_game_state(session_id)
+        
         return jsonify({
             'sessionId': session_id,
             'output': output
         })
 
     except Exception as e:
+        app.logger.error(f"Outer initialization error: {str(e)}")
         return jsonify({
             'error': str(e),
-            'output': "Starting new game...\n"
-        })
-
+            'output': f"Failed to start game: {str(e)}"
+        }), 500
 def save_game_state(session_id):
     """Save game state using the game's built-in save system"""
     if session_id in games:
