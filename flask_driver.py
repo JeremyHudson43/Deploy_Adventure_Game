@@ -50,47 +50,48 @@ def home():
 
 @app.route('/init_game', methods=['POST'])
 def init_game():
-   try:
-       data = request.get_json()
-       existing_session_id = data.get('sessionId')
-       
-       if existing_session_id and existing_session_id in game_states:
-           session_id = existing_session_id
-           games[session_id] = game_states[session_id]
-       else:
-           session_id = str(uuid.uuid4())
-           games[session_id] = Game()
-           game_states[session_id] = games[session_id]
-           
-       output_queue = queue.Queue()
-       output_queues[session_id] = output_queue
-       
-       flush_output, restore_stdout = capture_output(output_queue)
-       
-       try:
-           if session_id not in game_states:
-               games[session_id].setup()
-           else:
-               games[session_id].command_processor.look()
-           flush_output()
-       finally:
-           restore_stdout()
-       
-       output = ""
-       while not output_queues[session_id].empty():
-           output += output_queues[session_id].get()
-       
-       return jsonify({
-           'sessionId': session_id,
-           'output': output
-       })
+    try:
+        data = request.get_json()
+        existing_session_id = data.get('sessionId')
+        
+        if existing_session_id and existing_session_id in game_states and game_states[existing_session_id] is not None:
+            session_id = existing_session_id
+            games[session_id] = game_states[session_id]
+        else:
+            # Create new session if existing one not found or invalid
+            session_id = str(uuid.uuid4())
+            games[session_id] = Game()
+            games[session_id].setup()  # Initialize new game immediately
+            game_states[session_id] = games[session_id]
+            
+        output_queue = queue.Queue()
+        output_queues[session_id] = output_queue
+        flush_output, restore_stdout = capture_output(output_queue)
+        
+        try:
+            games[session_id].command_processor.look()
+            flush_output()
+        finally:
+            restore_stdout()
+        
+        output = ""
+        while not output_queues[session_id].empty():
+            output += output_queues[session_id].get()
+        
+        return jsonify({
+            'sessionId': session_id,
+            'output': output
+        })
 
-   except Exception as e:
-       app.logger.error(f"Error during game initialization: {str(e)}")
-       return jsonify({
-           'error': str(e),
-           'output': f"Error initializing game: {str(e)}"
-       }), 500
+    except Exception as e:
+        app.logger.error(f"Error during game initialization: {str(e)}")
+        # Clear potentially corrupted session
+        if 'session_id' in locals() and session_id in game_states:
+            del game_states[session_id]
+        return jsonify({
+            'error': str(e),
+            'output': f"Error initializing game: {str(e)}"
+        }), 500
 
 @app.route('/command', methods=['POST'])
 def process_command():
