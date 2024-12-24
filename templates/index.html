@@ -5,183 +5,210 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tezzeret's Adventure Terminal</title>
     <style>
-        /* Reset and base styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Courier New', monospace;
-        }
+       /* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', monospace;
+}
 
-        /* CRT screen effect */
-        @keyframes textShadow {
-            0% { text-shadow: 0.4389924193300864px 0 1px rgba(0,30,0,0.5), -0.4389924193300864px 0 1px rgba(0,30,0,0.3), 0 0 3px; }
-            5% { text-shadow: 2.7928974010788217px 0 1px rgba(0,30,0,0.5), -2.7928974010788217px 0 1px rgba(0,30,0,0.3), 0 0 3px; }
-            10% { text-shadow: 0.02956275843481219px 0 1px rgba(0,30,0,0.5), -0.02956275843481219px 0 1px rgba(0,30,0,0.3), 0 0 3px; }
-            15% { text-shadow: 0.40218538552878136px 0 1px rgba(0,30,0,0.5), -0.40218538552878136px 0 1px rgba(0,30,0,0.3), 0 0 3px; }
-            20% { text-shadow: 3.4794037899852017px 0 1px rgba(0,30,0,0.5), -3.4794037899852017px 0 1px rgba(0,30,0,0.3), 0 0 3px; }
-        }
+/* CRT screen effect */
+@keyframes textShadow {
+    0% { text-shadow: 0.4389924193300864px 0 1px rgba(0,30,0,0.5), -0.4389924193300864px 0 1px rgba(0,30,0,0.3), 0 0 3px; }
+    5% { text-shadow: 2.7928974010788217px 0 1px rgba(0,30,0,0.5), -2.7928974010788217px 0 1px rgba(0,30,0,0.3), 0 0 3px; }
+    10% { text-shadow: 0.02956275843481219px 0 1px rgba(0,30,0,0.5), -0.02956275843481219px 0 1px rgba(0,30,0,0.3), 0 0 3px; }
+    15% { text-shadow: 0.40218538552878136px 0 1px rgba(0,30,0,0.5), -0.40218538552878136px 0 1px rgba(0,30,0,0.3), 0 0 3px; }
+    20% { text-shadow: 3.4794037899852017px 0 1px rgba(0,30,0,0.5), -3.4794037899852017px 0 1px rgba(0,30,0,0.3), 0 0 3px; }
+}
 
-        @keyframes scanline {
-            0% { transform: translateY(-100%); }
-            100% { transform: translateY(100vh); }
-        }
+@keyframes scanline {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
+}
 
-        body {
-            background-color: #000;
-            min-height: 100vh;
-            overflow-x: hidden;
-            display: flex;
-            flex-direction: column;
-        }
+body {
+    background-color: #000;
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
 
-        .terminal {
-            flex: 1;
-            color: #33ff33;
-            padding: 20px;
-            font-size: 16px;
-            line-height: 1.4;
-            animation: textShadow 1.6s infinite;
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-            overflow: hidden;
-            position: relative;
-        }
+.terminal {
+    flex: 1;
+    color: #33ff33;
+    padding: 20px;
+    font-size: 16px;
+    line-height: 1.4;
+    animation: textShadow 1.6s infinite;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
 
-        /* Scanline effect */
-        .terminal::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                transparent 50%, 
-                rgba(0, 255, 0, 0.05) 50%
-            );
-            background-size: 100% 4px;
-            pointer-events: none;
-            z-index: 1;
-        }
+/* Scanline effect */
+.terminal::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        transparent 50%, 
+        rgba(0, 255, 0, 0.05) 50%
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 1;
+}
 
-        /* Moving scanline */
-        .terminal::after {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: rgba(0, 255, 0, 0.2);
-            animation: scanline 6s linear infinite;
-            pointer-events: none;
-            z-index: 2;
-        }
+/* Moving scanline */
+.terminal::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(0, 255, 0, 0.2);
+    animation: scanline 6s linear infinite;
+    pointer-events: none;
+    z-index: 2;
+}
 
-        #gameOutput {
-            flex: 1;
-            overflow-y: auto;
-            margin-bottom: 20px;
-            padding: 10px;
-            white-space: pre-wrap;
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
-        }
+#gameOutput {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    white-space: pre-wrap;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    z-index: 3;
+}
 
-        .input-area {
-            position: sticky;
-            bottom: 0;
-            background: #000;
-            padding: 10px 0;
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            z-index: 3;
-        }
+.input-area {
+    position: sticky;
+    bottom: 0;
+    background: transparent;
+    padding: 10px 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    z-index: 3;
+}
 
-        .prompt {
-            color: #33ff33;
-            font-weight: bold;
-        }
+.prompt {
+    color: #33ff33;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(51, 255, 51, 0.5);
+    animation: textShadow 1.6s infinite;
+}
 
-        #commandInput {
-            flex: 1;
-            background: #000;
-            border: 1px solid #33ff33;
-            color: #33ff33;
-            padding: 8px;
-            font-size: 16px;
-            font-family: 'Courier New', monospace;
-        }
+#commandInput {
+    flex: 1;
+    background: transparent;
+    border: 1px solid #33ff33;
+    color: #33ff33;
+    padding: 8px;
+    font-size: 16px;
+    font-family: 'Courier New', monospace;
+    position: relative;
+    z-index: 3;
+    text-shadow: 0 0 5px rgba(51, 255, 51, 0.5);
+    animation: textShadow 1.6s infinite;
+    -webkit-appearance: none;
+    appearance: none;
+}
 
-        #commandInput:focus {
-            outline: none;
-            box-shadow: 0 0 5px #33ff33;
-        }
+#commandInput:focus {
+    outline: none;
+    box-shadow: 0 0 5px #33ff33;
+    background: transparent;
+    color: #33ff33;
+}
 
-        .submit-btn {
-            background: #004400;
-            color: #33ff33;
-            border: 1px solid #33ff33;
-            padding: 8px 16px;
-            cursor: pointer;
-            font-family: 'Courier New', monospace;
-            transition: all 0.3s ease;
-        }
+/* Remove WebKit default styles */
+#commandInput::-webkit-inner-spin-button,
+#commandInput::-webkit-outer-spin-button,
+#commandInput::-webkit-search-decoration,
+#commandInput::-webkit-search-cancel-button,
+#commandInput::-webkit-search-results-button,
+#commandInput::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+    appearance: none;
+}
 
-        .submit-btn:hover {
-            background: #006600;
-            box-shadow: 0 0 10px #33ff33;
-        }
+.submit-btn {
+    background: transparent;
+    color: #33ff33;
+    border: 1px solid #33ff33;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px rgba(51, 255, 51, 0.5);
+    animation: textShadow 1.6s infinite;
+    position: relative;
+    z-index: 3;
+}
 
-        /* Mobile optimizations */
-        @media (max-width: 768px) {
-            .terminal {
-                padding: 10px;
-                font-size: 14px;
-            }
+.submit-btn:hover {
+    background: rgba(0, 102, 0, 0.3);
+    box-shadow: 0 0 10px #33ff33;
+}
 
-            #commandInput {
-                font-size: 14px;
-            }
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    .terminal {
+        padding: 10px;
+        font-size: 14px;
+    }
 
-            .submit-btn {
-                padding: 6px 12px;
-            }
-        }
+    #commandInput {
+        font-size: 14px;
+    }
 
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
+    .submit-btn {
+        padding: 6px 12px;
+    }
+}
 
-        ::-webkit-scrollbar-track {
-            background: #000;
-        }
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
 
-        ::-webkit-scrollbar-thumb {
-            background: #33ff33;
-            border-radius: 4px;
-        }
+::-webkit-scrollbar-track {
+    background: #000;
+}
 
-        ::-webkit-scrollbar-thumb:hover {
-            background: #00cc00;
-        }
+::-webkit-scrollbar-thumb {
+    background: #33ff33;
+    border-radius: 4px;
+}
 
-        /* Text decorations */
-        .decoration {
-            color: #00cc00;
-            margin: 10px 0;
-        }
+::-webkit-scrollbar-thumb:hover {
+    background: #00cc00;
+}
 
-        .title {
-            text-align: center;
-            margin: 20px 0;
-            color: #00ff00;
-            text-shadow: 0 0 10px #00ff00;
-        }
+/* Text decorations */
+.decoration {
+    color: #00cc00;
+    margin: 10px 0;
+}
+
+.title {
+    text-align: center;
+    margin: 20px 0;
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00;
+}
     </style>
 </head>
 <body>
