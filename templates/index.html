@@ -1,297 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tezzeret's Adventure Terminal</title>
-    <style>
-       /* Reset and base styles */
-/* Reset and base styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Courier New', monospace;
-}
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Tezzeret's Adventure Terminal</title>
+   <style>
+       * {
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+           font-family: 'Courier New', monospace;
+       }
 
-body {
-    background-color: #000;
-    min-height: 100vh;
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-}
+       body {
+           background-color: #000;
+           min-height: 100vh;
+           overflow-x: hidden;
+           display: flex;
+           flex-direction: column;
+       }
 
-.terminal {
-    flex: 1;
-    color: #33ff33;
-    padding: 20px;
-    font-size: 16px;
-    line-height: 1.4;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
-}
+       .terminal {
+           flex: 1;
+           color: #33ff33;
+           padding: 20px;
+           font-size: 16px;
+           line-height: 1.4;
+           display: flex;
+           flex-direction: column;
+           height: 100vh;
+           overflow: hidden;
+           position: relative;
+       }
 
-/* Static scanline effect */
-.terminal::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        transparent 50%, 
-        rgba(0, 255, 0, 0.05) 50%
-    );
-    background-size: 100% 4px;
-    pointer-events: none;
-    z-index: 1;
-}
+       .terminal::before {
+           content: "";
+           position: fixed;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+           background: linear-gradient(
+               transparent 50%, 
+               rgba(0, 255, 0, 0.05) 50%
+           );
+           background-size: 100% 4px;
+           pointer-events: none;
+           z-index: 1;
+       }
 
-#gameOutput {
-    flex: 1;
-    overflow-y: auto;
-    margin-bottom: 20px;
-    padding: 10px;
-    white-space: pre-wrap;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    position: relative;
-    z-index: 3;
-}
+       #gameOutput {
+           flex: 1;
+           overflow-y: auto;
+           margin-bottom: 20px;
+           padding: 10px;
+           white-space: pre-wrap;
+           scroll-behavior: smooth;
+           -webkit-overflow-scrolling: touch;
+           position: relative;
+           z-index: 3;
+       }
 
-.input-area {
-    position: sticky;
-    bottom: 0;
-    background: transparent;
-    padding: 10px 0;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    z-index: 3;
-}
+       .input-area {
+           position: sticky;
+           bottom: 0;
+           background: transparent;
+           padding: 10px 0;
+           display: flex;
+           gap: 10px;
+           align-items: center;
+           z-index: 3;
+       }
 
-.prompt {
-    color: #33ff33;
-    font-weight: bold;
-    text-shadow: 0 0 5px rgba(51, 255, 51, 0.5);
-}
+       .prompt {
+           color: #33ff33;
+           font-weight: bold;
+           text-shadow: 0 0 5px rgba(51, 255, 51, 0.5);
+       }
 
-#commandInput {
-    flex: 1;
-    background: transparent;
-    border: 1px solid #33ff33;
-    color: #33ff33;
-    padding: 8px;
-    font-size: 16px;
-    font-family: 'Courier New', monospace;
-    position: relative;
-    z-index: 3;
-    -webkit-appearance: none;
-    appearance: none;
-}
+       #commandInput {
+           flex: 1;
+           background: transparent;
+           border: 1px solid #33ff33;
+           color: #33ff33;
+           padding: 8px;
+           font-size: 16px;
+           font-family: 'Courier New', monospace;
+           position: relative;
+           z-index: 3;
+           -webkit-appearance: none;
+           appearance: none;
+       }
 
-#commandInput:focus {
-    outline: none;
-    box-shadow: 0 0 5px #33ff33;
-    background: transparent;
-    color: #33ff33;
-}
+       #commandInput:focus {
+           outline: none;
+           box-shadow: 0 0 5px #33ff33;
+           background: transparent;
+           color: #33ff33;
+       }
 
-/* Remove WebKit default styles */
-#commandInput::-webkit-inner-spin-button,
-#commandInput::-webkit-outer-spin-button,
-#commandInput::-webkit-search-decoration,
-#commandInput::-webkit-search-cancel-button,
-#commandInput::-webkit-search-results-button,
-#commandInput::-webkit-search-results-decoration {
-    -webkit-appearance: none;
-    appearance: none;
-}
+       #commandInput::-webkit-inner-spin-button,
+       #commandInput::-webkit-outer-spin-button,
+       #commandInput::-webkit-search-decoration,
+       #commandInput::-webkit-search-cancel-button,
+       #commandInput::-webkit-search-results-button,
+       #commandInput::-webkit-search-results-decoration {
+           -webkit-appearance: none;
+           appearance: none;
+       }
 
-.submit-btn {
-    background: transparent;
-    color: #33ff33;
-    border: 1px solid #33ff33;
-    padding: 8px 16px;
-    cursor: pointer;
-    font-family: 'Courier New', monospace;
-    transition: all 0.3s ease;
-    position: relative;
-    z-index: 3;
-}
+       .submit-btn {
+           background: transparent;
+           color: #33ff33;
+           border: 1px solid #33ff33;
+           padding: 8px 16px;
+           cursor: pointer;
+           font-family: 'Courier New', monospace;
+           transition: all 0.3s ease;
+           position: relative;
+           z-index: 3;
+       }
 
-.submit-btn:hover {
-    background: rgba(0, 102, 0, 0.3);
-    box-shadow: 0 0 10px #33ff33;
-}
+       .submit-btn:hover {
+           background: rgba(0, 102, 0, 0.3);
+           box-shadow: 0 0 10px #33ff33;
+       }
 
-/* Mobile optimizations */
-@media (max-width: 768px) {
-    .terminal {
-        padding: 10px;
-        font-size: 14px;
-    }
+       @media (max-width: 768px) {
+           .terminal { padding: 10px; font-size: 14px; }
+           #commandInput { font-size: 14px; }
+           .submit-btn { padding: 6px 12px; }
+       }
 
-    #commandInput {
-        font-size: 14px;
-    }
+       ::-webkit-scrollbar {
+           width: 8px;
+       }
 
-    .submit-btn {
-        padding: 6px 12px;
-    }
-}
+       ::-webkit-scrollbar-track {
+           background: #000;
+       }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-    width: 8px;
-}
+       ::-webkit-scrollbar-thumb {
+           background: #33ff33;
+           border-radius: 4px;
+       }
 
-::-webkit-scrollbar-track {
-    background: #000;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #33ff33;
-    border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #00cc00;
-}
-
-/* Text decorations */
-.decoration {
-    color: #00cc00;
-    margin: 10px 0;
-}
-
-.title {
-    text-align: center;
-    margin: 20px 0;
-    color: #00ff00;
-}
-    </style>
+       ::-webkit-scrollbar-thumb:hover {
+           background: #00cc00;
+       }
+   </style>
 </head>
 <body>
-    <div class="terminal">
-        <div id="gameOutput"></div>
-        <form id="commandForm" class="input-area">
-            <span class="prompt">&gt;</span>
-            <input type="text" id="commandInput" autocomplete="off" autofocus>
-            <button type="submit" class="submit-btn">Enter</button>
-        </form>
-    </div>
+   <div class="terminal">
+       <div id="gameOutput"></div>
+       <form id="commandForm" class="input-area">
+           <span class="prompt">&gt;</span>
+           <input type="text" id="commandInput" autocomplete="off" autofocus>
+           <button type="submit" class="submit-btn">Enter</button>
+       </form>
+   </div>
 
-    <script>
-        let commandHistory = [];
-        let historyIndex = -1;
+   <script>
+       let commandHistory = [];
+       let historyIndex = -1;
 
-        const gameOutput = document.getElementById('gameOutput');
-        const commandForm = document.getElementById('commandForm');
-        const commandInput = document.getElementById('commandInput');
-        const terminal = document.querySelector('.terminal');
+       const gameOutput = document.getElementById('gameOutput');
+       const commandForm = document.getElementById('commandForm');
+       const commandInput = document.getElementById('commandInput');
 
-        // Enhanced scroll function
-        function scrollToBottom(smooth = true) {
-            // Scroll the game output
-            gameOutput.scrollTo({
-                top: gameOutput.scrollHeight,
-                behavior: smooth ? 'smooth' : 'auto'
-            });
+       function saveGameState(sessionId) {
+           localStorage.setItem('gameSessionId', sessionId);
+       }
 
-            // Scroll the terminal container
-            terminal.scrollTo({
-                top: terminal.scrollHeight,
-                behavior: smooth ? 'smooth' : 'auto'
-            });
+       function loadGameState() {
+           return localStorage.getItem('gameSessionId');
+       }
 
-            // Ensure command input is visible
-            commandInput.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto' });
-        }
+       async function initializeGame() {
+           const existingSessionId = loadGameState();
+           
+           try {
+               const response = await fetch('/init_game', {
+                   method: 'POST',
+                   headers: {
+                       'Content-Type': 'application/json'
+                   },
+                   body: JSON.stringify({
+                       sessionId: existingSessionId
+                   })
+               });
+               
+               const data = await response.json();
+               if (data.sessionId) {
+                   saveGameState(data.sessionId);
+               }
+               
+               appendOutput(data.output);
+           } catch (error) {
+               appendOutput('\nError initializing game.\n');
+           }
+       }
 
-        function appendOutput(text) {
-            gameOutput.innerHTML += text;
-            scrollToBottom();
+       function appendOutput(text) {
+           gameOutput.innerHTML += text;
+           gameOutput.scrollTop = gameOutput.scrollHeight;
+           const terminal = document.querySelector('.terminal');
+           if (terminal) {
+               terminal.scrollTop = terminal.scrollHeight;
+           }
+           window.scrollTo(0, document.body.scrollHeight);
+       }
 
-            // Double-check scroll position after a short delay
-            // (helps with longer content and dynamic updates)
-            setTimeout(scrollToBottom, 100);
-        }
+       commandForm.addEventListener('submit', async (e) => {
+           e.preventDefault();
+           const command = commandInput.value.trim();
+           
+           if (command) {
+               commandHistory.unshift(command);
+               historyIndex = -1;
+               
+               appendOutput(`\n> ${command}\n`);
+               
+               try {
+                   const sessionId = loadGameState();
+                   const response = await fetch('/command', {
+                       method: 'POST',
+                       headers: { 
+                           'Content-Type': 'application/json'
+                       },
+                       body: JSON.stringify({
+                           sessionId: sessionId,
+                           command: command
+                       })
+                   });
+                   
+                   const data = await response.json();
+                   if (data.error) {
+                       throw new Error(data.error);
+                   }
+                   appendOutput(data.output);
+               } catch (error) {
+                   appendOutput('\nError communicating with game server.\n');
+               }
+               
+               commandInput.value = '';
+               commandInput.focus();
+               commandInput.scrollIntoView({ behavior: 'smooth' });
+           }
+       });
 
-        // Initialize game
-        fetch('/init_game', { method: 'POST' })
-            .then(response => response.text())
-            .then(text => {
-                appendOutput(text);
-            });
+       commandInput.addEventListener('keydown', (e) => {
+           if (e.key === 'ArrowUp' && historyIndex < commandHistory.length - 1) {
+               e.preventDefault();
+               historyIndex++;
+               commandInput.value = commandHistory[historyIndex];
+               requestAnimationFrame(() => {
+                   commandInput.selectionStart = commandInput.selectionEnd = commandInput.value.length;
+               });
+           } else if (e.key === 'ArrowDown' && historyIndex > -1) {
+               e.preventDefault();
+               historyIndex--;
+               commandInput.value = historyIndex >= 0 ? commandHistory[historyIndex] : '';
+               requestAnimationFrame(() => {
+                   commandInput.selectionStart = commandInput.selectionEnd = commandInput.value.length;
+               });
+           }
+       });
 
-        commandForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const command = commandInput.value.trim();
-            
-            if (command) {
-                commandHistory.unshift(command);
-                historyIndex = -1;
-                
-                // Echo command
-                appendOutput(`\n> ${command}\n`);
-                
-                try {
-                    const response = await fetch('/command', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                        body: `command=${encodeURIComponent(command)}`
-                    });
-                    
-                    const text = await response.text();
-                    appendOutput(text);
-                } catch (error) {
-                    appendOutput('\nError communicating with game server.\n');
-                }
-                
-                commandInput.value = '';
-                // Ensure input stays focused and visible
-                commandInput.focus();
-            }
-        });
+       document.addEventListener('click', () => commandInput.focus());
 
-        // Handle command history
-        commandInput.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowUp' && historyIndex < commandHistory.length - 1) {
-                e.preventDefault();
-                historyIndex++;
-                commandInput.value = commandHistory[historyIndex];
-                // Move cursor to end of input
-                requestAnimationFrame(() => {
-                    commandInput.selectionStart = commandInput.selectionEnd = commandInput.value.length;
-                });
-            } else if (e.key === 'ArrowDown' && historyIndex > -1) {
-                e.preventDefault();
-                historyIndex--;
-                commandInput.value = historyIndex >= 0 ? commandHistory[historyIndex] : '';
-                // Move cursor to end of input
-                requestAnimationFrame(() => {
-                    commandInput.selectionStart = commandInput.selectionEnd = commandInput.value.length;
-                });
-            }
-        });
+       window.addEventListener('resize', () => {
+           setTimeout(() => {
+               gameOutput.scrollTop = gameOutput.scrollHeight;
+           }, 300);
+       });
 
-        // Keep input focused
-        document.addEventListener('click', () => commandInput.focus());
-
-        // Handle mobile keyboard appearance
-        window.addEventListener('resize', () => {
-            // Small delay to let keyboard finish appearing
-            setTimeout(scrollToBottom, 300);
-        });
-
-        // Ensure we're scrolled to bottom initially
-        window.addEventListener('load', () => scrollToBottom(false));
-    </script>
+       initializeGame();
+   </script>
 </body>
 </html>
