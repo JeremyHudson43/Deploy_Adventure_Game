@@ -121,7 +121,6 @@ def save_game_state(session_id):
     except Exception as e:
         logger.error("Error in save_game_state: %s", traceback.format_exc())
 
-# Utility: Load Game State
 def load_game_state(session_id):
     try:
         save_path = Path('saves') / f"{session_id}.save"
@@ -136,8 +135,15 @@ def load_game_state(session_id):
 
         if state['current_world']:
             game.current_world = game.worlds.get(state['current_world'])
-            if game.current_world:
-                game.current_room = game.current_world.rooms.get(state.get('current_room'))
+            if game.current_world is None:
+                raise ValueError(f"World '{state['current_world']}' not found.")
+
+            current_room_name = state['player'].get('current_room')
+            game.player.current_room = game.current_world.rooms.get(current_room_name)
+            if game.player.current_room is None:
+                raise ValueError(f"Room '{current_room_name}' not found in world '{state['current_world']}'.")
+
+            game.current_world.initialize(game.game_state)
 
         games[session_id] = game
         return True
