@@ -16,6 +16,7 @@ from puzzles.types.ChiptunePuzzle import ChiptunePuzzle
 from puzzles.types.SteampunkMusicPuzzle import SteampunkMusicPuzzle
 from puzzles.types.SpiritLevelPuzzle import SpiritLevelPuzzle
 from puzzles.types.NostalgiaPuzzle import NostalgiaPuzzle
+from puzzles.types.ChildhoodPuzzle import ChildhoodPuzzle
 
 logger = logging.getLogger(__name__)
 
@@ -127,18 +128,23 @@ class WorldComponentLoader:
             # Initialize Fire puzzle
             fire_puzzle = FireLevelPuzzle()
             
+            # Initialize Spirit puzzle
+            spirit_puzzle = SpiritLevelPuzzle()
+            
             # Set up game references
             if hasattr(self.world, 'game_state') and hasattr(self.world.game_state, 'game'):
                 air_puzzle.game = self.world.game_state.game
                 earth_puzzle.game = self.world.game_state.game
                 water_puzzle.game = self.world.game_state.game
                 fire_puzzle.game = self.world.game_state.game
+                spirit_puzzle.game = self.world.game_state.game
             
             # Add to world's puzzles
             self.world.puzzles[air_puzzle.puzzle_id] = air_puzzle
             self.world.puzzles[earth_puzzle.puzzle_id] = earth_puzzle
             self.world.puzzles[water_puzzle.puzzle_id] = water_puzzle
             self.world.puzzles[fire_puzzle.puzzle_id] = fire_puzzle
+            self.world.puzzles[spirit_puzzle.puzzle_id] = spirit_puzzle
             
         except Exception as e:
             logger.error(f"Error loading Elemental puzzles: {e}")
@@ -148,29 +154,20 @@ class WorldComponentLoader:
         """Load puzzles for Whimsical Realm world."""
         try:
             # Initialize all puzzles
-            alternative_rock = AlternativeRockPuzzle()
-            creative_convergence = CreativeConvergencePuzzle()
-            chiptune = ChiptunePuzzle()
-            steampunk = SteampunkMusicPuzzle()
-            spirit = SpiritLevelPuzzle()
+            creative = CreativeConvergencePuzzle()
             nostalgia = NostalgiaPuzzle()
+            childhood = ChildhoodPuzzle()
             
             # Set up game references
             if hasattr(self.world, 'game_state') and hasattr(self.world.game_state, 'game'):
-                alternative_rock.game = self.world.game_state.game
-                creative_convergence.game = self.world.game_state.game
-                chiptune.game = self.world.game_state.game
-                steampunk.game = self.world.game_state.game
-                spirit.game = self.world.game_state.game
+                creative.game = self.world.game_state.game
                 nostalgia.game = self.world.game_state.game
+                childhood.game = self.world.game_state.game
             
             # Add to world's puzzles
-            self.world.puzzles[alternative_rock.puzzle_id] = alternative_rock
-            self.world.puzzles[creative_convergence.puzzle_id] = creative_convergence
-            self.world.puzzles[chiptune.puzzle_id] = chiptune
-            self.world.puzzles[steampunk.puzzle_id] = steampunk
-            self.world.puzzles[spirit.puzzle_id] = spirit
+            self.world.puzzles[creative.puzzle_id] = creative
             self.world.puzzles[nostalgia.puzzle_id] = nostalgia
+            self.world.puzzles[childhood.puzzle_id] = childhood
         
         except Exception as e:
             logger.error(f"Error loading Whimsical puzzles: {e}")

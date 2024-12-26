@@ -1,0 +1,2468 @@
+
+=== ELEMENTAL CONFLUX WORLD ===
+
+--- AIR LEVEL ---
+
+> teleport to elemental conflux
+Failed to import AirLevelPuzzle: No module named 'puzzles.types.air_puzzle'
+Failed to import ChiptunePuzzle: No module named 'puzzles.types.chiptune_puzzle'
+Failed to import SteampunkMusicPuzzle: No module named 'puzzles.types.steampunk_music_puzzle'
+Failed to import CreativeConvergencePuzzle: No module named 'puzzles.types.creative_convergence_puzzle'
+Failed to import FireLevelPuzzle: No module named 'puzzles.types.fire_puzzle'
+Failed to import SpiritLevelPuzzle: No module named 'puzzles.types.spirit_puzzle'
+Failed to import NostalgiaPuzzle: No module named 'puzzles.types.nostalgia_puzzle'
+Failed to import AlternativeRockPuzzle: No module named 'puzzles.types.alternative_rock_puzzle'
+Failed to import WaterLevelPuzzle: No module named 'puzzles.types.water_puzzle'
+Failed to import EarthLevelPuzzle: No module named 'puzzles.types.earth_puzzle'
+2024-12-26 17:35:37,415 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: air_level
+2024-12-26 17:35:37,415 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: alternative_rock
+2024-12-26 17:35:37,415 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: childhood
+2024-12-26 17:35:37,415 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: chiptune
+2024-12-26 17:35:37,415 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: creative_convergence
+2024-12-26 17:35:37,415 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: earth_level
+2024-12-26 17:35:37,415 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: fire_level
+2024-12-26 17:35:37,415 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: nostalgia
+2024-12-26 17:35:37,415 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: spirit_level
+2024-12-26 17:35:37,415 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: steampunk_music
+2024-12-26 17:35:37,415 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: water_level
+2024-12-26 17:35:37,418 - world - WARNING - RoomConnectionManager.py:91 - Could not find room 'level_one/locked_room' for exit 'east' in room 'level_one/living_room'
+2024-12-26 17:35:37,418 - core.world.WorldComponentLoader - INFO - WorldComponentLoader.py:105 - Loading built-in puzzles for world: Intro World
+2024-12-26 17:35:37,418 - core.world.WorldComponentLoader - INFO - WorldComponentLoader.py:114 - Finished loading puzzles. Available puzzles: []
+2024-12-26 17:35:37,419 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: air_level
+2024-12-26 17:35:37,419 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: alternative_rock
+2024-12-26 17:35:37,419 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: childhood
+2024-12-26 17:35:37,419 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: chiptune
+2024-12-26 17:35:37,419 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: creative_convergence
+2024-12-26 17:35:37,419 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: earth_level
+2024-12-26 17:35:37,419 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: fire_level
+2024-12-26 17:35:37,419 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: nostalgia
+2024-12-26 17:35:37,419 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: spirit_level
+2024-12-26 17:35:37,419 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: steampunk_music
+2024-12-26 17:35:37,419 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: water_level
+2024-12-26 17:35:37,433 - world - WARNING - RoomConnectionManager.py:109 - Item 'water_scroll' not found for room 'Katara's Waterbending Rapids'
+2024-12-26 17:35:37,433 - world - WARNING - RoomConnectionManager.py:109 - Item 'moon_crystal' not found for room 'Katara's Waterbending Rapids'
+2024-12-26 17:35:37,433 - world - WARNING - RoomConnectionManager.py:109 - Item 'healing_vial' not found for room 'Katara's Waterbending Rapids'
+2024-12-26 17:35:37,435 - core.world.WorldComponentLoader - INFO - WorldComponentLoader.py:105 - Loading built-in puzzles for world: Elemental Conflux
+2024-12-26 17:35:37,435 - core.world.WorldComponentLoader - INFO - WorldComponentLoader.py:114 - Finished loading puzzles. Available puzzles: ['air_currents_puzzle', 'earth_stability_puzzle', 'water_mastery_puzzle', 'fire_mastery_puzzle', 'spirit_level_puzzle']
+2024-12-26 17:35:37,436 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: air_level
+2024-12-26 17:35:37,436 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: alternative_rock
+2024-12-26 17:35:37,436 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: childhood
+2024-12-26 17:35:37,436 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: chiptune
+2024-12-26 17:35:37,436 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: creative_convergence
+2024-12-26 17:35:37,436 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: earth_level
+2024-12-26 17:35:37,436 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: fire_level
+2024-12-26 17:35:37,436 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: nostalgia
+2024-12-26 17:35:37,436 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: spirit_level
+2024-12-26 17:35:37,437 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: steampunk_music
+2024-12-26 17:35:37,437 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: water_level
+2024-12-26 17:35:37,449 - world - WARNING - RoomConnectionManager.py:109 - Item 'black_paint' not found for room 'Twenty One Pilots Trench Terminal'
+2024-12-26 17:35:37,449 - world - WARNING - RoomConnectionManager.py:109 - Item 'trench_coat' not found for room 'Twenty One Pilots Trench Terminal'
+2024-12-26 17:35:37,449 - world - WARNING - RoomConnectionManager.py:119 - NPC 'josh_dun' not found for room 'Twenty One Pilots Trench Terminal'
+2024-12-26 17:35:37,451 - core.world.WorldComponentLoader - INFO - WorldComponentLoader.py:105 - Loading built-in puzzles for world: Harmonic Nexus
+2024-12-26 17:35:37,451 - core.world.WorldComponentLoader - INFO - WorldComponentLoader.py:114 - Finished loading puzzles. Available puzzles: ['alternative_rock_puzzle', 'chiptune_puzzle', 'steampunk_music_puzzle']
+2024-12-26 17:35:37,452 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: air_level
+2024-12-26 17:35:37,452 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: alternative_rock
+2024-12-26 17:35:37,452 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: childhood
+2024-12-26 17:35:37,452 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: chiptune
+2024-12-26 17:35:37,452 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: creative_convergence
+2024-12-26 17:35:37,452 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: earth_level
+2024-12-26 17:35:37,452 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: fire_level
+2024-12-26 17:35:37,452 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: nostalgia
+2024-12-26 17:35:37,452 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: spirit_level
+2024-12-26 17:35:37,452 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: steampunk_music
+2024-12-26 17:35:37,452 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: water_level
+2024-12-26 17:35:37,466 - core.world.WorldComponentLoader - INFO - WorldComponentLoader.py:105 - Loading built-in puzzles for world: Whimsical Realm
+2024-12-26 17:35:37,466 - core.world.WorldComponentLoader - INFO - WorldComponentLoader.py:114 - Finished loading puzzles. Available puzzles: ['creative_convergence_puzzle', 'nostalgia_puzzle', 'childhood_puzzle']
+2024-12-26 17:35:37,469 - world - WARNING - RoomConnectionManager.py:91 - Could not find room 'level_one/locked_room' for exit 'east' in room 'level_one/living_room'
+2024-12-26 17:35:37,469 - core.world.WorldComponentLoader - INFO - WorldComponentLoader.py:105 - Loading built-in puzzles for world: Intro World
+2024-12-26 17:35:37,469 - core.world.WorldComponentLoader - INFO - WorldComponentLoader.py:114 - Finished loading puzzles. Available puzzles: []
+
+------------------------------------------------------------
+Successfully loaded world: Intro World
+------------------------------------------------------------
+
+
+------------------------------------------------------------
+Successfully loaded world: Elemental Conflux
+------------------------------------------------------------
+
+
+------------------------------------------------------------
+Successfully loaded world: Harmonic Nexus
+------------------------------------------------------------
+
+
+------------------------------------------------------------
+Successfully loaded world: Whimsical Realm
+------------------------------------------------------------
+
+
+============================================================
+Welcome to Tezzeret's Surreal Adventure
+
+Type 'help' at any time to see available actions.
+============================================================
+
+
+============================================================
+Room: Bedroom
+
+A quiet, small bedroom with a neatly made bed and a faint glow of early morning
+light seeping through the curtains.
+============================================================
+
+
+Exits:
+• South (leads to Living Room)
+
+
+Items:
+• There are no items here.
+
+
+NPCs:
+• Tezzeret
+
+> 2024-12-26 17:35:40,239 - world - WARNING - RoomConnectionManager.py:109 - Item 'water_scroll' not found for room 'Katara's Waterbending Rapids'
+2024-12-26 17:35:40,239 - world - WARNING - RoomConnectionManager.py:109 - Item 'moon_crystal' not found for room 'Katara's Waterbending Rapids'
+2024-12-26 17:35:40,239 - world - WARNING - RoomConnectionManager.py:109 - Item 'healing_vial' not found for room 'Katara's Waterbending Rapids'
+2024-12-26 17:35:40,241 - core.world.WorldComponentLoader - INFO - WorldComponentLoader.py:105 - Loading built-in puzzles for world: Elemental Conflux
+2024-12-26 17:35:40,241 - core.world.WorldComponentLoader - INFO - WorldComponentLoader.py:114 - Finished loading puzzles. Available puzzles: ['air_currents_puzzle', 'earth_stability_puzzle', 'water_mastery_puzzle', 'fire_mastery_puzzle', 'spirit_level_puzzle']
+
+------------------------------------------------------------
+Teleported to Elemental Conflux.
+------------------------------------------------------------
+
+
+============================================================
+Room: Aang's Airbending Academy
+
+Ancient scrolls and wind chimes line this tranquil chamber. Adult Aang stands at
+the center, mild breezes circling around him. A pair of ornate stands hold an
+Air Glider and a set of Wind Resonance Crystals.
+============================================================
+
+
+Exits:
+• East (leads to Mario's Wing Cap Heights)
+
+
+Items:
+• Air Glider
+• Wind Resonance Crystals
+
+
+NPCs:
+• Adult Aang
+
+
+> look
+> 
+============================================================
+Room: Aang's Airbending Academy
+
+Ancient scrolls and wind chimes line this tranquil chamber. Adult Aang stands at
+the center, mild breezes circling around him. A pair of ornate stands hold an
+Air Glider and a set of Wind Resonance Crystals.
+============================================================
+
+
+Exits:
+• East (leads to Mario's Wing Cap Heights)
+
+
+Items:
+• Air Glider
+• Wind Resonance Crystals
+
+
+NPCs:
+• Adult Aang
+
+
+> focus crystal
+> 
+------------------------------------------------------------
+The air currents shift in response. The spiritual harmony grows stronger.
+------------------------------------------------------------
+
+
+> go east
+> 
+============================================================
+Room: Mario's Wing Cap Heights
+
+Floating platforms soar among drifting clouds. A Wing Cap and a Power Star
+glimmer atop stone pedestals, as if guiding the winds themselves.
+============================================================
+
+
+Exits:
+• East (leads to Storm Crow's Ascension)
+• West (leads to Aang's Airbending Academy)
+
+
+Items:
+• Wing Cap
+• Power Star
+
+
+NPCs:
+• Wing Cap Mario
+
+
+> look
+> 
+============================================================
+Room: Mario's Wing Cap Heights
+
+Floating platforms soar among drifting clouds. A Wing Cap and a Power Star
+glimmer atop stone pedestals, as if guiding the winds themselves.
+============================================================
+
+
+Exits:
+• East (leads to Storm Crow's Ascension)
+• West (leads to Aang's Airbending Academy)
+
+
+Items:
+• Wing Cap
+• Power Star
+
+
+NPCs:
+• Wing Cap Mario
+
+
+> align stars
+> 
+------------------------------------------------------------
+The air currents shift in response. The celestial navigation grows stronger.
+------------------------------------------------------------
+
+
+> go east
+> 
+============================================================
+Room: Storm Crow's Ascension
+
+High above, thunderclouds surge with electricity. A Storm Crow perches on a
+jagged spire while lightning arcs between dark clouds. The air crackles with
+potential.
+============================================================
+
+
+Exits:
+• Up (leads to Torbrans Forge Hall - LOCKED)
+• West (leads to Mario's Wing Cap Heights)
+
+
+Items:
+• Storm Feather
+• Lightning Rod
+• Storm Crystal
+
+
+NPCs:
+• Storm Crow
+
+
+> look
+> 
+============================================================
+Room: Storm Crow's Ascension
+
+High above, thunderclouds surge with electricity. A Storm Crow perches on a
+jagged spire while lightning arcs between dark clouds. The air crackles with
+potential.
+============================================================
+
+
+Exits:
+• Up (leads to Torbrans Forge Hall - LOCKED)
+• West (leads to Mario's Wing Cap Heights)
+
+
+Items:
+• Storm Feather
+• Lightning Rod
+• Storm Crystal
+
+
+NPCs:
+• Storm Crow
+
+
+> channel thunder
+> 
+------------------------------------------------------------
+The combined powers of air currents, celestial navigation, and storm energy
+create a path forward!
+------------------------------------------------------------
+
+
+------------------------------------------------------------
+Puzzle complete!
+------------------------------------------------------------
+
+
+> go up
+> 
+============================================================
+Room: Torbran's Forge Hall
+
+A dwarven stronghold carved deep into the mountain. An enormous forge blazes at
+its center, runes flickering against the stone pillars. The rhythmic beat of
+hammers resonates through the hall.
+============================================================
+
+
+Exits:
+• Down (leads to Storm Crows Ascension)
+• Up (leads to Chandras Flame Sanctuary - LOCKED)
+• West (leads to Rock Solid Chess Dojo)
+
+
+Items:
+• There are no items here.
+
+
+NPCs:
+• Torbran
+
+
+--- EARTH LEVEL ---
+
+> look
+> 
+============================================================
+Room: Torbran's Forge Hall
+
+A dwarven stronghold carved deep into the mountain. An enormous forge blazes at
+its center, runes flickering against the stone pillars. The rhythmic beat of
+hammers resonates through the hall.
+============================================================
+
+
+Exits:
+• Down (leads to Storm Crows Ascension)
+• Up (leads to Chandras Flame Sanctuary - LOCKED)
+• West (leads to Rock Solid Chess Dojo)
+
+
+Items:
+• There are no items here.
+
+
+NPCs:
+• Torbran
+
+
+> go west
+> 
+============================================================
+Room: Rock Solid Chess Dojo
+
+A grand chamber dominated by a massive chessboard carved from living stone. The
+pieces seem almost alive with earth energy, each poised for a strategic
+showdown.
+============================================================
+
+
+Exits:
+• East (leads to Torbran's Forge Hall)
+• West (leads to Tophs Crystal Caverns)
+
+
+Items:
+• Granite Strategy Guide
+• Chess Piece
+
+
+NPCs:
+• Bisharp
+
+
+> look
+> 
+============================================================
+Room: Rock Solid Chess Dojo
+
+A grand chamber dominated by a massive chessboard carved from living stone. The
+pieces seem almost alive with earth energy, each poised for a strategic
+showdown.
+============================================================
+
+
+Exits:
+• East (leads to Torbran's Forge Hall)
+• West (leads to Tophs Crystal Caverns)
+
+
+Items:
+• Granite Strategy Guide
+• Chess Piece
+
+
+NPCs:
+• Bisharp
+
+
+> go west
+> 
+============================================================
+Room: Tophs Crystal Caverns
+
+A subterranean realm where glowing crystals flourish in clusters along walls and
+ceilings. The natural hum of earth resonates all around.
+============================================================
+
+
+Exits:
+• Down (leads to Aangs Airbending Academy)
+• East (leads to Rock Solid Chess Dojo)
+
+
+Items:
+• Earth Crystal
+
+
+NPCs:
+• Crystal Master Toph
+
+
+> look
+> 
+============================================================
+Room: Tophs Crystal Caverns
+
+A subterranean realm where glowing crystals flourish in clusters along walls and
+ceilings. The natural hum of earth resonates all around.
+============================================================
+
+
+Exits:
+• Down (leads to Aangs Airbending Academy)
+• East (leads to Rock Solid Chess Dojo)
+
+
+Items:
+• Earth Crystal
+
+
+NPCs:
+• Crystal Master Toph
+
+
+> sense crystal
+> 
+------------------------------------------------------------
+The earth responds to your command. The seismic resonance grows stronger.
+------------------------------------------------------------
+
+
+> go east
+> 
+============================================================
+Room: Rock Solid Chess Dojo
+
+A grand chamber dominated by a massive chessboard carved from living stone. The
+pieces seem almost alive with earth energy, each poised for a strategic
+showdown.
+============================================================
+
+
+Exits:
+• East (leads to Torbran's Forge Hall)
+• West (leads to Tophs Crystal Caverns)
+
+
+Items:
+• Granite Strategy Guide
+• Chess Piece
+
+
+NPCs:
+• Bisharp
+
+
+> look
+> 
+============================================================
+Room: Rock Solid Chess Dojo
+
+A grand chamber dominated by a massive chessboard carved from living stone. The
+pieces seem almost alive with earth energy, each poised for a strategic
+showdown.
+============================================================
+
+
+Exits:
+• East (leads to Torbran's Forge Hall)
+• West (leads to Tophs Crystal Caverns)
+
+
+Items:
+• Granite Strategy Guide
+• Chess Piece
+
+
+NPCs:
+• Bisharp
+
+
+> move piece
+> 
+------------------------------------------------------------
+The earth responds to your command. The tactical earthbending grows stronger.
+------------------------------------------------------------
+
+
+> go east
+> 
+============================================================
+Room: Torbran's Forge Hall
+
+A dwarven stronghold carved deep into the mountain. An enormous forge blazes at
+its center, runes flickering against the stone pillars. The rhythmic beat of
+hammers resonates through the hall.
+============================================================
+
+
+Exits:
+• Down (leads to Storm Crows Ascension)
+• Up (leads to Chandras Flame Sanctuary - LOCKED)
+• West (leads to Rock Solid Chess Dojo)
+
+
+Items:
+• There are no items here.
+
+
+NPCs:
+• Torbran
+
+
+> look
+> 
+============================================================
+Room: Torbran's Forge Hall
+
+A dwarven stronghold carved deep into the mountain. An enormous forge blazes at
+its center, runes flickering against the stone pillars. The rhythmic beat of
+hammers resonates through the hall.
+============================================================
+
+
+Exits:
+• Down (leads to Storm Crows Ascension)
+• Up (leads to Chandras Flame Sanctuary - LOCKED)
+• West (leads to Rock Solid Chess Dojo)
+
+
+Items:
+• There are no items here.
+
+
+NPCs:
+• Torbran
+
+
+> forge metal
+> 
+------------------------------------------------------------
+The ground trembles with approval as the three earthen forces unite, carving a
+new path through the mountain!
+------------------------------------------------------------
+
+
+------------------------------------------------------------
+Puzzle complete!
+------------------------------------------------------------
+
+
+> go up
+> 
+============================================================
+Room: Chandras Flame Sanctuary
+
+A blazing arena where fierce flames roar in battle-ready formations. The air
+crackles with intense heat, and ancient fire runes pulse with raw power on the
+walls.
+============================================================
+
+
+Exits:
+• Down (leads to Torbrans Forge Hall)
+• East (leads to Irohs Dragon Tea Garden)
+
+
+Items:
+• Ritual Candle
+• Phoenix Feather
+• Flame Essence
+
+
+NPCs:
+• Flame Guardian Chandra
+
+
+--- FIRE LEVEL ---
+
+> look
+> 
+============================================================
+Room: Chandras Flame Sanctuary
+
+A blazing arena where fierce flames roar in battle-ready formations. The air
+crackles with intense heat, and ancient fire runes pulse with raw power on the
+walls.
+============================================================
+
+
+Exits:
+• Down (leads to Torbrans Forge Hall)
+• East (leads to Irohs Dragon Tea Garden)
+
+
+Items:
+• Ritual Candle
+• Phoenix Feather
+• Flame Essence
+
+
+NPCs:
+• Flame Guardian Chandra
+
+
+> channel flame
+> 
+------------------------------------------------------------
+The flames respond to your command. The pyromantic combat burns stronger.
+------------------------------------------------------------
+
+
+> go east
+> 
+============================================================
+Room: Irohs Dragon Tea Garden
+
+A tranquil space where ancient fire and tea-brewing converge. Dragon statues
+gently exhale rainbow flames, reflecting each visitor's spirit.
+============================================================
+
+
+Exits:
+• North (leads to Zukos Dragon Fire)
+• West (leads to Chandras Flame Sanctuary)
+
+
+Items:
+• Dragon Scale Teapot
+• Sun Warrior Flame
+
+
+NPCs:
+• Uncle Iroh
+
+
+> look
+> 
+============================================================
+Room: Irohs Dragon Tea Garden
+
+A tranquil space where ancient fire and tea-brewing converge. Dragon statues
+gently exhale rainbow flames, reflecting each visitor's spirit.
+============================================================
+
+
+Exits:
+• North (leads to Zukos Dragon Fire)
+• West (leads to Chandras Flame Sanctuary)
+
+
+Items:
+• Dragon Scale Teapot
+• Sun Warrior Flame
+
+
+NPCs:
+• Uncle Iroh
+
+
+> steep tea
+> 
+------------------------------------------------------------
+The flames respond to your command. The dragon wisdom burns stronger.
+------------------------------------------------------------
+
+
+> go north
+> 
+============================================================
+Room: Zukos Dragon Fire
+
+A volcanic training ground where heat distorts the air. Dragon statues line the
+path, breathing harmless flames in rhythmic patterns.
+============================================================
+
+
+Exits:
+• South (leads to Irohs Dragon Tea Garden)
+• Up (leads to Kataras Waterbending Rapids - LOCKED)
+
+
+Items:
+• Dual Dao Swords
+• Dragon Scale Teapot
+
+
+NPCs:
+• Prince Zuko
+
+
+> look
+> 
+============================================================
+Room: Zukos Dragon Fire
+
+A volcanic training ground where heat distorts the air. Dragon statues line the
+path, breathing harmless flames in rhythmic patterns.
+============================================================
+
+
+Exits:
+• South (leads to Irohs Dragon Tea Garden)
+• Up (leads to Kataras Waterbending Rapids - LOCKED)
+
+
+Items:
+• Dual Dao Swords
+• Dragon Scale Teapot
+
+
+NPCs:
+• Prince Zuko
+
+
+> flow chi
+> 
+------------------------------------------------------------
+The fires roar in harmony as combat, wisdom, and discipline unite, opening a
+blazing path through the flames!
+------------------------------------------------------------
+
+
+------------------------------------------------------------
+Puzzle complete!
+------------------------------------------------------------
+
+
+> go up
+> 
+============================================================
+Room: Katara's Waterbending Rapids
+
+Rushing waterfalls and swirling rapids provide a dynamic environment for
+mastering healing and bending techniques.
+============================================================
+
+
+Exits:
+• Up (leads to Raavas Ethereal Sanctuary - LOCKED)
+• West (leads to Squirtles Surfing Coast)
+
+
+Items:
+• There are no items here.
+
+
+NPCs:
+• Katara
+
+
+--- WATER LEVEL ---
+
+> look
+> 
+============================================================
+Room: Katara's Waterbending Rapids
+
+Rushing waterfalls and swirling rapids provide a dynamic environment for
+mastering healing and bending techniques.
+============================================================
+
+
+Exits:
+• Up (leads to Raavas Ethereal Sanctuary - LOCKED)
+• West (leads to Squirtles Surfing Coast)
+
+
+Items:
+• There are no items here.
+
+
+NPCs:
+• Katara
+
+
+> heal spirit
+> 
+------------------------------------------------------------
+The waters respond to your command. The healing arts flows stronger.
+------------------------------------------------------------
+
+
+> go west
+> 
+============================================================
+Room: Squirtles Surfing Coast
+
+A sunlit beach with rolling waves that seem made for surfing. Squirtle and
+friends zip across the surface, showing off watery tricks.
+============================================================
+
+
+Exits:
+• Down (leads to Marios Fire Flower Fields)
+• East (leads to Katara's Waterbending Rapids)
+• North (leads to Moana Waves)
+• Up (leads to Mount Pyres Ancestral Summit - LOCKED)
+
+
+Items:
+• Squirtle Shell Board
+• Water Stone
+
+
+NPCs:
+• Surfer Squirtle
+
+
+> look
+> 
+============================================================
+Room: Squirtles Surfing Coast
+
+A sunlit beach with rolling waves that seem made for surfing. Squirtle and
+friends zip across the surface, showing off watery tricks.
+============================================================
+
+
+Exits:
+• Down (leads to Marios Fire Flower Fields)
+• East (leads to Katara's Waterbending Rapids)
+• North (leads to Moana Waves)
+• Up (leads to Mount Pyres Ancestral Summit - LOCKED)
+
+
+Items:
+• Squirtle Shell Board
+• Water Stone
+
+
+NPCs:
+• Surfer Squirtle
+
+
+> ride surf
+> 
+------------------------------------------------------------
+The waters respond to your command. The playful mastery flows stronger.
+------------------------------------------------------------
+
+
+> go north
+> 
+============================================================
+Room: Moana Waves
+
+A mystical stretch of ocean guided by starry skies and living currents. Each
+crest seems eager to show you something new.
+============================================================
+
+
+Exits:
+• Down (leads to Chandras Flame Sanctuary)
+• South (leads to Squirtles Surfing Coast)
+• Up (leads to Celeste Mountains Astral Ascent - LOCKED)
+
+
+Items:
+• Heart Of Te Fiti
+• Wayfinder Pendant
+
+
+NPCs:
+• Moana
+
+
+> look
+> 
+============================================================
+Room: Moana Waves
+
+A mystical stretch of ocean guided by starry skies and living currents. Each
+crest seems eager to show you something new.
+============================================================
+
+
+Exits:
+• Down (leads to Chandras Flame Sanctuary)
+• South (leads to Squirtles Surfing Coast)
+• Up (leads to Celeste Mountains Astral Ascent - LOCKED)
+
+
+Items:
+• Heart Of Te Fiti
+• Wayfinder Pendant
+
+
+NPCs:
+• Moana
+
+
+> read tide
+> 
+------------------------------------------------------------
+The waters surge with harmony as healing, wisdom, and play unite, opening a
+serene path through the waves!
+------------------------------------------------------------
+
+
+------------------------------------------------------------
+Puzzle complete!
+------------------------------------------------------------
+
+
+> go up
+> 
+============================================================
+Room: Celeste Mountains Astral Ascent
+
+A mystical peak where physical reality thins, revealing cosmic horizons. Aurora
+ribbons dance overhead, hinting at unseen realms.
+============================================================
+
+
+Exits:
+• Down (leads to Bob Ross Sunset Ocean)
+• East (leads to Mount Pyres Ancestral Summit)
+
+
+Items:
+• Elemental Shard
+
+
+NPCs:
+• Madeline
+
+
+--- SPIRIT LEVEL ---
+
+> look
+> 
+============================================================
+Room: Celeste Mountains Astral Ascent
+
+A mystical peak where physical reality thins, revealing cosmic horizons. Aurora
+ribbons dance overhead, hinting at unseen realms.
+============================================================
+
+
+Exits:
+• Down (leads to Bob Ross Sunset Ocean)
+• East (leads to Mount Pyres Ancestral Summit)
+
+
+Items:
+• Elemental Shard
+
+
+NPCs:
+• Madeline
+
+
+> project realm
+> 
+------------------------------------------------------------
+The spirits respond to your command. The astral ascension grows stronger.
+------------------------------------------------------------
+
+
+> go east
+> 
+============================================================
+Room: Mount Pyres Ancestral Summit
+
+High in the swirling mists rests a sacred vantage point where lingering spirits
+draw near. Monuments and memorials mark those who came before.
+============================================================
+
+
+Exits:
+• Down (leads to Squirtles Surfing Coast)
+• East (leads to Raavas Ethereal Sanctuary)
+• West (leads to Celeste Mountains Astral Ascent)
+
+
+Items:
+• Elemental Shard
+
+
+NPCs:
+• Elder Trevenant
+
+
+> look
+> 
+============================================================
+Room: Mount Pyres Ancestral Summit
+
+High in the swirling mists rests a sacred vantage point where lingering spirits
+draw near. Monuments and memorials mark those who came before.
+============================================================
+
+
+Exits:
+• Down (leads to Squirtles Surfing Coast)
+• East (leads to Raavas Ethereal Sanctuary)
+• West (leads to Celeste Mountains Astral Ascent)
+
+
+Items:
+• Elemental Shard
+
+
+NPCs:
+• Elder Trevenant
+
+
+> honor ancestor
+> 
+------------------------------------------------------------
+The spirits respond to your command. The ancestral bonds grows stronger.
+------------------------------------------------------------
+
+
+> go east
+> 
+============================================================
+Room: Raavas Ethereal Sanctuary
+
+A domain of gentle radiance where the line between physical and spirit realms
+fades. Raava's luminescence weaves through the air, offering peace.
+============================================================
+
+
+Exits:
+• Down (leads to Water Tribe Kayak Rapids)
+• West (leads to Mount Pyres Ancestral Summit)
+
+
+Items:
+• Elemental Shard
+
+
+NPCs:
+• Raava
+
+
+> look
+> 
+============================================================
+Room: Raavas Ethereal Sanctuary
+
+A domain of gentle radiance where the line between physical and spirit realms
+fades. Raava's luminescence weaves through the air, offering peace.
+============================================================
+
+
+Exits:
+• Down (leads to Water Tribe Kayak Rapids)
+• West (leads to Mount Pyres Ancestral Summit)
+
+
+Items:
+• Elemental Shard
+
+
+NPCs:
+• Raava
+
+
+> attune light
+> 
+------------------------------------------------------------
+The spirits resonate in harmony as ethereal, astral, and ancestral forces unite,
+opening a mystical path through the veil!
+------------------------------------------------------------
+
+
+------------------------------------------------------------
+Puzzle complete!
+------------------------------------------------------------
+
+
+> look
+> 
+============================================================
+Room: Raavas Ethereal Sanctuary
+
+A domain of gentle radiance where the line between physical and spirit realms
+fades. Raava's luminescence weaves through the air, offering peace.
+============================================================
+
+
+Exits:
+• Down (leads to Water Tribe Kayak Rapids)
+• West (leads to Mount Pyres Ancestral Summit)
+
+
+Items:
+• Elemental Shard
+
+
+NPCs:
+• Raava
+
+
+> take elemental shard
+> 
+You picked up the Elemental Shard.
+
+
+=== HARMONIC NEXUS WORLD ===
+
+--- ALTERNATIVE_ROCK LEVEL ---
+
+> teleport to harmonic nexus
+> 2024-12-26 17:36:56,920 - world - WARNING - RoomConnectionManager.py:109 - Item 'black_paint' not found for room 'Twenty One Pilots Trench Terminal'
+2024-12-26 17:36:56,920 - world - WARNING - RoomConnectionManager.py:109 - Item 'trench_coat' not found for room 'Twenty One Pilots Trench Terminal'
+2024-12-26 17:36:56,920 - world - WARNING - RoomConnectionManager.py:119 - NPC 'josh_dun' not found for room 'Twenty One Pilots Trench Terminal'
+2024-12-26 17:36:56,922 - core.world.WorldComponentLoader - INFO - WorldComponentLoader.py:105 - Loading built-in puzzles for world: Harmonic Nexus
+2024-12-26 17:36:56,922 - core.world.WorldComponentLoader - INFO - WorldComponentLoader.py:114 - Finished loading puzzles. Available puzzles: ['alternative_rock_puzzle', 'chiptune_puzzle', 'steampunk_music_puzzle']
+
+------------------------------------------------------------
+Teleported to Harmonic Nexus.
+------------------------------------------------------------
+
+
+============================================================
+Room: Twenty One Pilots Trench Terminal
+
+A neon-lit terminal where alternative rock energy pulses through the walls.
+Yellow tape and black paint create intricate patterns.
+============================================================
+
+
+Exits:
+• East (leads to AJR Bang Boulevard)
+• Up (leads to Darren Korb Supergiant Studio - LOCKED)
+
+
+Items:
+• Yellow Tape
+
+
+NPCs:
+• Tyler Joseph
+
+
+> look
+> 
+============================================================
+Room: Twenty One Pilots Trench Terminal
+
+A neon-lit terminal where alternative rock energy pulses through the walls.
+Yellow tape and black paint create intricate patterns.
+============================================================
+
+
+Exits:
+• East (leads to AJR Bang Boulevard)
+• Up (leads to Darren Korb Supergiant Studio - LOCKED)
+
+
+Items:
+• Yellow Tape
+
+
+NPCs:
+• Tyler Joseph
+
+
+> paint pattern
+> 
+------------------------------------------------------------
+The music responds to your command. The emotional resonance grows stronger.
+------------------------------------------------------------
+
+
+> go east
+> 
+============================================================
+Room: AJR Bang Boulevard
+
+A lively street scene with neon signs and confetti raining from above. The sound
+of trumpets fills the air.
+============================================================
+
+
+Exits:
+• East (leads to Saint Motel Voyeur Vista)
+• Up (leads to Qumu 8 Bit Oasis - LOCKED)
+• West (leads to Twenty One Pilots Trench Terminal)
+
+
+Items:
+• Neon Sign
+• Trumpet
+
+
+NPCs:
+• Adam Met
+
+
+> look
+> 
+============================================================
+Room: AJR Bang Boulevard
+
+A lively street scene with neon signs and confetti raining from above. The sound
+of trumpets fills the air.
+============================================================
+
+
+Exits:
+• East (leads to Saint Motel Voyeur Vista)
+• Up (leads to Qumu 8 Bit Oasis - LOCKED)
+• West (leads to Twenty One Pilots Trench Terminal)
+
+
+Items:
+• Neon Sign
+• Trumpet
+
+
+NPCs:
+• Adam Met
+
+
+> play trumpet
+> 
+------------------------------------------------------------
+The music responds to your command. The energetic fusion grows stronger.
+------------------------------------------------------------
+
+
+> go east
+> 
+============================================================
+Room: Saint Motel Voyeur Vista
+
+A retro-styled room with large windows overlooking a bustling city. Vintage
+cameras and film reels decorate the space.
+============================================================
+
+
+Exits:
+• East (leads to Panic At The Disco Boom Boom Ballroom)
+• Up (leads to Snails House Beep Boop Arcade - LOCKED)
+• West (leads to AJR Bang Boulevard)
+
+
+Items:
+• Vintage Camera
+• Film Reel
+
+
+NPCs:
+• AJ Jackson
+
+
+> look
+> 
+============================================================
+Room: Saint Motel Voyeur Vista
+
+A retro-styled room with large windows overlooking a bustling city. Vintage
+cameras and film reels decorate the space.
+============================================================
+
+
+Exits:
+• East (leads to Panic At The Disco Boom Boom Ballroom)
+• Up (leads to Snails House Beep Boop Arcade - LOCKED)
+• West (leads to AJR Bang Boulevard)
+
+
+Items:
+• Vintage Camera
+• Film Reel
+
+
+NPCs:
+• AJ Jackson
+
+
+> capture moment
+> 
+------------------------------------------------------------
+The music responds to your command. The visual storytelling grows stronger.
+------------------------------------------------------------
+
+
+> go east
+> 
+============================================================
+Room: Panic At The Disco Boom Boom Ballroom
+
+An extravagant ballroom with a high, vaulted ceiling. Champagne fountains and
+glittering decorations catch the eye.
+============================================================
+
+
+Exits:
+• Up (leads to Darren Korb Supergiant Studio - LOCKED)
+• West (leads to Saint Motel Voyeur Vista)
+
+
+Items:
+• Top Hat
+• Champagne Glass
+
+
+NPCs:
+• Brendon Urie
+
+
+> look
+> 
+============================================================
+Room: Panic At The Disco Boom Boom Ballroom
+
+An extravagant ballroom with a high, vaulted ceiling. Champagne fountains and
+glittering decorations catch the eye.
+============================================================
+
+
+Exits:
+• Up (leads to Darren Korb Supergiant Studio - LOCKED)
+• West (leads to Saint Motel Voyeur Vista)
+
+
+Items:
+• Top Hat
+• Champagne Glass
+
+
+NPCs:
+• Brendon Urie
+
+
+> perform dance
+> 
+------------------------------------------------------------
+The music swells in harmony as theatrics, emotion, and energy unite, opening a
+rhythmic path through the sound!
+------------------------------------------------------------
+
+
+------------------------------------------------------------
+Puzzle complete!
+------------------------------------------------------------
+
+
+> go up
+> 
+============================================================
+Room: Darren Korb Supergiant Studio
+
+A cozy recording studio filled with various instruments and gaming memorabilia.
+The walls are adorned with artwork from Supergiant games.
+============================================================
+
+
+Exits:
+• Down (leads to Twenty One Pilots Trench Terminal)
+• East (leads to Qumu 8 Bit Oasis)
+• Up (leads to Scary Pockets Funky Groove - LOCKED)
+
+
+Items:
+• Guitar
+• Bastion Shield
+
+
+NPCs:
+• Darren Korb
+
+
+--- CHIPTUNE LEVEL ---
+
+> look
+> 
+============================================================
+Room: Darren Korb Supergiant Studio
+
+A cozy recording studio filled with various instruments and gaming memorabilia.
+The walls are adorned with artwork from Supergiant games.
+============================================================
+
+
+Exits:
+• Down (leads to Twenty One Pilots Trench Terminal)
+• East (leads to Qumu 8 Bit Oasis)
+• Up (leads to Scary Pockets Funky Groove - LOCKED)
+
+
+Items:
+• Guitar
+• Bastion Shield
+
+
+NPCs:
+• Darren Korb
+
+
+> compose melody
+> 
+------------------------------------------------------------
+The pixels respond to your command. The epic composition grows stronger.
+------------------------------------------------------------
+
+
+> go east
+> 
+============================================================
+Room: Qumu 8 Bit Oasis
+
+A pixelated paradise where retro game sounds blend with modern beats. Chiptune
+melodies float through the air.
+============================================================
+
+
+Exits:
+• Down (leads to Ajr Bang Boulevard)
+• East (leads to Snail's House Beep Boop Arcade)
+• Up (leads to Steam Powered Giraffe Clockwork Carnival - LOCKED)
+• West (leads to Darren Korb Supergiant Studio)
+
+
+Items:
+• Chiptune Synthesizer
+• Pixel Art Canvas
+
+
+NPCs:
+• Qumu
+
+
+> look
+> 
+============================================================
+Room: Qumu 8 Bit Oasis
+
+A pixelated paradise where retro game sounds blend with modern beats. Chiptune
+melodies float through the air.
+============================================================
+
+
+Exits:
+• Down (leads to Ajr Bang Boulevard)
+• East (leads to Snail's House Beep Boop Arcade)
+• Up (leads to Steam Powered Giraffe Clockwork Carnival - LOCKED)
+• West (leads to Darren Korb Supergiant Studio)
+
+
+Items:
+• Chiptune Synthesizer
+• Pixel Art Canvas
+
+
+NPCs:
+• Qumu
+
+
+> sync beat
+> 
+------------------------------------------------------------
+The pixels respond to your command. The retro fusion grows stronger.
+------------------------------------------------------------
+
+
+> go east
+> 
+============================================================
+Room: Snail's House Beep Boop Arcade
+
+A kawaii-themed arcade filled with retro game cabinets and pastel decorations.
+Chiptune melodies float through the air.
+============================================================
+
+
+Exits:
+• Up (leads to Steam Powered Giraffes Clockwork Stage - LOCKED)
+• West (leads to Qumu 8 Bit Oasis)
+
+
+Items:
+• Arcade Token
+• Kawaii Plushie
+• Pixel Heart
+
+
+NPCs:
+• Snail Chan
+• Pixel Sprite
+
+
+> look
+> 
+============================================================
+Room: Snail's House Beep Boop Arcade
+
+A kawaii-themed arcade filled with retro game cabinets and pastel decorations.
+Chiptune melodies float through the air.
+============================================================
+
+
+Exits:
+• Up (leads to Steam Powered Giraffes Clockwork Stage - LOCKED)
+• West (leads to Qumu 8 Bit Oasis)
+
+
+Items:
+• Arcade Token
+• Kawaii Plushie
+• Pixel Heart
+
+
+NPCs:
+• Snail Chan
+• Pixel Sprite
+
+
+> play game
+> 
+------------------------------------------------------------
+The digital sounds harmonize as epic, retro, and kawaii unite, opening a
+pixelated path through the code!
+------------------------------------------------------------
+
+
+------------------------------------------------------------
+Puzzle complete!
+------------------------------------------------------------
+
+
+> go up
+> 
+============================================================
+Room: Steam Powered Giraffe's Clockwork Stage
+
+A grand Victorian stage where clockwork automatons perform. Brass gears turn in
+perfect harmony, and steam hisses create a rhythmic backdrop.
+============================================================
+
+
+Exits:
+• West (leads to Abney Park's Steampunk Airship)
+
+
+Items:
+• Resonance Fragment
+
+
+NPCs:
+• Rabbit
+• The Spine
+• Zero
+
+
+--- STEAMPUNK LEVEL ---
+
+> go west
+> 
+============================================================
+Room: Abney Park's Steampunk Airship
+
+A magnificent steampunk airship's deck, where brass instruments and steam-
+powered machinery create a symphony of mechanical music. Navigation instruments
+double as musical devices, and the sails catch both wind and sound.
+============================================================
+
+
+Exits:
+• Down (leads to Snails House Beep Boop Arcade)
+• East (leads to Steam Powered Giraffe's Clockwork Stage)
+• Up (leads to Fall Out Boy Centuries Coliseum - LOCKED)
+• West (leads to The Cog is Dead's Temporal Laboratory)
+
+
+Items:
+• Resonance Fragment
+
+
+NPCs:
+• Captain Robert
+
+
+> look
+> 
+============================================================
+Room: Abney Park's Steampunk Airship
+
+A magnificent steampunk airship's deck, where brass instruments and steam-
+powered machinery create a symphony of mechanical music. Navigation instruments
+double as musical devices, and the sails catch both wind and sound.
+============================================================
+
+
+Exits:
+• Down (leads to Snails House Beep Boop Arcade)
+• East (leads to Steam Powered Giraffe's Clockwork Stage)
+• Up (leads to Fall Out Boy Centuries Coliseum - LOCKED)
+• West (leads to The Cog is Dead's Temporal Laboratory)
+
+
+Items:
+• Resonance Fragment
+
+
+NPCs:
+• Captain Robert
+
+
+> reverse time
+> 
+------------------------------------------------------------
+Nothing happens.
+------------------------------------------------------------
+
+
+> go east
+> 
+============================================================
+Room: Steam Powered Giraffe's Clockwork Stage
+
+A grand Victorian stage where clockwork automatons perform. Brass gears turn in
+perfect harmony, and steam hisses create a rhythmic backdrop.
+============================================================
+
+
+Exits:
+• West (leads to Abney Park's Steampunk Airship)
+
+
+Items:
+• Resonance Fragment
+
+
+NPCs:
+• Rabbit
+• The Spine
+• Zero
+
+
+> look
+> 
+============================================================
+Room: Steam Powered Giraffe's Clockwork Stage
+
+A grand Victorian stage where clockwork automatons perform. Brass gears turn in
+perfect harmony, and steam hisses create a rhythmic backdrop.
+============================================================
+
+
+Exits:
+• West (leads to Abney Park's Steampunk Airship)
+
+
+Items:
+• Resonance Fragment
+
+
+NPCs:
+• Rabbit
+• The Spine
+• Zero
+
+
+> conduct wind
+> 
+------------------------------------------------------------
+Nothing happens.
+------------------------------------------------------------
+
+
+> go east
+> 
+------------------------------------------------------------
+There is no exit east from here.
+------------------------------------------------------------
+
+
+> look
+> 
+============================================================
+Room: Steam Powered Giraffe's Clockwork Stage
+
+A grand Victorian stage where clockwork automatons perform. Brass gears turn in
+perfect harmony, and steam hisses create a rhythmic backdrop.
+============================================================
+
+
+Exits:
+• West (leads to Abney Park's Steampunk Airship)
+
+
+Items:
+• Resonance Fragment
+
+
+NPCs:
+• Rabbit
+• The Spine
+• Zero
+
+
+> sync gear
+> 
+------------------------------------------------------------
+The machinery responds to your command. The mechanical performance grows
+stronger.
+------------------------------------------------------------
+
+
+> look
+> 
+============================================================
+Room: Steam Powered Giraffe's Clockwork Stage
+
+A grand Victorian stage where clockwork automatons perform. Brass gears turn in
+perfect harmony, and steam hisses create a rhythmic backdrop.
+============================================================
+
+
+Exits:
+• West (leads to Abney Park's Steampunk Airship)
+
+
+Items:
+• Resonance Fragment
+
+
+NPCs:
+• Rabbit
+• The Spine
+• Zero
+
+
+> take resonance core fragment
+> 
+There's no 'resonance core fragment' here to take.
+
+
+=== WHIMSICAL REALM WORLD ===
+
+--- CREATIVE LEVEL ---
+
+> teleport to whimsical realm
+> 2024-12-26 17:37:46,546 - core.world.WorldComponentLoader - INFO - WorldComponentLoader.py:105 - Loading built-in puzzles for world: Whimsical Realm
+2024-12-26 17:37:46,546 - core.world.WorldComponentLoader - INFO - WorldComponentLoader.py:114 - Finished loading puzzles. Available puzzles: ['creative_convergence_puzzle', 'nostalgia_puzzle', 'childhood_puzzle']
+
+------------------------------------------------------------
+Teleported to Whimsical Realm.
+------------------------------------------------------------
+
+
+============================================================
+Room: Bob Ross Haven
+
+A cozy studio space where reality seems to blur at the edges like wet paint.
+Half-finished landscapes on easels occasionally shift when no one's looking, and
+happy little clouds drift past indoors. The air smells of oil paint and joy.
+============================================================
+
+
+Exits:
+• East (leads to Megamind's Misguided Mansion)
+• Up (leads to Mad Hatters Temporal Trap - LOCKED)
+• West (leads to Cheshire Cats Grinning Abyss)
+
+
+Items:
+• Reality Brush
+• Happy Palette
+
+
+NPCs:
+• Bob Ross
+
+
+> look
+> 
+============================================================
+Room: Bob Ross Haven
+
+A cozy studio space where reality seems to blur at the edges like wet paint.
+Half-finished landscapes on easels occasionally shift when no one's looking, and
+happy little clouds drift past indoors. The air smells of oil paint and joy.
+============================================================
+
+
+Exits:
+• East (leads to Megamind's Misguided Mansion)
+• Up (leads to Mad Hatters Temporal Trap - LOCKED)
+• West (leads to Cheshire Cats Grinning Abyss)
+
+
+Items:
+• Reality Brush
+• Happy Palette
+
+
+NPCs:
+• Bob Ross
+
+
+> paint cloud
+> 
+------------------------------------------------------------
+The creativity responds to your command. The artistic vision grows stronger.
+------------------------------------------------------------
+
+
+> go west
+> 
+============================================================
+Room: Cheshire Cats Grinning Abyss
+
+A surreal, ever-changing space where reality seems to bend. The Cheshire Cat's
+grin floats in the air.
+============================================================
+
+
+Exits:
+• East (leads to Bob Ross Haven)
+• Up (leads to Queen Of Hearts Grim Garden Party - LOCKED)
+
+
+Items:
+• Vanishing Potion
+• Grin In A Bottle
+
+
+NPCs:
+• Cheshire Cat
+
+
+> look
+> 
+============================================================
+Room: Cheshire Cats Grinning Abyss
+
+A surreal, ever-changing space where reality seems to bend. The Cheshire Cat's
+grin floats in the air.
+============================================================
+
+
+Exits:
+• East (leads to Bob Ross Haven)
+• Up (leads to Queen Of Hearts Grim Garden Party - LOCKED)
+
+
+Items:
+• Vanishing Potion
+• Grin In A Bottle
+
+
+NPCs:
+• Cheshire Cat
+
+
+> fade reality
+> 
+------------------------------------------------------------
+The creativity responds to your command. The surreal transformation grows
+stronger.
+------------------------------------------------------------
+
+
+> go east
+> 
+============================================================
+Room: Bob Ross Haven
+
+A cozy studio space where reality seems to blur at the edges like wet paint.
+Half-finished landscapes on easels occasionally shift when no one's looking, and
+happy little clouds drift past indoors. The air smells of oil paint and joy.
+============================================================
+
+
+Exits:
+• East (leads to Megamind's Misguided Mansion)
+• Up (leads to Mad Hatters Temporal Trap - LOCKED)
+• West (leads to Cheshire Cats Grinning Abyss)
+
+
+Items:
+• Reality Brush
+• Happy Palette
+
+
+NPCs:
+• Bob Ross
+
+
+> go east
+> 
+============================================================
+Room: Megamind's Misguided Mansion
+
+A sprawling blue mansion filled with eccentric inventions and dramatic
+presentation spaces. Minion's bowls are scattered about.
+============================================================
+
+
+Exits:
+• East (leads to Utopian Lego City)
+• Up (leads to Mad Hatters Temporal Trap - LOCKED)
+• West (leads to Bob Ross Haven)
+
+
+Items:
+• Presentation Cape
+• Minion Cookie
+• Dehydration Gun
+
+
+NPCs:
+• Megamind
+• Minion
+
+
+> look
+> 
+============================================================
+Room: Megamind's Misguided Mansion
+
+A sprawling blue mansion filled with eccentric inventions and dramatic
+presentation spaces. Minion's bowls are scattered about.
+============================================================
+
+
+Exits:
+• East (leads to Utopian Lego City)
+• Up (leads to Mad Hatters Temporal Trap - LOCKED)
+• West (leads to Bob Ross Haven)
+
+
+Items:
+• Presentation Cape
+• Minion Cookie
+• Dehydration Gun
+
+
+NPCs:
+• Megamind
+• Minion
+
+
+> present invention
+> 
+------------------------------------------------------------
+The creativity responds to your command. The inventive brilliance grows
+stronger.
+------------------------------------------------------------
+
+
+> go east
+> 
+============================================================
+Room: Utopian Lego City
+
+A vibrant city built entirely of Lego bricks. Everything is awesome here!
+============================================================
+
+
+Exits:
+• Up (leads to Walles Wonderful World - LOCKED)
+• West (leads to Megamind's Misguided Mansion)
+
+
+Items:
+• Instruction Manual
+• Lego Brick
+
+
+NPCs:
+• Lego Batman
+
+
+> look
+> 
+============================================================
+Room: Utopian Lego City
+
+A vibrant city built entirely of Lego bricks. Everything is awesome here!
+============================================================
+
+
+Exits:
+• Up (leads to Walles Wonderful World - LOCKED)
+• West (leads to Megamind's Misguided Mansion)
+
+
+Items:
+• Instruction Manual
+• Lego Brick
+
+
+NPCs:
+• Lego Batman
+
+
+> build tower
+> 
+------------------------------------------------------------
+The creative forces unite as painting, surrealism, invention, and master
+building combine, opening a whimsical path through imagination!
+------------------------------------------------------------
+
+
+------------------------------------------------------------
+Puzzle complete!
+------------------------------------------------------------
+
+
+> go up
+> 
+============================================================
+Room: Walles Wonderful World
+
+A world in transition, with piles of trash being transformed into a green
+paradise.
+============================================================
+
+
+Exits:
+• Down (leads to Megaminds Misguided Mansion)
+• East (leads to Mr Rogers Nostalgic Nexus)
+• Up (leads to Sheetz Station Of Infinite Delight - LOCKED)
+• West (leads to Queen of Hearts' Grim Garden Party)
+
+
+Items:
+• Rubiks Cube
+• Plant Boot
+
+
+NPCs:
+• WALL-E
+
+
+--- NOSTALGIA LEVEL ---
+
+> look
+> 
+============================================================
+Room: Walles Wonderful World
+
+A world in transition, with piles of trash being transformed into a green
+paradise.
+============================================================
+
+
+Exits:
+• Down (leads to Megaminds Misguided Mansion)
+• East (leads to Mr Rogers Nostalgic Nexus)
+• Up (leads to Sheetz Station Of Infinite Delight - LOCKED)
+• West (leads to Queen of Hearts' Grim Garden Party)
+
+
+Items:
+• Rubiks Cube
+• Plant Boot
+
+
+NPCs:
+• WALL-E
+
+
+> pour tea
+> 
+------------------------------------------------------------
+Nothing happens.
+------------------------------------------------------------
+
+
+> go west
+> 
+============================================================
+Room: Queen of Hearts' Grim Garden Party
+
+A twisted garden where roses painted red drip ominously. Playing card guards
+stand at attention while croquet mallets shaped like flamingos rest against
+hedges.
+============================================================
+
+
+Exits:
+• East (leads to Walles Wonderful World)
+• Up (leads to The Brave Little Toasters Appliance Uprising - LOCKED)
+• West (leads to Mad Hatters Temporal Trap)
+
+
+Items:
+• Flamingo Mallet
+• Red Paint
+• Tarts Recipe
+
+
+NPCs:
+• Queen of Hearts
+• White Rabbit
+
+
+> look
+> 
+============================================================
+Room: Queen of Hearts' Grim Garden Party
+
+A twisted garden where roses painted red drip ominously. Playing card guards
+stand at attention while croquet mallets shaped like flamingos rest against
+hedges.
+============================================================
+
+
+Exits:
+• East (leads to Walles Wonderful World)
+• Up (leads to The Brave Little Toasters Appliance Uprising - LOCKED)
+• West (leads to Mad Hatters Temporal Trap)
+
+
+Items:
+• Flamingo Mallet
+• Red Paint
+• Tarts Recipe
+
+
+NPCs:
+• Queen of Hearts
+• White Rabbit
+
+
+> paint rose
+> 
+------------------------------------------------------------
+The memories respond to your command. The royal nostalgia grows stronger.
+------------------------------------------------------------
+
+
+> go east
+> 
+============================================================
+Room: Walles Wonderful World
+
+A world in transition, with piles of trash being transformed into a green
+paradise.
+============================================================
+
+
+Exits:
+• Down (leads to Megaminds Misguided Mansion)
+• East (leads to Mr Rogers Nostalgic Nexus)
+• Up (leads to Sheetz Station Of Infinite Delight - LOCKED)
+• West (leads to Queen of Hearts' Grim Garden Party)
+
+
+Items:
+• Rubiks Cube
+• Plant Boot
+
+
+NPCs:
+• WALL-E
+
+
+> look
+> 
+============================================================
+Room: Walles Wonderful World
+
+A world in transition, with piles of trash being transformed into a green
+paradise.
+============================================================
+
+
+Exits:
+• Down (leads to Megaminds Misguided Mansion)
+• East (leads to Mr Rogers Nostalgic Nexus)
+• Up (leads to Sheetz Station Of Infinite Delight - LOCKED)
+• West (leads to Queen of Hearts' Grim Garden Party)
+
+
+Items:
+• Rubiks Cube
+• Plant Boot
+
+
+NPCs:
+• WALL-E
+
+
+> collect treasure
+> 
+------------------------------------------------------------
+The memories respond to your command. The robotic innocence grows stronger.
+------------------------------------------------------------
+
+
+> go east
+> 
+============================================================
+Room: Mr Rogers Nostalgic Nexus
+
+A cozy, warm space reminiscent of Mr. Rogers' Neighborhood. Nostalgia fills the
+air.
+============================================================
+
+
+Exits:
+• Down (leads to Utopian Lego City)
+• Up (leads to The Brave Little Toasters Appliance Uprising - LOCKED)
+• West (leads to Walles Wonderful World)
+
+
+Items:
+• Cardigan Sweater
+• Puppet Friend
+
+
+NPCs:
+• Mr. Rogers
+
+
+> look
+> 
+============================================================
+Room: Mr Rogers Nostalgic Nexus
+
+A cozy, warm space reminiscent of Mr. Rogers' Neighborhood. Nostalgia fills the
+air.
+============================================================
+
+
+Exits:
+• Down (leads to Utopian Lego City)
+• Up (leads to The Brave Little Toasters Appliance Uprising - LOCKED)
+• West (leads to Walles Wonderful World)
+
+
+Items:
+• Cardigan Sweater
+• Puppet Friend
+
+
+NPCs:
+• Mr. Rogers
+
+
+> share smile
+> 
+------------------------------------------------------------
+The memories respond to your command. The neighborly kindness grows stronger.
+------------------------------------------------------------
+
+
+> go up
+> 
+------------------------------------------------------------
+This area is locked. Complete the current level's challenges to proceed.
+------------------------------------------------------------
+
+
+--- CHILDHOOD LEVEL ---
+
+> look
+> 
+============================================================
+Room: Mr Rogers Nostalgic Nexus
+
+A cozy, warm space reminiscent of Mr. Rogers' Neighborhood. Nostalgia fills the
+air.
+============================================================
+
+
+Exits:
+• Down (leads to Utopian Lego City)
+• Up (leads to The Brave Little Toasters Appliance Uprising - LOCKED)
+• West (leads to Walles Wonderful World)
+
+
+Items:
+• Cardigan Sweater
+• Puppet Friend
+
+
+NPCs:
+• Mr. Rogers
+
+
+> unite friend
+> 
+------------------------------------------------------------
+Nothing happens.
+------------------------------------------------------------
+
+
+> go east
+> 
+------------------------------------------------------------
+There is no exit east from here.
+------------------------------------------------------------
+
+
+> look
+> 
+============================================================
+Room: Mr Rogers Nostalgic Nexus
+
+A cozy, warm space reminiscent of Mr. Rogers' Neighborhood. Nostalgia fills the
+air.
+============================================================
+
+
+Exits:
+• Down (leads to Utopian Lego City)
+• Up (leads to The Brave Little Toasters Appliance Uprising - LOCKED)
+• West (leads to Walles Wonderful World)
+
+
+Items:
+• Cardigan Sweater
+• Puppet Friend
+
+
+NPCs:
+• Mr. Rogers
+
+
+> spark thunder
+> 
+------------------------------------------------------------
+Nothing happens.
+------------------------------------------------------------
+
+
+> go east
+> 
+------------------------------------------------------------
+There is no exit east from here.
+------------------------------------------------------------
+
+
+> look
+> 
+============================================================
+Room: Mr Rogers Nostalgic Nexus
+
+A cozy, warm space reminiscent of Mr. Rogers' Neighborhood. Nostalgia fills the
+air.
+============================================================
+
+
+Exits:
+• Down (leads to Utopian Lego City)
+• Up (leads to The Brave Little Toasters Appliance Uprising - LOCKED)
+• West (leads to Walles Wonderful World)
+
+
+Items:
+• Cardigan Sweater
+• Puppet Friend
+
+
+NPCs:
+• Mr. Rogers
+
+
+> serve ball
+> 
+------------------------------------------------------------
+Nothing happens.
+------------------------------------------------------------
+
+
+> go east
+> 
+------------------------------------------------------------
+There is no exit east from here.
+------------------------------------------------------------
+
+
+> look
+> 
+============================================================
+Room: Mr Rogers Nostalgic Nexus
+
+A cozy, warm space reminiscent of Mr. Rogers' Neighborhood. Nostalgia fills the
+air.
+============================================================
+
+
+Exits:
+• Down (leads to Utopian Lego City)
+• Up (leads to The Brave Little Toasters Appliance Uprising - LOCKED)
+• West (leads to Walles Wonderful World)
+
+
+Items:
+• Cardigan Sweater
+• Puppet Friend
+
+
+NPCs:
+• Mr. Rogers
+
+
+> taste snack
+> 
+------------------------------------------------------------
+Nothing happens.
+------------------------------------------------------------
+
+
+> look
+> 
+============================================================
+Room: Mr Rogers Nostalgic Nexus
+
+A cozy, warm space reminiscent of Mr. Rogers' Neighborhood. Nostalgia fills the
+air.
+============================================================
+
+
+Exits:
+• Down (leads to Utopian Lego City)
+• Up (leads to The Brave Little Toasters Appliance Uprising - LOCKED)
+• West (leads to Walles Wonderful World)
+
+
+Items:
+• Cardigan Sweater
+• Puppet Friend
+
+
+NPCs:
+• Mr. Rogers
+
+
+> take imagination shard fragment
+> 
+There's no 'imagination shard fragment' here to take.
+

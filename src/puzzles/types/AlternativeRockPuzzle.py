@@ -165,7 +165,57 @@ class AlternativeRockPuzzle(BasePuzzle):
                     "sound",
                     "sounds"
                 }
-            }
+            },
+            # Add the new aspect group to self.aspects:
+            "visual_storytelling": {
+                "room": "saint_motel_voyeur_vista",
+                "verbs": {
+                    # Camera actions
+                    "record",
+                    "capture",
+                    "film",
+                    "shoot",
+                    "document",
+                    # Vision actions
+                    "observe",
+                    "watch",
+                    "witness",
+                    "view",
+                    "see",
+                    # Story actions
+                    "create",
+                    "craft",
+                    "weave",
+                    "tell",
+                    "share"
+                },
+                "nouns": {
+                    # Film equipment
+                    "film",
+                    "films",
+                    "reel",
+                    "reels",
+                    "camera",
+                    "cameras",
+                    # Visual elements
+                    "scene",
+                    "scenes",
+                    "vista",
+                    "vistas",
+                    "moment",
+                    "moments",
+                    # Story elements
+                    "story",
+                    "stories",
+                    "tale",
+                    "tales",
+                    # Atmosphere
+                    "image",
+                    "images",
+                    "light",
+                    "lights"
+                }
+            },
         }
 
     def handle_command(self, command: str, room_id: str, inventory: List[str]) -> Tuple[bool, str]:
@@ -215,5 +265,6 @@ class AlternativeRockPuzzle(BasePuzzle):
         return any(location in room_id.lower() for location in [
             "panic_at_the_disco_boom_boom_ballroom",
             "twenty_one_pilots_trench_terminal",
-            "ajr_bang_boulevard"
+            "ajr_bang_boulevard",
+            "saint_motel_voyeur_vista"  # Add this line
         ])
