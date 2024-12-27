@@ -129,8 +129,7 @@ class Game:
     def quit(self):
         """Clean up and exit the game."""
         self.is_running = False
-        self.display.print_message("\nThank you for playing!\n")
-
+        
     def get_puzzle(self, puzzle_id: str) -> Optional[BasePuzzle]:
         """Get a puzzle by its ID from the current world."""
         if self.current_world and hasattr(self.current_world, 'puzzles'):

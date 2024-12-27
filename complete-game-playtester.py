@@ -61,63 +61,45 @@ class GameAutomation:
         levels = [
             GameLevel("air", [
                 "teleport to elemental conflux",
-                "look",
                 "focus crystal",
                 "go east",
-                "look",
                 "align stars",
                 "go east",
-                "look",
                 "channel thunder",
                 "go up"
             ]),
             GameLevel("earth", [
-                "look",
                 "go west",  # To Chess Dojo
-                "look",
                 "go west",  # To Toph's Caverns
-                "look",
                 "sense crystal",
                 "go east",  # Back to Chess Dojo
-                "look",
                 "move piece",
                 "go east",  # Back to Forge Hall
-                "look", 
                 "forge metal",
                 "go up"
             ]),
             GameLevel("fire", [
-                "look",
                 "channel flame",
                 "go east",  # To Dragon Garden
-                "look",
                 "steep tea",
                 "go north",  # To Zuko's Fire
-                "look",
                 "flow chi",
                 "go up"
             ]),
             GameLevel("water", [
-                "look",
                 "heal spirit",
                 "go west",  # To Squirtle's Coast
-                "look",
                 "ride surf",
                 "go north",  # To Moana's Waves
-                "look",
                 "read tide",
                 "go up"
             ]),
             GameLevel("spirit", [
-                "look",
                 "project realm",
                 "go east",  # To Mount Pyres
-                "look",
                 "honor ancestor",
                 "go east",  # To Raava's Sanctuary
-                "look",
                 "attune light",
-                "look",
                 "take elemental shard"
             ])
         ]
@@ -127,108 +109,87 @@ class GameAutomation:
 
     def complete_harmonic_nexus(self, game_process, log_file):
         """Complete all levels of Harmonic Nexus world."""
-        worlds_header = f"\n=== HARMONIC NEXUS WORLD ===\n"
-        log_file.write(worlds_header)
-        print(worlds_header, end='')
+        log_file.write("\n=== HARMONIC NEXUS WORLD ===\n")
+        print("\n=== HARMONIC NEXUS WORLD ===\n", end='')
 
         levels = [
             GameLevel("alternative_rock", [
                 "teleport to harmonic nexus",
-                "look",
-                "paint pattern",  # Emotional resonance in Trench Terminal
+                "paint pattern",
                 "go east",
-                "look",
-                "play trumpet",  # Energetic fusion in AJR Boulevard
+                "play trumpet", 
                 "go east",
-                "look",
-                "capture moment",  # Visual storytelling in Saint Motel
-                "go east",
-                "look",
-                "perform dance",  # Theatrical performance in Panic Ballroom
+                "capture moment",
+                "go east", 
+                "perform dance",
                 "go up"
             ]),
             GameLevel("chiptune", [
-                "look",
-                "compose melody",  # At Supergiant Studio
+                "compose melody",
                 "go east",
-                "look", 
-                "sync beat",  # At Qumu Oasis
+                "sync beat",
                 "go east",
-                "look",
-                "play game",  # At Snail's House
+                "play game",
                 "go up"
             ]),
             GameLevel("steampunk", [
-                "go west",  # To Temporal Lab first!
-                "look",
-                "reverse time", 
-                "go east",  # To Airship
-                "look",
-                "conduct wind",
-                "go east",  # To Clockwork Stage
-                "look",
+                "go west", # To Airship
+                "conduct sail",
+                "take resonance shard",
+                "go west", # To Temporal Lab
+                "reverse time",
+                "go east", # Back to Airship
+                "go east", # To Clockwork Stage
                 "sync gear",
-                "look",
-                "take resonance fragment" 
-            ])]
+                ])
+        ]
         
         for level in levels:
             self.execute_commands(game_process, level, log_file)
 
     def complete_whimsical_realm(self, game_process, log_file):
         """Complete all levels of Whimsical Realm world."""
-        worlds_header = f"\n=== WHIMSICAL REALM WORLD ===\n"
-        log_file.write(worlds_header)
-        print(worlds_header, end='')
+        log_file.write("\n=== WHIMSICAL REALM WORLD ===\n")
+        print("\n=== WHIMSICAL REALM WORLD ===\n", end='')
 
         levels = [
             GameLevel("creative", [
                 "teleport to whimsical realm",
-                "look",
                 "paint cloud",
-                "go west",  # To Cheshire Cat
-                "look",
+                "go west",
                 "fade reality",
-                "go east",  # Back to Bob Ross
-                "go east",  # To Megamind
-                "look",
-                "present invention",
-                "go east",  # To Lego City
-                "look",
-                "build tower",
-                "go up"  # To Mad Hatter's
+                "go east",
+                "go east",
+                "present invention", 
+                "go east",
+                "build tower", 
+                "go up"
             ]),
             GameLevel("nostalgia", [
-                "look",
-                "pour tea",  # Mad Hatter puzzle part 1
-                "go west",  # To Queen of Hearts (from map)
-                "look",
-                "paint rose",  # Queen puzzle part 2
-                "go east",  # To WALL-E's World
-                "look",
-                "collect treasure",  # WALL-E puzzle part 3
-                "go east",  # From WALL-E to Mr. Rogers
-                "look",
-                "share smile",  # Rogers puzzle part 4 - completes level
-                "go up"  # To Brave Little Toaster
+                "collect boot",  # Wall-E's Wonderful World
+                "go west",  # Queen of Hearts' Grim Garden Party
+                "paint rose",  # Solve royal nostalgia
+                "go west",  # Mad Hatter's Temporal Trap
+                "pour tea",  # Solve wonderland mischief
+                "go east",  # Queen of Hearts' Grim Garden Party
+                "go east",  # Wall-E's Wonderful World
+                "go east",  # Mr. Rogers' Nostalgic Nexus
+                "share smile",  # Solve neighborly kindness
+                "go up"  # Ascend stairs after solving all aspects
             ]),
             GameLevel("childhood", [
-                "look",
-                "unite friend",  # Toaster puzzle part 1
-                "go east",  # To Blanka's Jungle
-                "look",
-                "spark thunder",  # Blanka puzzle part 2
-                "go east",  # To Pickleball Court
-                "look",
-                "serve ball",  # Pickleball puzzle part 3
-                "go east",  # To Sheetz Station
-                "look",
-                "taste snack",  # Sheetz puzzle part 4
-                "look",
-                "take imagination shard fragment"
+                "unite friend",  # Toaster puzzle
+                "go east",  # To Blanka
+                "spark thunder", # Blanka puzzle
+                "go east", # To Pickleball
+                "serve ball",  # Pickleball puzzle
+                "go east", # To Sheetz
+                "taste slushie", # Sheetz puzzle
+                "take imagination shard",
+                "1"
             ])
         ]
-        
+
         for level in levels:
             self.execute_commands(game_process, level, log_file)
 

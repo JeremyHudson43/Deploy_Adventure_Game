@@ -10,6 +10,5 @@
     "npcs": [
         "friendly_cashier",
         "snack_wizard"
-    ],
-    "stairs_up": "level_four/childhood_memories_finale"
+    ]
 }
