@@ -2,12 +2,12 @@
     "name": "Tezzeret",
     "description": "A dangerous artificer stands before you, his etherium arm crackling with sinister energy. His calculating gaze suggests hidden motives behind every word.",
     "dialogue": {
-        "greeting": "Welcome, Isaac. Before you begin exploring other worlds through my portals, you'll need to understand some basic principles of navigation and interaction.",
+        "greeting": "Welcome, Isaac. Before you begin exploring other worlds through my portals, you'll need to understand some basic principles of navigation and interaction. Make sure to ask me about everything you can to ensure you don't get stuck.",
         "topics": {
             "game_basics": {
                 "movement": "Navigation is straightforward. Use 'go north', 'go south', 'go east', or 'go west' to move between rooms. Some locations may have 'go up' or 'go down' as well.",
                 "looking": "Use 'look' to examine your surroundings, 'look at [object]' for specific items, and 'inventory' to check what you're carrying.",
-                "items": "You can 'take' items you find and 'drop' ones you don't need. Some puzzles require specific items to solve them."
+                "items": "Most items serve no practical function. They are still useful environmental clues though."
             },
             "about_travel": {
                 "using portals": "The command structure is simple. Type 'teleport' to see available worlds, then 'teleport to [world name]' to travel there. For example: 'teleport to elemental conflux'.",
@@ -30,11 +30,13 @@
             },
             "about_puzzles": {
                 "the mechanics": "Each puzzle room contains clues about which commands you'll need. Study your surroundings carefully - the architecture, the atmosphere, even the room's name can hint at the required actions.",
-                "solving puzzles": "Success often requires combining multiple commands in the right sequence. For instance, you might need to 'observe' something before you can 'activate' it. Pay attention to how the room responds to your actions"
+                "solving puzzles": "Success often requires combining multiple commands in the right sequence. For instance, you might need to 'observe' something before you can 'activate' it. Pay attention to how the room responds to your actions",
+                "puzzle_difficulty": "Some puzzles may be easy -- others hard. If you find that one is too hard, simply email me at TezzeretTechTips@gmail.com (this is a real email address)"
             },
             "farewell": {
                 "first meeting": "Remember: 'look' to observe, 'inventory' to check items, and 'help' if you need guidance. The portals await your command.",
-                "usual goodbye": "Return here if you need to review basic commands or try a different world. Good luck on your journey."
+                "usual goodbye": "Return here if you need to review basic commands or try a different world. Good luck on your journey.",
+                
             }
         }
     }
