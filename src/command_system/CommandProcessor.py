@@ -164,7 +164,6 @@ class CommandProcessor:
                 ("take [item]", "Pick up an item"),
                 ("pick up [item]", "Pick up an item"),
                 ("drop [item]", "Drop an item"),
-                ("use [item]", "Use an item"),
                 ("talk to [npc]", "Talk to an NPC"),
                 ("ask [npc] about [topic]", "Ask an NPC about a specific topic")
             ]),

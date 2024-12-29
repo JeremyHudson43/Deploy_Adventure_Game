@@ -2,27 +2,21 @@
     "name": "Tezzeret",
     "description": "A dangerous artificer stands before you, his etherium arm crackling with sinister energy. His calculating gaze suggests hidden motives behind every word.",
     "dialogue": {
-        "greeting": "Welcome, Isaac. Before you begin exploring other worlds through my portals, you'll need to understand some basic principles of navigation and interaction. Make sure to ask me about everything you can to ensure you don't get stuck.",
+        "greeting": "Welcome, Isaac. Before you begin exploring other worlds with my technology, you'll need to understand some basic principles of navigation and interaction. The Etherium Interface Module in this room will grant you access to abilities beyond normal comprehension, like flight, fire magic, minor reality bending, and even planeswalking between the three realms. Make sure to ask me about everything you can to ensure you don't get stuck.",
         "topics": {
             "game_basics": {
                 "movement": "Navigation is straightforward. Use 'go north', 'go south', 'go east', or 'go west' to move between rooms. Some locations may have 'go up' or 'go down' as well.",
-                "looking": "Use 'look' to examine your surroundings, 'look at [object]' for specific items, and 'inventory' to check what you're carrying.",
+                "looking": "Use 'look' to examine your surroundings and 'inventory' to check what you're carrying.",
                 "items": "Most items serve no practical function. They are still useful environmental clues though."
             },
             "about_travel": {
                 "using portals": "The command structure is simple. Type 'teleport' to see available worlds, then 'teleport to [world name]' to travel there. For example: 'teleport to elemental conflux'.",
-                "the limitations": "Each world has its own challenges and requirements. You'll need to solve puzzles in sequence to progress deeper into each realm.",
-                "returning": "You can always return here using 'teleport to hub' if you need guidance or want to try a different world."
+                "the limitations": "Each world has its own challenges and requirements. You'll need to solve puzzles in sequence to progress deeper into each realm. The Etherium Interface Module also allows a rudimentary form of planeswalking between these three realms, letting you travel directly from one to another.."
             },
             "about_worlds": {
                 "elemental conflux": "A realm of pure elemental forces, starting with simple air currents and progressing to complex spiritual harmonies. Begin here to learn basic puzzle mechanics.",
                 "harmonic nexus": "A musical realm where different styles create unique harmonies. Its puzzles focus on pattern recognition and rhythm.",
                 "whimsical realm": "A place of creativity and imagination, with puzzles that challenge conventional thinking."
-            },
-            "about_portals": {
-                "the technology": "Yes, I lost the original Planar Bridge... but my work with the Phyrexians proved invaluable. By combining their portal technology with my etherium upgrades, I can create controlled tears in reality itself.",
-                "the purpose": "Each realm holds artifacts I require for my research. Complete the challenges, and you'll gain access to knowledge and power beyond your previous imagination.",
-                "the warning": "The portals aren't completely stable. Best to use them quickly and directly. What the Phyrexians don't know about our use of their technology is... best kept between us."
             },
             "about_goals": {
                 "the mission": "I need you to venture into these realms and retrieve core shards - powerful crystalline artifacts that contain pure planar energy. Each world houses one of these fragments, crucial for my research into planar travel.",
@@ -30,13 +24,12 @@
             },
             "about_puzzles": {
                 "the mechanics": "Each puzzle room contains clues about which commands you'll need. Study your surroundings carefully - the architecture, the atmosphere, even the room's name can hint at the required actions.",
-                "solving puzzles": "Success often requires combining multiple commands in the right sequence. For instance, you might need to 'observe' something before you can 'activate' it. Pay attention to how the room responds to your actions",
-                "puzzle_difficulty": "Some puzzles may be easy -- others hard. If you find that one is too hard, simply email me at TezzeretTechTips@gmail.com (this is a real email address)"
+                "solving puzzles": "Success often requires combining multiple commands in the right sequence. For instance, you might need to 'observe' something before you can 'activate' it. Pay attention to how the room responds to your actions.",
+                "puzzle_difficulty": "Some puzzles may be easy -- others hard. If you find that one is too hard, simply email me at TezzeretTechTips@gmail.com (this is a real email address)."
             },
             "farewell": {
-                "first meeting": "Remember: 'look' to observe, 'inventory' to check items, and 'help' if you need guidance. The portals await your command.",
+                "first meeting": "Remember: 'look' to observe, 'inventory' to check items, and 'help' if you need guidance. The Etherium Interface Module will allow you to access extraordinary powers.",
                 "usual goodbye": "Return here if you need to review basic commands or try a different world. Good luck on your journey."
-                
             }
         }
     }

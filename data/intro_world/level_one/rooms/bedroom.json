@@ -4,6 +4,6 @@
     "exits": {
         "south": "living_room"
     },
-    "items": [],
+    "items": ["etherium_interface_module"],
     "npcs": ["Tezzeret"]
 }
