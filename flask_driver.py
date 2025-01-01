@@ -264,6 +264,7 @@ def process_command():
         game = games[session_id]
         output_queue = output_queues[session_id]
         flush_output, restore_stdout = capture_output(output_queue)
+        output = ""
 
         try:
             if command == "save game":
