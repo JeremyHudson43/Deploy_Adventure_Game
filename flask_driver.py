@@ -253,7 +253,7 @@ def process_command():
     try:
         data = request.get_json()
         session_id = data.get('sessionId')
-        command = data.get('command', '').strip()
+        command = data.get('command', '').strip().lower()  # Normalize the command input
 
         if not session_id or session_id not in games:
             return jsonify({
@@ -266,14 +266,18 @@ def process_command():
         flush_output, restore_stdout = capture_output(output_queue)
 
         try:
-            game.command_processor.process_command(command)
-            game.boss_battle.trigger_battle()
-            flush_output()
-            save_game_state(session_id)
+            if command == "save game":
+                # Save the game state when the user types "save game"
+                save_success = save_game_state(session_id)
+                output = "Game saved successfully!" if save_success else "Failed to save the game."
+            else:
+                # Process other commands
+                game.command_processor.process_command(command)
+                flush_output()
         finally:
             restore_stdout()
 
-        output = ""
+        # Capture game output
         while not output_queue.empty():
             output += output_queue.get()
 
@@ -282,6 +286,7 @@ def process_command():
     except Exception as e:
         logger.error(f"Error in process_command: {str(e)}")
         return jsonify({'error': str(e)}), 500
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=int(os.getenv("PORT", 8080)))
