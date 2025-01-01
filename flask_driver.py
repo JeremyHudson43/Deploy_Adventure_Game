@@ -264,29 +264,52 @@ def process_command():
         game = games[session_id]
         output_queue = output_queues[session_id]
         flush_output, restore_stdout = capture_output(output_queue)
-        output = ""
+
+        output = ""  # Ensure output is initialized
 
         try:
-            if command == "save game":
-                # Save the game state when the user types "save game"
-                save_success = save_game_state(session_id)
-                output = "Game saved successfully!" if save_success else "Failed to save the game."
+            # Handle multi-step commands like save/load/delete
+            if game.command_processor.awaiting_load_choice:
+                try:
+                    choice = int(command)
+                    saves = game.game_state.list_saves()
+                    if 1 <= choice <= len(saves):
+                        save_name = saves[choice - 1]['name']
+                        if game.game_state.load_game(save_name):
+                            output = f"Loaded save game '{save_name}'."
+                            game.command_processor.look()  # Display current room
+                        else:
+                            output = "Failed to load the selected save game."
+                    else:
+                        output = "Invalid save number."
+                except ValueError:
+                    output = "Please enter a valid number."
+                finally:
+                    game.command_processor.awaiting_load_choice = False
             else:
-                # Process other commands
-                game.command_processor.process_command(command)
-                flush_output()
+                # Standard command processing
+                if command == "save game":
+                    save_success = save_game_state(session_id)
+                    output = "Game saved successfully!" if save_success else "Failed to save the game."
+                else:
+                    game.command_processor.process_command(command)
+                    flush_output()
+
+            # Capture game output
+            while not output_queue.empty():
+                output += output_queue.get()
         finally:
             restore_stdout()
-
-        # Capture game output
-        while not output_queue.empty():
-            output += output_queue.get()
 
         return jsonify({'output': output})
 
     except Exception as e:
         logger.error(f"Error in process_command: {str(e)}")
-        return jsonify({'error': str(e)}), 500
+        logger.error(traceback.format_exc())
+        return jsonify({
+            'error': str(e),
+            'output': "An error occurred while processing the command. Please try again."
+        }), 500
 
 
 if __name__ == '__main__':
