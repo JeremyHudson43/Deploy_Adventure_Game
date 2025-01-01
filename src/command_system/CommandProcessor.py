@@ -364,24 +364,24 @@ class CommandProcessor:
             return f"level_one/{room_name}"
 
     def process_command(self, command: str) -> None:
-        # Handle save/load input states
-        if self.awaiting_save_name:
-            self.awaiting_save_name = False
-            success = self.game_state.save_game(command)
+        # Handle multi-step command states
+        if self.game.awaiting_save_name:
+            self.game.awaiting_save_name = False
+            success = self.game.game_state.save_game(command)
             if success:
                 self.display.print_message(f'Game saved as "{command}"')
             else:
                 self.display.print_message("Failed to save game.")
             return
 
-        if self.awaiting_load_choice:
-            self.awaiting_load_choice = False
+        if self.game.awaiting_load_choice:
+            self.game.awaiting_load_choice = False
             try:
                 choice = int(command)
-                saves = self.game_state.list_saves()
+                saves = self.game.game_state.list_saves()
                 if 1 <= choice <= len(saves):
                     save_name = saves[choice-1]['name']
-                    if self.game_state.load_game(save_name):
+                    if self.game.game_state.load_game(save_name):
                         self.look()
                         self.display.print_message(f'Loaded save game "{save_name}"')
                     else:
@@ -392,11 +392,21 @@ class CommandProcessor:
                 self.display.print_message("Please enter a number.")
             return
 
-        # Process normal commands
+        if self.game.awaiting_delete_choice:
+            self.game.awaiting_delete_choice = False
+            try:
+                choice = int(command)
+                success, message = self.game.game_state.delete_game_save(choice)
+                self.display.print_message(message)
+            except ValueError:
+                self.display.print_message("Please enter a number.")
+            return
+
+        # Process standard commands
         parts = command.lower().split()
         matched_command = None
 
-        # Match longest command first (e.g. "pick up" before "pick")
+        # Match longest command patterns first
         for cmd in sorted(self.commands.keys(), key=lambda x: -len(x.split())):
             cmd_parts = cmd.split()
             if parts[:len(cmd_parts)] == cmd_parts:
@@ -411,6 +421,7 @@ class CommandProcessor:
             else:
                 handler()
         else:
+            # Check for puzzle-specific commands if no standard command matched
             if self._check_puzzle_commands(command):
                 return
             self.display.print_message("I don't understand that command.")
@@ -425,7 +436,6 @@ class CommandProcessor:
 
         for puzzle_id, puzzle in self.game.current_world.puzzles.items():
             if hasattr(puzzle, 'is_puzzle_room') and puzzle.is_puzzle_room(room_id):
-                # Pass any command to the puzzle handler when in a puzzle room
                 success, message = puzzle.handle_command(
                     command=command_lower,
                     room_id=room_id,
