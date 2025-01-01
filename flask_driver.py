@@ -106,10 +106,9 @@ def load_game_state(session_id, save_name):
 
         # Create and setup new game
         game = Game()
-        game.game_state.deserialize(state['game_state'])
+        game.game_state.progression.world_progress = state['game_state']['world_progress']
         game.player.deserialize(state['player_state'])
-        # game.current_world.deserialize(state['world_state']) # The world needs to be deserialized after all worlds are loaded
-        game.deserialize(state) # Load is_running and worlds
+        game.deserialize(state)  # Load is_running and worlds
 
         games[session_id] = game
         return game
