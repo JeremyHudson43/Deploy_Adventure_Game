@@ -21,19 +21,21 @@ from core.systems.BossBattle import BossBattle
 
 class Game:
     def __init__(self):
-        # Initialize available directions first
-        initialize_directions()
-        
+        # Existing initialization
         self.display = Display()
         self.game_state = GameState(self)
         self.player = Player()
-        self.player.game = self  # Set player's game reference
+        self.player.game = self
         self.worlds = {}
         self.current_world = None
         self.command_processor = CommandProcessor(self, self.player, self.display, self.game_state)
-        self.load_all_worlds()
         self.is_running = True
         self.boss_battle = BossBattle(self)
+
+        # Add command state flags
+        self.awaiting_save_name = False
+        self.awaiting_load_choice = False 
+        self.awaiting_delete_choice = False
 
     def serialize(self):
         return {
