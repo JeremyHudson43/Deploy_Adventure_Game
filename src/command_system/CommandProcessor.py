@@ -43,7 +43,8 @@ class CommandProcessor:
             "teleport": (self.handle_teleport, ["world_name"]),
             "ask": (self.handle_ask, ["npc_name", "topic"]),
             "list worlds": (self.handle_list_worlds, []),
-            "florbglorbule": (self.handle_dev_command, [])
+            "florbglorbule": (self.handle_dev_command, []),
+            "delete save": (self.handle_delete_save, [])
         }
 
         self.awaiting_save_name = False
@@ -179,6 +180,34 @@ class CommandProcessor:
             timestamp = save['timestamp']
             save_name = save['name']
             self.display.print_message(f"{i}. {save_name} ({timestamp})")
+
+    # Add the handler method
+    def handle_delete_save(self):
+        """Start delete save process"""
+        saves = self.game.game_state.list_saves()
+        if not saves:
+            self.display.print_message("No saved games found.")
+            return
+            
+        self.display.print_message("Available saves to delete:")
+        for i, save in enumerate(saves, 1):
+            timestamp = save['timestamp']
+            save_name = save['name']
+            self.display.print_message(f"{i}. {save_name} ({timestamp})")
+        
+        self.display.print_message("\nEnter the number of the save to delete:")
+        self.game.awaiting_delete_choice = True
+
+        # Add to process_command handling
+        if self.game.awaiting_delete_choice:
+            self.game.awaiting_delete_choice = False
+            try:
+                choice = int(command)
+                success, message = self.game.game_state.delete_game_save(choice)
+                self.display.print_message(message)
+            except ValueError:
+                self.display.print_message("Please enter a number.")
+            return
 
     def print_help(self):
         sections = [
