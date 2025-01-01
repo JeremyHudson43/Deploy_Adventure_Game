@@ -1,10 +1,13 @@
-# src/save_system/game_state.py
-
 import json
-from pathlib import Path
 import datetime
-from typing import Dict, Optional, Any
+from typing import Dict, Any, Optional
+from pathlib import Path
+import pickle
+import traceback
+import logging
 from core.systems.ProgressionSystem import ProgressionSystem
+
+logger = logging.getLogger(__name__)
 
 class GameState:
     def __init__(self, game):
@@ -14,212 +17,195 @@ class GameState:
         self.progression = ProgressionSystem(self)
         self.world_progress = self.progression.world_progress
 
-    def save_game(self, slot: str = "quicksave") -> bool:
-        """
-        Save the current game state to a file.
-        
-        Args:
-            slot: Save slot name (default: "quicksave")
-            
-        Returns:
-            bool: True if save was successful, False otherwise
-        """
-        try:
-            timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-            save_data = {
-                "metadata": {
-                    "timestamp": timestamp,
-                    "version": "1.0",
-                    "slot": slot
-                },
-                "player_state": self._serialize_player(),
-                "world_state": self._serialize_world_state(),
-                "puzzle_state": self._serialize_puzzle_state(),
-                "world_progress": self.world_progress
-            }
-
-            # Create filename with timestamp
-            filename = f"{slot}_{timestamp}.json"
-            save_path = self.saves_directory / filename
-
-            # Save the file
-            with open(save_path, "w", encoding='utf-8') as f:
-                json.dump(save_data, f, indent=2, ensure_ascii=False)
-
-            # Cleanup old saves if quicksave
-            if slot == "quicksave":
-                self._cleanup_old_quicksaves()
-
-            self.game.display.print_message(f"Game saved successfully to slot: {slot}")
-            return True
-
-        except Exception as e:
-            self.game.display.print_message(f"Error saving game: {str(e)}")
-            return False
-
-    def load_game(self, slot: str = "quicksave") -> bool:
-        """
-        Load a game state from a file.
-        
-        Args:
-            slot: Save slot to load from (default: "quicksave")
-            
-        Returns:
-            bool: True if load was successful, False otherwise
-        """
-        try:
-            # Find the most recent save file for the given slot
-            save_files = list(self.saves_directory.glob(f"{slot}_*.json"))
-            if not save_files:
-                self.game.display.print_simple_message(f"No saved game found in slot: {slot}")
-                return False
-
-            # Get the most recent save file
-            save_path = max(save_files, key=lambda p: p.stat().st_mtime)
-
-            # Load and validate save data
-            with open(save_path, "r", encoding='utf-8') as f:
-                save_data = json.load(f)
-
-            if not self._validate_save_data(save_data):
-                self.game.display.print_simple_message("Warning: This save file appears to be corrupted or from a different version")
-                return False
-
-            # Restore game state
-            self._deserialize_player(save_data["player_state"])
-            self._deserialize_world_state(save_data["world_state"])
-            self._deserialize_puzzle_state(save_data["puzzle_state"])
-            self.world_progress = save_data.get("world_progress", self.progression.world_progress)
-            self.progression.world_progress = self.world_progress
-
-            self.game.display.print_message(f"Game loaded successfully from slot: {slot}")
-            return True
-
-        except Exception as e:
-            self.game.display.print_message(f"Error loading game: {str(e)}")
-            return False
-
-    def list_saves(self) -> list:
-        """List all available save slots with their timestamps."""
-        saves = []
-        for save_file in self.saves_directory.glob("*.json"):
-            try:
-                with open(save_file, "r", encoding='utf-8') as f:
-                    save_data = json.load(f)
-                    saves.append({
-                        "slot": save_data["metadata"]["slot"],
-                        "timestamp": save_data["metadata"]["timestamp"],
-                        "filename": save_file.name
-                    })
-            except Exception:
-                continue
-        return saves
-    
     def serialize(self):
         return {
             'world_progress': self.world_progress,
             'saves_directory': str(self.saves_directory)
         }
 
-    def _serialize_player(self):
-        return {
-            "current_room": self.game.player.current_room.name if self.game.player.current_room else "No Room",
-            "inventory": [item.name for item in self.game.player.inventory],
-            "position": {
-                "world": self.game.current_world.name if self.game.current_world else "No World",
-                "room": self.game.player.current_room.name if self.game.player.current_room else "No Room"
-            }
-        }
-    
-    def _serialize_world_state(self) -> Dict[str, Any]:
-        """Serialize current world state."""
-        return {
-            "current_world": self.game.current_world.name,
-            "rooms": {
-                room_id: {
-                    "items": [item.name for item in room.items],
-                    "npcs": [npc.name for npc in getattr(room, 'npcs', [])]
+    def save_game(self, save_name: str) -> bool:
+        """Save game state with custom name."""
+        try:
+            game = self.game
+            saves_dir = self.saves_directory
+            saves_dir.mkdir(exist_ok=True)
+
+            timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+
+            # Get current room ID
+            current_room_id = None
+            if game.current_world and game.player.current_room:
+                for room_id, room in game.current_world.rooms.items():
+                    if room == game.player.current_room:
+                        current_room_id = room_id
+                        break
+
+            # Build save state
+            state = {
+                'metadata': {
+                    'save_name': save_name,
+                    'timestamp': timestamp,
+                    'version': '1.0'
+                },
+                'player': {
+                    'inventory': [item.name for item in game.player.inventory],
+                    'current_room': current_room_id,
+                    'visited_rooms': list(game.player.state.visited_rooms)
+                },
+                'world': {
+                    'current_world': game.current_world.name if game.current_world else None,
+                    'room_states': {
+                        room_id: {
+                            'items': [item.name for item in room.items]
+                        }
+                        for room_id, room in game.current_world.rooms.items()
+                    } if game.current_world else {}
+                },
+                'puzzles': {
+                    puzzle_id: {
+                        'completed': puzzle.completed,
+                        'completed_groups': list(getattr(puzzle, '_completed_groups', set()))
+                    }
+                    for puzzle_id, puzzle in game.current_world.puzzles.items()
+                } if game.current_world else {},
+                'progression': {
+                    'world_progress': self.progression.world_progress
                 }
-                for room_id, room in self.game.current_world.rooms.items()
             }
-        }
 
-    def _serialize_puzzle_state(self) -> Dict[str, Any]:
-        """Serialize puzzle states."""
-        puzzle_state = {}
-        if hasattr(self.game.current_world, 'puzzles'):
-            for puzzle_id, puzzle in self.game.current_world.puzzles.items():
-                puzzle_state[puzzle_id] = {
-                    "completed": puzzle.completed,
-                    "state": getattr(puzzle, 'sequence_state', None),
-                    "visited_worlds": list(getattr(puzzle, 'visited_worlds', set()))
-                }
-        return puzzle_state
-
-    def _deserialize_player(self, player_data: Dict[str, Any]) -> None:
-        """Restore player state."""
-        # Switch to correct world first
-        world_name = player_data["position"]["world"]
-        if world_name in self.game.worlds:
-            self.game.current_world = self.game.worlds[world_name]
+            # Save to file
+            filename = f"{save_name}_{timestamp}.save"
+            save_path = saves_dir / filename
             
-        # Restore room position
-        room_name = player_data["position"]["room"]
-        if room_name in self.game.current_world.rooms:
-            self.game.player.current_room = self.game.current_world.rooms[room_name]
-            
-        # Restore inventory
-        self.game.player.inventory.clear()
-        for item_name in player_data["inventory"]:
-            for item in self.game.current_world.items.values():
-                if item.name == item_name:
-                    self.game.player.inventory.add(item)
-                    break
+            with open(save_path, 'wb') as f:
+                pickle.dump(state, f)
 
-    def _deserialize_world_state(self, world_data: Dict[str, Any]) -> None:
-        """Restore world state."""
-        for room_id, room_data in world_data["rooms"].items():
-            if room_id in self.game.current_world.rooms:
-                room = self.game.current_world.rooms[room_id]
-                # Restore items
-                room.items.clear()
-                for item_name in room_data["items"]:
-                    for item in self.game.current_world.items.values():
-                        if item.name == item_name:
-                            room.items.add(item)
-                            break
+            logger.info(f"Game saved successfully as '{save_name}'")
+            return True
 
-    def _deserialize_puzzle_state(self, puzzle_data: Dict[str, Any]) -> None:
-        """Restore puzzle states."""
-        if hasattr(self.game.current_world, 'puzzles'):
-            for puzzle_id, puzzle_state in puzzle_data.items():
-                if puzzle_id in self.game.current_world.puzzles:
-                    puzzle = self.game.current_world.puzzles[puzzle_id]
-                    puzzle.completed = puzzle_state["completed"]
-                    if puzzle_state["state"]:
-                        puzzle.sequence_state = puzzle_state["state"]
-                    if puzzle_state["visited_worlds"]:
-                        puzzle.visited_worlds = set(puzzle_state["visited_worlds"])
-
-    def _validate_save_data(self, save_data: Dict[str, Any]) -> bool:
-        """Validate save data structure and version compatibility."""
-        required_keys = ["metadata", "player_state", "world_state", "puzzle_state"]
-        if not all(key in save_data for key in required_keys):
+        except Exception as e:
+            logger.error(f"Error saving game: {str(e)}")
+            logger.error(traceback.format_exc())
             return False
+
+    def load_game(self, save_name: str) -> bool:
+        """Load game state from a named save."""
+        try:
+            # Find the most recent save file with this name
+            save_files = list(self.saves_directory.glob(f"{save_name}_*.save"))
+            if not save_files:
+                logger.warning(f"No save file found with name '{save_name}'")
+                return False
+
+            # Get most recent save for this name
+            save_path = max(save_files, key=lambda p: p.stat().st_mtime)
+            
+            with open(save_path, 'rb') as f:
+                state = pickle.load(f)
+
+            # Validate save data
+            if not self._validate_save_data(state):
+                logger.warning("Invalid save data structure")
+                return False
+
+            # Restore game state
+            game = self.game
+            game.setup()  # Reset to initial state
+
+            # Restore world
+            if state['world']['current_world']:
+                game.current_world = game.worlds.get(state['world']['current_world'])
+                if game.current_world:
+                    game.current_world.initialize(self)
+
+                    # Restore inventory
+                    game.player.inventory.clear()
+                    for item_name in state['player']['inventory']:
+                        for world_item in game.current_world.items.values():
+                            if world_item.name == item_name:
+                                game.player.inventory.add(world_item)
+                                break
+
+                    # Restore room state
+                    for room_id, room_state in state['world']['room_states'].items():
+                        if room_id in game.current_world.rooms:
+                            room = game.current_world.rooms[room_id]
+                            room.items.clear()
+                            for item_name in room_state['items']:
+                                for world_item in game.current_world.items.values():
+                                    if world_item.name == item_name:
+                                        room.items.add(world_item)
+                                        break
+
+                    # Restore current room
+                    room_id = state['player']['current_room']
+                    if room_id in game.current_world.rooms:
+                        game.player.current_room = game.current_world.rooms[room_id]
+                        game.player.state.current_room_id = room_id
+                        game.player.state.current_world_id = state['world']['current_world']
+
+                    # Restore visited rooms
+                    game.player.state.visited_rooms = set(state['player'].get('visited_rooms', []))
+
+                    # Restore puzzles
+                    for puzzle_id, puzzle_state in state.get('puzzles', {}).items():
+                        if puzzle_id in game.current_world.puzzles:
+                            puzzle = game.current_world.puzzles[puzzle_id]
+                            puzzle.completed = puzzle_state.get('completed', False)
+                            if hasattr(puzzle, '_completed_groups'):
+                                puzzle._completed_groups = set(puzzle_state.get('completed_groups', []))
+                            puzzle.game = game
+
+                    # Restore progression
+                    if 'progression' in state:
+                        self.progression.world_progress = state['progression']['world_progress']
+
+            logger.info(f"Game loaded successfully from '{save_name}'")
+            return True
+
+        except Exception as e:
+            logger.error(f"Error loading game: {str(e)}")
+            logger.error(traceback.format_exc())
+            return False
+
+    def list_saves(self) -> list:
+        """List all available save files."""
+        saves = []
+        for save_file in self.saves_directory.glob("*.save"):
+            try:
+                with open(save_file, 'rb') as f:
+                    save_data = pickle.load(f)
+                    saves.append({
+                        'name': save_data['metadata']['save_name'],
+                        'timestamp': save_data['metadata']['timestamp'],
+                        'filename': save_file.name
+                    })
+            except Exception:
+                continue
         
-        # Version check
-        version = save_data["metadata"].get("version", "0")
-        if version != "1.0":  # Current version
+        # Sort by timestamp, newest first
+        return sorted(saves, key=lambda x: x['timestamp'], reverse=True)
+
+    def _validate_save_data(self, state: Dict) -> bool:
+        """Validate save data structure."""
+        required_keys = ['metadata', 'player', 'world', 'puzzles', 'progression']
+        if not all(key in state for key in required_keys):
             return False
-            
+
+        # Version check
+        version = state['metadata'].get('version', '0')
+        if version != '1.0':
+            return False
+
         return True
 
-    def _cleanup_old_quicksaves(self, keep_count: int = 5) -> None:
-        """Keep only the most recent quicksaves."""
-        quicksaves = list(self.saves_directory.glob("quicksave_*.json"))
-        if len(quicksaves) > keep_count:
-            # Sort by modification time, oldest first
-            quicksaves.sort(key=lambda p: p.stat().st_mtime)
-            # Remove older files
-            for save_file in quicksaves[:-keep_count]:
+    def delete_save(self, save_name: str) -> bool:
+        """Delete a named save file."""
+        try:
+            save_files = list(self.saves_directory.glob(f"{save_name}_*.save"))
+            for save_file in save_files:
                 save_file.unlink()
+            return True
+        except Exception as e:
+            logger.error(f"Error deleting save '{save_name}': {str(e)}")
+            return False

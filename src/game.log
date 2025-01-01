@@ -12641,3 +12641,81 @@ NameError: name 'RetroRevolutionPuzzle' is not defined
 2024-12-27 11:40:02,129 - core.world.WorldComponentLoader - INFO - WorldComponentLoader.py:114 - Finished loading puzzles. Available puzzles: ['alternative_rock_puzzle', 'chiptune_puzzle', 'steampunk_music_puzzle']
 2024-12-27 11:40:36,708 - core.world.WorldComponentLoader - INFO - WorldComponentLoader.py:105 - Loading built-in puzzles for world: Whimsical Realm
 2024-12-27 11:40:36,708 - core.world.WorldComponentLoader - INFO - WorldComponentLoader.py:114 - Finished loading puzzles. Available puzzles: ['creative_convergence_puzzle', 'nostalgia_puzzle', 'childhood_puzzle']
+2024-12-29 08:15:20,921 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: air_level
+2024-12-29 08:15:20,922 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: alternative_rock
+2024-12-29 08:15:20,922 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: childhood
+2024-12-29 08:15:20,922 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: chiptune
+2024-12-29 08:15:20,922 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: creative_convergence
+2024-12-29 08:15:20,922 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: earth_level
+2024-12-29 08:15:20,922 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: fire_level
+2024-12-29 08:15:20,922 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: nostalgia
+2024-12-29 08:15:20,922 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: spirit_level
+2024-12-29 08:15:20,922 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: steampunk_music
+2024-12-29 08:15:20,922 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: water_level
+2024-12-29 08:15:20,925 - world - WARNING - RoomConnectionManager.py:91 - Could not find room 'level_one/locked_room' for exit 'east' in room 'level_one/living_room'
+2024-12-29 08:15:20,926 - core.world.WorldComponentLoader - INFO - WorldComponentLoader.py:105 - Loading built-in puzzles for world: Intro World
+2024-12-29 08:15:20,926 - core.world.WorldComponentLoader - INFO - WorldComponentLoader.py:114 - Finished loading puzzles. Available puzzles: []
+2024-12-29 08:15:20,926 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: air_level
+2024-12-29 08:15:20,926 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: alternative_rock
+2024-12-29 08:15:20,926 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: childhood
+2024-12-29 08:15:20,926 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: chiptune
+2024-12-29 08:15:20,927 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: creative_convergence
+2024-12-29 08:15:20,927 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: earth_level
+2024-12-29 08:15:20,927 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: fire_level
+2024-12-29 08:15:20,927 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: nostalgia
+2024-12-29 08:15:20,927 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: spirit_level
+2024-12-29 08:15:20,927 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: steampunk_music
+2024-12-29 08:15:20,927 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: water_level
+2024-12-29 08:15:20,942 - world - WARNING - RoomConnectionManager.py:109 - Item 'water_scroll' not found for room 'Katara's Waterbending Rapids'
+2024-12-29 08:15:20,942 - world - WARNING - RoomConnectionManager.py:109 - Item 'moon_crystal' not found for room 'Katara's Waterbending Rapids'
+2024-12-29 08:15:20,942 - world - WARNING - RoomConnectionManager.py:109 - Item 'healing_vial' not found for room 'Katara's Waterbending Rapids'
+2024-12-29 08:15:20,944 - core.world.WorldComponentLoader - INFO - WorldComponentLoader.py:105 - Loading built-in puzzles for world: Elemental Conflux
+2024-12-29 08:15:20,944 - core.world.WorldComponentLoader - INFO - WorldComponentLoader.py:114 - Finished loading puzzles. Available puzzles: ['air_currents_puzzle', 'earth_stability_puzzle', 'water_mastery_puzzle', 'fire_mastery_puzzle', 'spirit_level_puzzle']
+2024-12-29 08:15:20,945 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: air_level
+2024-12-29 08:15:20,945 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: alternative_rock
+2024-12-29 08:15:20,945 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: childhood
+2024-12-29 08:15:20,945 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: chiptune
+2024-12-29 08:15:20,945 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: creative_convergence
+2024-12-29 08:15:20,945 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: earth_level
+2024-12-29 08:15:20,945 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: fire_level
+2024-12-29 08:15:20,945 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: nostalgia
+2024-12-29 08:15:20,945 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: spirit_level
+2024-12-29 08:15:20,945 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: steampunk_music
+2024-12-29 08:15:20,945 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: water_level
+2024-12-29 08:15:20,957 - world - WARNING - RoomConnectionManager.py:109 - Item 'black_paint' not found for room 'Twenty One Pilots Trench Terminal'
+2024-12-29 08:15:20,958 - world - WARNING - RoomConnectionManager.py:109 - Item 'trench_coat' not found for room 'Twenty One Pilots Trench Terminal'
+2024-12-29 08:15:20,958 - world - WARNING - RoomConnectionManager.py:119 - NPC 'josh_dun' not found for room 'Twenty One Pilots Trench Terminal'
+2024-12-29 08:15:20,958 - world - WARNING - RoomConnectionManager.py:109 - Item 'resonance_fragment' not found for room 'Steam Powered Giraffe's Clockwork Stage'
+2024-12-29 08:15:20,958 - world - WARNING - RoomConnectionManager.py:109 - Item 'resonance_fragment' not found for room 'The Cog is Dead's Temporal Laboratory'
+2024-12-29 08:15:20,959 - core.world.WorldComponentLoader - INFO - WorldComponentLoader.py:105 - Loading built-in puzzles for world: Harmonic Nexus
+2024-12-29 08:15:20,959 - core.world.WorldComponentLoader - INFO - WorldComponentLoader.py:114 - Finished loading puzzles. Available puzzles: ['alternative_rock_puzzle', 'chiptune_puzzle', 'steampunk_music_puzzle']
+2024-12-29 08:15:20,960 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: air_level
+2024-12-29 08:15:20,960 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: alternative_rock
+2024-12-29 08:15:20,960 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: childhood
+2024-12-29 08:15:20,960 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: chiptune
+2024-12-29 08:15:20,960 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: creative_convergence
+2024-12-29 08:15:20,960 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: earth_level
+2024-12-29 08:15:20,960 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: fire_level
+2024-12-29 08:15:20,960 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: nostalgia
+2024-12-29 08:15:20,960 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: spirit_level
+2024-12-29 08:15:20,960 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: steampunk_music
+2024-12-29 08:15:20,961 - puzzles.core.PuzzleManager - INFO - PuzzleManager.py:51 - Registered puzzle type: water_level
+2024-12-29 08:15:20,975 - core.world.WorldComponentLoader - INFO - WorldComponentLoader.py:105 - Loading built-in puzzles for world: Whimsical Realm
+2024-12-29 08:15:20,976 - core.world.WorldComponentLoader - INFO - WorldComponentLoader.py:114 - Finished loading puzzles. Available puzzles: ['creative_convergence_puzzle', 'nostalgia_puzzle', 'childhood_puzzle']
+2024-12-29 08:15:20,979 - world - WARNING - RoomConnectionManager.py:91 - Could not find room 'level_one/locked_room' for exit 'east' in room 'level_one/living_room'
+2024-12-29 08:15:20,979 - core.world.WorldComponentLoader - INFO - WorldComponentLoader.py:105 - Loading built-in puzzles for world: Intro World
+2024-12-29 08:15:20,979 - core.world.WorldComponentLoader - INFO - WorldComponentLoader.py:114 - Finished loading puzzles. Available puzzles: []
+2024-12-29 08:15:23,687 - world - WARNING - RoomConnectionManager.py:109 - Item 'water_scroll' not found for room 'Katara's Waterbending Rapids'
+2024-12-29 08:15:23,688 - world - WARNING - RoomConnectionManager.py:109 - Item 'moon_crystal' not found for room 'Katara's Waterbending Rapids'
+2024-12-29 08:15:23,688 - world - WARNING - RoomConnectionManager.py:109 - Item 'healing_vial' not found for room 'Katara's Waterbending Rapids'
+2024-12-29 08:15:23,690 - core.world.WorldComponentLoader - INFO - WorldComponentLoader.py:105 - Loading built-in puzzles for world: Elemental Conflux
+2024-12-29 08:15:23,690 - core.world.WorldComponentLoader - INFO - WorldComponentLoader.py:114 - Finished loading puzzles. Available puzzles: ['air_currents_puzzle', 'earth_stability_puzzle', 'water_mastery_puzzle', 'fire_mastery_puzzle', 'spirit_level_puzzle']
+2024-12-29 08:16:13,307 - world - WARNING - RoomConnectionManager.py:109 - Item 'black_paint' not found for room 'Twenty One Pilots Trench Terminal'
+2024-12-29 08:16:13,307 - world - WARNING - RoomConnectionManager.py:109 - Item 'trench_coat' not found for room 'Twenty One Pilots Trench Terminal'
+2024-12-29 08:16:13,307 - world - WARNING - RoomConnectionManager.py:119 - NPC 'josh_dun' not found for room 'Twenty One Pilots Trench Terminal'
+2024-12-29 08:16:13,307 - world - WARNING - RoomConnectionManager.py:109 - Item 'resonance_fragment' not found for room 'Steam Powered Giraffe's Clockwork Stage'
+2024-12-29 08:16:13,308 - world - WARNING - RoomConnectionManager.py:109 - Item 'resonance_fragment' not found for room 'The Cog is Dead's Temporal Laboratory'
+2024-12-29 08:16:13,308 - core.world.WorldComponentLoader - INFO - WorldComponentLoader.py:105 - Loading built-in puzzles for world: Harmonic Nexus
+2024-12-29 08:16:13,309 - core.world.WorldComponentLoader - INFO - WorldComponentLoader.py:114 - Finished loading puzzles. Available puzzles: ['alternative_rock_puzzle', 'chiptune_puzzle', 'steampunk_music_puzzle']
+2024-12-29 08:16:47,895 - core.world.WorldComponentLoader - INFO - WorldComponentLoader.py:105 - Loading built-in puzzles for world: Whimsical Realm
+2024-12-29 08:16:47,895 - core.world.WorldComponentLoader - INFO - WorldComponentLoader.py:114 - Finished loading puzzles. Available puzzles: ['creative_convergence_puzzle', 'nostalgia_puzzle', 'childhood_puzzle']

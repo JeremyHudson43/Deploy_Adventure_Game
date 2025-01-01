@@ -186,7 +186,7 @@ class GameAutomation:
                 "go east", # To Sheetz
                 "taste slushie", # Sheetz puzzle
                 "take imagination shard",
-                "1"
+                "3"
             ])
         ]
 
