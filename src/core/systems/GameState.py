@@ -6,6 +6,8 @@ import pickle
 import traceback
 import logging
 from core.systems.ProgressionSystem import ProgressionSystem
+from typing import Tuple
+
 
 logger = logging.getLogger(__name__)
 
