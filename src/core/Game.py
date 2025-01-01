@@ -32,11 +32,6 @@ class Game:
         self.is_running = True
         self.boss_battle = BossBattle(self)
 
-        # Add command state flags
-        self.awaiting_save_name = False
-        self.awaiting_load_choice = False 
-        self.awaiting_delete_choice = False
-
     def serialize(self):
         return {
             'worlds': {name: world.name for name, world in self.worlds.items()},

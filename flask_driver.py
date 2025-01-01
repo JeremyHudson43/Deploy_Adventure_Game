@@ -265,36 +265,10 @@ def process_command():
         output = ""
 
         try:
-            if game.awaiting_load_choice:
-                try:
-                    # Process the load choice
-                    choice = int(command)
-                    saves = game.game_state.list_saves()
-                    if 1 <= choice <= len(saves):
-                        save_name = saves[choice - 1]['name']
-                        if game.game_state.load_game(save_name):
-                            output += f'Loaded save game "{save_name}".\n'
-                            game.command_processor.look()  # Refresh the room state
-                        else:
-                            output += "Failed to load save game.\n"
-                    else:
-                        output += "Invalid save number.\n"
-                except ValueError:
-                    output += "Please enter a valid number.\n"
-                finally:
-                    game.awaiting_load_choice = False  # Clear the flag after processing
-            elif game.awaiting_save_name:
-                # Handle save name input
-                success = game.game_state.save_game(command)
-                if success:
-                    output += f'Game saved as "{command}".\n'
-                else:
-                    output += "Failed to save game.\n"
-                game.awaiting_save_name = False  # Clear the flag
-            else:
-                # Process other commands
-                game.command_processor.process_command(command)
-                flush_output()
+            # Remove special state handling from here
+            # Let the CommandProcessor do this
+            game.command_processor.process_command(command)
+            flush_output()
 
             # Capture any additional output
             while not output_queue.empty():

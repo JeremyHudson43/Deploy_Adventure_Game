@@ -47,8 +47,10 @@ class CommandProcessor:
             "delete save": (self.handle_delete_save, [])
         }
 
+        # Internal flags for handling multi-step commands
         self.awaiting_save_name = False
         self.awaiting_load_choice = False
+        self.awaiting_delete_choice = False
 
     def look(self):
         room = self.player.current_room
@@ -181,7 +183,6 @@ class CommandProcessor:
             save_name = save['name']
             self.display.print_message(f"{i}. {save_name} ({timestamp})")
 
-    # Add the handler method
     def handle_delete_save(self):
         """Start delete save process"""
         saves = self.game.game_state.list_saves()
@@ -196,7 +197,7 @@ class CommandProcessor:
             self.display.print_message(f"{i}. {save_name} ({timestamp})")
         
         self.display.print_message("\nEnter the number of the save to delete:")
-        self.game.awaiting_delete_choice = True
+        self.awaiting_delete_choice = True
 
     def print_help(self):
         sections = [
@@ -353,24 +354,26 @@ class CommandProcessor:
             return f"level_one/{room_name}"
 
     def process_command(self, command: str) -> None:
+        """Handle user input and execute appropriate commands."""
+
         # Handle multi-step command states
-        if self.game.awaiting_save_name:
-            self.game.awaiting_save_name = False
-            success = self.game.game_state.save_game(command)
+        if self.awaiting_save_name:
+            self.awaiting_save_name = False
+            success = self.game_state.save_game(command)
             if success:
                 self.display.print_message(f'Game saved as "{command}"')
             else:
                 self.display.print_message("Failed to save game.")
             return
 
-        if self.game.awaiting_load_choice:
-            self.game.awaiting_load_choice = False
+        if self.awaiting_load_choice:
+            self.awaiting_load_choice = False
             try:
                 choice = int(command)
-                saves = self.game.game_state.list_saves()
+                saves = self.game_state.list_saves()
                 if 1 <= choice <= len(saves):
                     save_name = saves[choice-1]['name']
-                    if self.game.game_state.load_game(save_name):
+                    if self.game_state.load_game(save_name):
                         self.look()
                         self.display.print_message(f'Loaded save game "{save_name}"')
                     else:
@@ -381,11 +384,11 @@ class CommandProcessor:
                 self.display.print_message("Please enter a number.")
             return
 
-        if self.game.awaiting_delete_choice:
-            self.game.awaiting_delete_choice = False
+        if self.awaiting_delete_choice:
+            self.awaiting_delete_choice = False
             try:
                 choice = int(command)
-                success, message = self.game.game_state.delete_game_save(choice)
+                success, message = self.game_state.delete_game_save(choice)
                 self.display.print_message(message)
             except ValueError:
                 self.display.print_message("Please enter a number.")
