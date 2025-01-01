@@ -198,17 +198,6 @@ class CommandProcessor:
         self.display.print_message("\nEnter the number of the save to delete:")
         self.game.awaiting_delete_choice = True
 
-        # Add to process_command handling
-        if self.game.awaiting_delete_choice:
-            self.game.awaiting_delete_choice = False
-            try:
-                choice = int(command)
-                success, message = self.game.game_state.delete_game_save(choice)
-                self.display.print_message(message)
-            except ValueError:
-                self.display.print_message("Please enter a number.")
-            return
-
     def print_help(self):
         sections = [
             ("Basic Commands", [
