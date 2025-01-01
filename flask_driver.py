@@ -28,8 +28,8 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Game state management
-games = {}
-output_queues = {}
+games = {}  # Store instantiated games
+output_queues = {}  # Store output queues for each game
 
 def get_client_id():
     """Generate unique client ID from IP and user agent"""
@@ -63,14 +63,6 @@ def save_game_state(session_id, save_name=None):
             saves_dir = Path('saves')
             saves_dir.mkdir(exist_ok=True)
 
-            # Get current room ID
-            current_room_id = None
-            if game.current_world and game.player.current_room:
-                for room_id, room in game.current_world.rooms.items():
-                    if room == game.player.current_room:
-                        current_room_id = room_id
-                        break
-
             # Build state object
             state = {
                 'metadata': {
@@ -78,30 +70,9 @@ def save_game_state(session_id, save_name=None):
                     'timestamp': datetime.datetime.now().strftime("%Y%m%d_%H%M%S"),
                     'version': '1.0'
                 },
-                'player': {
-                    'inventory': [item.name for item in game.player.inventory],
-                    'current_room': current_room_id,
-                    'visited_rooms': list(game.player.state.visited_rooms)
-                },
-                'world': {
-                    'current_world': game.current_world.name if game.current_world else None,
-                    'room_states': {
-                        room_id: {
-                            'items': [item.name for item in room.items]
-                        }
-                        for room_id, room in game.current_world.rooms.items()
-                    } if game.current_world else {}
-                },
-                'puzzles': {
-                    puzzle_id: {
-                        'completed': puzzle.completed,
-                        'completed_groups': list(getattr(puzzle, '_completed_groups', set()))
-                    }
-                    for puzzle_id, puzzle in game.current_world.puzzles.items()
-                } if game.current_world else {},
-                'progression': {
-                    'world_progress': game.game_state.progression.world_progress
-                }
+                'game_state': game.game_state.serialize(),  # Serialize game state
+                'player_state': game.player.serialize(),  # Serialize player state
+                'world_state': game.current_world.serialize() if game.current_world else None,  # Serialize world
             }
 
             # Generate filename and save
@@ -117,79 +88,37 @@ def save_game_state(session_id, save_name=None):
         logger.error(traceback.format_exc())
         return False
 
-def load_game_state(session_id, save_name=None):
-    """Load game state from file"""
+def load_game_state(session_id, save_name):
+    """Load game state from file and initialize a new Game instance."""
     try:
         saves_dir = Path('saves')
         
-        # Find latest save file for session/name
-        pattern = f"{save_name or session_id}_*.save"
+        # Find specified save file
+        pattern = f"{save_name}_*.save"
         save_files = list(saves_dir.glob(pattern))
         if not save_files:
-            return False
+            return None
 
         save_path = max(save_files, key=lambda p: p.stat().st_mtime)
-        
+
         with open(save_path, 'rb') as f:
             state = pickle.load(f)
 
         # Create and setup new game
         game = Game()
-        game.setup()
-
-        if state['world']['current_world']:
-            # Restore world
-            game.current_world = game.worlds.get(state['world']['current_world'])
-            if game.current_world:
-                game.current_world.initialize(game.game_state)
-
-                # Restore inventory
-                for item_name in state['player'].get('inventory', []):
-                    for world_item in game.current_world.items.values():
-                        if world_item.name == item_name:
-                            game.player.inventory.add(world_item)
-
-                # Restore room states
-                for room_id, room_state in state['world']['room_states'].items():
-                    if room_id in game.current_world.rooms:
-                        room = game.current_world.rooms[room_id]
-                        room.items.clear()
-                        for item_name in room_state['items']:
-                            for world_item in game.current_world.items.values():
-                                if world_item.name == item_name:
-                                    room.items.add(world_item)
-
-                # Restore current room
-                room_id = state['player']['current_room']
-                if room_id in game.current_world.rooms:
-                    game.player.current_room = game.current_world.rooms[room_id]
-                    game.player.state.current_room_id = room_id
-                    game.player.state.current_world_id = state['world']['current_world']
-
-                # Restore visited rooms
-                game.player.state.visited_rooms = set(state['player'].get('visited_rooms', []))
-
-                # Restore puzzles
-                for puzzle_id, puzzle_state in state.get('puzzles', {}).items():
-                    if puzzle_id in game.current_world.puzzles:
-                        puzzle = game.current_world.puzzles[puzzle_id]
-                        puzzle.completed = puzzle_state.get('completed', False)
-                        if hasattr(puzzle, '_completed_groups'):
-                            puzzle._completed_groups = set(puzzle_state.get('completed_groups', []))
-                        puzzle.game = game
-
-                # Restore progression
-                if 'progression' in state:
-                    game.game_state.progression.world_progress = state['progression']['world_progress']
+        game.deserialize(state)
+        game.game_state.deserialize(state['game_state'])
+        game.player.deserialize(state['player_state'])
+        game.current_world.deserialize(state['world_state'])
 
         games[session_id] = game
-        return True
+        return game
 
     except Exception as e:
         logger.error(f"Error loading game state: {str(e)}")
         logger.error(traceback.format_exc())
-        return False
-
+        return None
+    
 @app.route('/')
 def home():
     """Render the game interface"""
@@ -197,33 +126,24 @@ def home():
 
 @app.route('/init_game', methods=['POST'])
 def init_game():
-    """Initialize or restore game session"""
+    """Initialize a new game session."""
     try:
         client_id = get_client_id()
         session_id = f"session_{client_id}"
-        output_queue = queue.Queue()
         
-        game_exists = load_game_state(session_id)
-        if not game_exists:
-            try:
-                game = Game()
-                games[session_id] = game
-                game.setup()
-            except ValueError as e:
-                return jsonify({
-                    'error': str(e),
-                    'output': f"Error initializing game: {str(e)}\nPlease contact the administrator."
-                }), 500
+        # Only create a new game if one doesn't already exist for the session
+        if session_id not in games:
+            game = Game()
+            games[session_id] = game
         else:
-            game = games[session_id]
+            game = games[session_id] # Get the existing game instance
 
+        output_queue = queue.Queue()
         output_queues[session_id] = output_queue
         flush_output, restore_stdout = capture_output(output_queue)
 
         try:
-            if not game_exists:
-                game.intro()
-            game.command_processor.look()
+            game.intro()
             flush_output()
         finally:
             restore_stdout()
@@ -231,8 +151,6 @@ def init_game():
         output = ""
         while not output_queue.empty():
             output += output_queue.get()
-
-        save_game_state(session_id)
 
         return jsonify({
             'sessionId': session_id,
@@ -249,24 +167,23 @@ def init_game():
     
 @app.route('/command', methods=['POST'])
 def process_command():
-    """Process game commands"""
+    """Process game commands."""
     try:
         data = request.get_json()
         session_id = data.get('sessionId')
         command = data.get('command', '').strip()
 
         if not session_id or session_id not in games:
-            return jsonify({'error': 'Session expired', 'output': 'Game session expired.'}), 404
+            return jsonify({'error': 'Session expired', 'output': 'Game session expired or not initialized.'}), 404
 
-        game = games[session_id]
+        game = games[session_id]  # Retrieve the game instance
         output_queue = output_queues[session_id]
         flush_output, restore_stdout = capture_output(output_queue)
 
         output = ""
 
         try:
-            # Remove special state handling from here
-            # Let the CommandProcessor do this
+            # Let the command processor handle all commands
             game.command_processor.process_command(command)
             flush_output()
 
