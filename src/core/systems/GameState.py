@@ -8,7 +8,6 @@ import logging
 from core.systems.ProgressionSystem import ProgressionSystem
 from typing import Tuple
 
-
 logger = logging.getLogger(__name__)
 
 class GameState:
@@ -26,7 +25,11 @@ class GameState:
         }
 
     def save_game(self, save_name: str) -> bool:
-        """Save game state with custom name."""
+        """
+        Save game state with custom name.  
+        This now stores the player's current room ID in normalized form
+        so it matches the keys in current_world.rooms exactly.
+        """
         try:
             game = self.game
             saves_dir = self.saves_directory
@@ -34,12 +37,12 @@ class GameState:
 
             timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
 
-            # Get current room ID
+            # Find the normalized key for the player's current room
             current_room_id = None
             if game.current_world and game.player.current_room:
-                for room_id, room in game.current_world.rooms.items():
-                    if room == game.player.current_room:
-                        current_room_id = room_id
+                for r_id, r_obj in game.current_world.rooms.items():
+                    if r_obj == game.player.current_room:
+                        current_room_id = r_id
                         break
 
             # Build save state
@@ -51,7 +54,7 @@ class GameState:
                 },
                 'player': {
                     'inventory': [item.name for item in game.player.inventory],
-                    'current_room': current_room_id,
+                    'current_room': current_room_id,  # This is now the normalized ID
                     'visited_rooms': list(game.player.state.visited_rooms)
                 },
                 'world': {
@@ -78,7 +81,7 @@ class GameState:
             # Save to file
             filename = f"{save_name}_{timestamp}.save"
             save_path = saves_dir / filename
-            
+
             with open(save_path, 'wb') as f:
                 pickle.dump(state, f)
 
@@ -91,7 +94,11 @@ class GameState:
             return False
 
     def load_game(self, save_name: str) -> bool:
-        """Load game state from a named save."""
+        """
+        Load game state from a named save.  
+        Now also normalizes the saved room ID to avoid None-type current_room.
+        If the normalized room is not found, fallback to the world's starting room.
+        """
         try:
             # Find the most recent save file with this name
             save_files = list(self.saves_directory.glob(f"{save_name}_*.save"))
@@ -101,7 +108,7 @@ class GameState:
 
             # Get most recent save for this name
             save_path = max(save_files, key=lambda p: p.stat().st_mtime)
-            
+
             with open(save_path, 'rb') as f:
                 state = pickle.load(f)
 
@@ -110,57 +117,79 @@ class GameState:
                 logger.warning("Invalid save data structure")
                 return False
 
-            # Restore game state
+            # Reset to initial state
             game = self.game
-            game.setup()  # Reset to initial state
+            game.setup()  # This sets up worlds, etc.
 
             # Restore world
             if state['world']['current_world']:
-                game.current_world = game.worlds.get(state['world']['current_world'])
-                if game.current_world:
+                # Find the matching loaded world name
+                world_name = state['world']['current_world']
+                if world_name in game.worlds:
+                    game.current_world = game.worlds[world_name]
                     game.current_world.initialize(self)
+                else:
+                    logger.warning(f"World '{world_name}' not found among loaded worlds.")
+                    return False
 
-                    # Restore inventory
-                    game.player.inventory.clear()
-                    for item_name in state['player']['inventory']:
-                        for world_item in game.current_world.items.values():
-                            if world_item.name == item_name:
-                                game.player.inventory.add(world_item)
-                                break
+                # Restore inventory
+                game.player.inventory.clear()
+                for item_name in state['player']['inventory']:
+                    for world_item in game.current_world.items.values():
+                        if world_item.name == item_name:
+                            game.player.inventory.add(world_item)
+                            break
 
-                    # Restore room state
-                    for room_id, room_state in state['world']['room_states'].items():
-                        if room_id in game.current_world.rooms:
-                            room = game.current_world.rooms[room_id]
-                            room.items.clear()
-                            for item_name in room_state['items']:
-                                for world_item in game.current_world.items.values():
-                                    if world_item.name == item_name:
-                                        room.items.add(world_item)
-                                        break
-
-                    # Restore current room
-                    room_id = state['player']['current_room']
+                # Restore room items
+                for room_id, room_state in state['world']['room_states'].items():
                     if room_id in game.current_world.rooms:
-                        game.player.current_room = game.current_world.rooms[room_id]
-                        game.player.state.current_room_id = room_id
-                        game.player.state.current_world_id = state['world']['current_world']
+                        room = game.current_world.rooms[room_id]
+                        room.items.clear()
+                        for item_name in room_state['items']:
+                            for world_item in game.current_world.items.values():
+                                if world_item.name == item_name:
+                                    room.items.add(world_item)
+                                    break
 
-                    # Restore visited rooms
-                    game.player.state.visited_rooms = set(state['player'].get('visited_rooms', []))
+                # Restore current room (normalize if needed)
+                saved_room_id = state['player']['current_room']
 
-                    # Restore puzzles
-                    for puzzle_id, puzzle_state in state.get('puzzles', {}).items():
-                        if puzzle_id in game.current_world.puzzles:
-                            puzzle = game.current_world.puzzles[puzzle_id]
-                            puzzle.completed = puzzle_state.get('completed', False)
-                            if hasattr(puzzle, '_completed_groups'):
-                                puzzle._completed_groups = set(puzzle_state.get('completed_groups', []))
-                            puzzle.game = game
+                if saved_room_id is not None:
+                    # Attempt to see if it matches as-is
+                    if saved_room_id not in game.current_world.rooms:
+                        # If not, try the world's own normalization
+                        normalized_id = game.current_world._normalize_room_id(saved_room_id)
+                        if normalized_id in game.current_world.rooms:
+                            saved_room_id = normalized_id
+                        else:
+                            # Fallback: use starting room
+                            logger.warning(f"Room '{saved_room_id}' not found. Falling back to starting room.")
+                            start_rm = game.current_world.get_starting_room()
+                            game.player.current_room = start_rm
+                            if start_rm is not None:
+                                # We'll store the new ID to keep the player's state consistent
+                                for r_id, r_obj in game.current_world.rooms.items():
+                                    if r_obj == start_rm:
+                                        game.player.state.current_room_id = r_id
+                                        break
+                            game.player.state.current_world_id = game.current_world.name
+                            game.player.state.visited_rooms = set(state['player'].get('visited_rooms', []))
+                            # Done with fallback
+                            self._restore_puzzles(state)
+                            # Successfully loaded with fallback:
+                            logger.info(f"Game loaded successfully from '{save_name}' with fallback room.")
+                            return True
 
-                    # Restore progression
-                    if 'progression' in state:
-                        self.progression.world_progress = state['progression']['world_progress']
+                    # If still valid, set player's room on success
+                    game.player.current_room = game.current_world.rooms[saved_room_id]
+                    game.player.state.current_room_id = saved_room_id
+                    game.player.state.current_world_id = state['world']['current_world']
+
+                # Restore visited rooms
+                game.player.state.visited_rooms = set(state['player'].get('visited_rooms', []))
+
+                # Restore puzzle states
+                self._restore_puzzles(state)
 
             logger.info(f"Game loaded successfully from '{save_name}'")
             return True
@@ -184,7 +213,7 @@ class GameState:
                     })
             except Exception:
                 continue
-        
+
         # Sort by timestamp, newest first
         return sorted(saves, key=lambda x: x['timestamp'], reverse=True)
 
@@ -211,20 +240,20 @@ class GameState:
         except Exception as e:
             logger.error(f"Error deleting save '{save_name}': {str(e)}")
             return False
-        
+
     def delete_game_save(self, save_number: int) -> Tuple[bool, str]:
         """Delete a save game by its number in the list."""
         try:
             saves = self.list_saves()
             if not saves:
                 return False, "No saves found."
-                
+
             if not (1 <= save_number <= len(saves)):
                 return False, "Invalid save number."
-                
+
             save_to_delete = saves[save_number - 1]
             save_path = self.saves_directory / save_to_delete['filename']
-            
+
             try:
                 save_path.unlink()  # Delete the file
                 return True, f"Deleted save: {save_to_delete['name']}"
@@ -237,3 +266,21 @@ class GameState:
         except Exception as e:
             logger.error(f"Error in delete_game_save: {str(e)}")
             return False, "Error processing delete command."
+
+    def _restore_puzzles(self, state: Dict[str, Any]) -> None:
+        """Restore puzzle states from the save data."""
+        # Restore puzzle completion
+        if 'puzzles' not in state:
+            return
+        for puzzle_id, puzzle_state in state['puzzles'].items():
+            if puzzle_id in self.game.current_world.puzzles:
+                puzzle = self.game.current_world.puzzles[puzzle_id]
+                puzzle.completed = puzzle_state.get('completed', False)
+                if hasattr(puzzle, '_completed_groups'):
+                    puzzle._completed_groups = set(puzzle_state.get('completed_groups', []))
+                puzzle.game = self.game
+
+        # Restore progression
+        if 'progression' in state:
+            self.progression.world_progress = state['progression']['world_progress']
+            # If there's anything else needed for progression, do it here
