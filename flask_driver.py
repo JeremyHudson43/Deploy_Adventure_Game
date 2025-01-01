@@ -253,50 +253,45 @@ def process_command():
     try:
         data = request.get_json()
         session_id = data.get('sessionId')
-        command = data.get('command', '').strip().lower()  # Normalize the command input
+        command = data.get('command', '').strip()
 
         if not session_id or session_id not in games:
-            return jsonify({
-                'error': 'Session expired',
-                'output': 'Game session expired. Please refresh the page.'
-            }), 404
+            return jsonify({'error': 'Session expired', 'output': 'Game session expired.'}), 404
 
         game = games[session_id]
         output_queue = output_queues[session_id]
         flush_output, restore_stdout = capture_output(output_queue)
 
-        output = ""  # Ensure output is initialized
+        output = ""
 
         try:
-            # Handle multi-step commands like save/load/delete
-            if game.command_processor.awaiting_load_choice:
+            if game.awaiting_load_choice:
                 try:
+                    # Process the load choice
                     choice = int(command)
                     saves = game.game_state.list_saves()
                     if 1 <= choice <= len(saves):
                         save_name = saves[choice - 1]['name']
                         if game.game_state.load_game(save_name):
-                            output = f"Loaded save game '{save_name}'."
-                            game.command_processor.look()  # Display current room
+                            output += f'Loaded save game "{save_name}".\n'
+                            game.command_processor.look()  # Refresh the room state
                         else:
-                            output = "Failed to load the selected save game."
+                            output += "Failed to load save game.\n"
                     else:
-                        output = "Invalid save number."
+                        output += "Invalid save number.\n"
                 except ValueError:
-                    output = "Please enter a valid number."
+                    output += "Please enter a valid number.\n"
                 finally:
-                    game.command_processor.awaiting_load_choice = False
+                    game.awaiting_load_choice = False  # Clear the flag after processing
             else:
-                # Standard command processing
-                if command == "save game":
-                    save_success = save_game_state(session_id)
-                else:
-                    game.command_processor.process_command(command)
-                    flush_output()
+                # Process other commands
+                game.command_processor.process_command(command)
+                flush_output()
 
-            # Capture game output
+            # Capture any additional output
             while not output_queue.empty():
                 output += output_queue.get()
+
         finally:
             restore_stdout()
 
