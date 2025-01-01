@@ -42,8 +42,10 @@ class Game:
     def deserialize(self, data):
         self.is_running = data.get('is_running', True)  # Default to True if not found
         self.load_all_worlds()
-        if data['current_world']:
-            self.current_world = self.worlds[data['current_world']]
+        current_world_name = data.get('current_world')
+        if current_world_name and current_world_name in self.worlds:
+            self.current_world = self.worlds[current_world_name]
+            self.current_world.initialize(self.game_state)
             
     def setup(self):
         """Initialize game state and starting location."""
