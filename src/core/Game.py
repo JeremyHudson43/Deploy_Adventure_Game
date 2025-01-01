@@ -53,9 +53,6 @@ class Game:
     def setup(self):
         """Initialize game state and starting location."""
         self.current_world = self.worlds.get("Intro World")
-        if not self.current_world:
-            self.display.print_simple_message("Warning: Could not find the Intro World. Please check your game files.")
-            exit()
             
         # Initialize the current world with game state
         self.current_world.initialize(self.game_state)
