@@ -246,7 +246,7 @@ def init_game():
             'error': str(e),
             'output': f"Error initializing game: {str(e)}\nPlease contact the administrator."
         }), 500
-
+    
 @app.route('/command', methods=['POST'])
 def process_command():
     """Process game commands"""
@@ -283,6 +283,14 @@ def process_command():
                     output += "Please enter a valid number.\n"
                 finally:
                     game.awaiting_load_choice = False  # Clear the flag after processing
+            elif game.awaiting_save_name:
+                # Handle save name input
+                success = game.game_state.save_game(command)
+                if success:
+                    output += f'Game saved as "{command}".\n'
+                else:
+                    output += "Failed to save game.\n"
+                game.awaiting_save_name = False  # Clear the flag
             else:
                 # Process other commands
                 game.command_processor.process_command(command)
@@ -304,7 +312,6 @@ def process_command():
             'error': str(e),
             'output': "An error occurred while processing the command. Please try again."
         }), 500
-
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=int(os.getenv("PORT", 8080)))
