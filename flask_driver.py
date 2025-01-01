@@ -290,7 +290,6 @@ def process_command():
                 # Standard command processing
                 if command == "save game":
                     save_success = save_game_state(session_id)
-                    output = "Game saved successfully!" if save_success else "Failed to save the game."
                 else:
                     game.command_processor.process_command(command)
                     flush_output()
