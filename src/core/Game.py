@@ -52,18 +52,28 @@ class Game:
             
     def setup(self):
         """Initialize game state and starting location."""
+        # Load all worlds if not already loaded
+        if not self.worlds:
+            self.load_all_worlds()
+        
+        # Try to get Intro World
         self.current_world = self.worlds.get("Intro World")
-            
-        # Initialize the current world with game state
+        if not self.current_world:
+            # If Intro World not found, try to use any available world
+            if self.worlds:
+                self.current_world = next(iter(self.worlds.values()))
+            else:
+                raise ValueError("No game worlds could be loaded. Please check your game files.")
+                
+        # Initialize the current world
         self.current_world.initialize(self.game_state)
             
+        # Get starting room
         starting_room = self.current_world.get_starting_room()
-        if starting_room:
-            self.player.move_to(starting_room)
-        else:
-            self.display.print_simple_message("Warning: Could not find a starting room. Please check your game files.")
-            exit()
+        if not starting_room:
+            raise ValueError(f"No starting room found in {self.current_world.name}. Please check world configuration.")
             
+        self.player.move_to(starting_room)
         self.intro()
         self.command_processor.look()
 

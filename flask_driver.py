@@ -205,9 +205,15 @@ def init_game():
         
         game_exists = load_game_state(session_id)
         if not game_exists:
-            game = Game()
-            games[session_id] = game
-            game.setup()
+            try:
+                game = Game()
+                games[session_id] = game
+                game.setup()
+            except ValueError as e:
+                return jsonify({
+                    'error': str(e),
+                    'output': f"Error initializing game: {str(e)}\nPlease contact the administrator."
+                }), 500
         else:
             game = games[session_id]
 
@@ -235,7 +241,11 @@ def init_game():
 
     except Exception as e:
         logger.error(f"Error in init_game: {str(e)}")
-        return jsonify({'error': str(e)}), 500
+        logger.error(traceback.format_exc())
+        return jsonify({
+            'error': str(e),
+            'output': f"Error initializing game: {str(e)}\nPlease contact the administrator."
+        }), 500
 
 @app.route('/command', methods=['POST'])
 def process_command():
