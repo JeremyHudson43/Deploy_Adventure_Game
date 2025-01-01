@@ -130,20 +130,19 @@ def init_game():
     try:
         client_id = get_client_id()
         session_id = f"session_{client_id}"
-        
-        # Only create a new game if one doesn't already exist for the session
-        if session_id not in games:
-            game = Game()
-            games[session_id] = game
-        else:
-            game = games[session_id] # Get the existing game instance
-
         output_queue = queue.Queue()
+
+        # Always create a new game instance
+        game = Game()
+        games[session_id] = game
+        game.setup()  # Initialize the world, player's start location, etc
+
         output_queues[session_id] = output_queue
         flush_output, restore_stdout = capture_output(output_queue)
 
         try:
             game.intro()
+            game.command_processor.look() # Now safe to call after setup()
             flush_output()
         finally:
             restore_stdout()
@@ -183,8 +182,53 @@ def process_command():
         output = ""
 
         try:
-            # Let the command processor handle all commands
-            game.command_processor.process_command(command)
+            # Check if the command is to load a game
+            if command.lower() == "load game":
+                game.command_processor.handle_load_game()
+                # game.command_processor.look() # Removed, because we don't want to look immediately after typing load game
+            elif game.command_processor.awaiting_load_choice:
+                try:
+                    choice = int(command)
+                    saves = game.game_state.list_saves()
+                    if 1 <= choice <= len(saves):
+                        save_name = saves[choice - 1]['name']
+                        game = load_game_state(session_id, save_name)
+                        if game:
+                            # If a game was loaded, set the game and output_queue in the globals
+                            games[session_id] = game
+                            output_queues[session_id] = queue.Queue()
+
+                            flush_output, restore_stdout = capture_output(output_queues[session_id])
+                            try:
+                                game.command_processor.look()
+                                flush_output()
+                            finally:
+                                restore_stdout()
+
+                            output = f'Loaded save game "{save_name}".\n'
+                            while not output_queues[session_id].empty():
+                                output += output_queues[session_id].get()
+                        else:
+                            output = "Failed to load save game.\n"
+                    else:
+                        output = "Invalid save number.\n"
+                except ValueError:
+                    output = "Please enter a valid number.\n"
+                finally:
+                    game.command_processor.awaiting_load_choice = False
+            
+            elif game.command_processor.awaiting_save_name:
+                # Handle save name input
+                success = save_game_state(session_id, command)
+                if success:
+                    output += f'Game saved as "{command}".\n'
+                else:
+                    output += "Failed to save game.\n"
+                game.command_processor.awaiting_save_name = False  # Clear the flag
+            else:
+                # Process other commands using the command processor
+                game.command_processor.process_command(command)
+            
             flush_output()
 
             # Capture any additional output
