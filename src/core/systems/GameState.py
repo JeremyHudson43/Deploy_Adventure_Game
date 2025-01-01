@@ -209,3 +209,29 @@ class GameState:
         except Exception as e:
             logger.error(f"Error deleting save '{save_name}': {str(e)}")
             return False
+        
+    def delete_game_save(self, save_number: int) -> Tuple[bool, str]:
+        """Delete a save game by its number in the list."""
+        try:
+            saves = self.list_saves()
+            if not saves:
+                return False, "No saves found."
+                
+            if not (1 <= save_number <= len(saves)):
+                return False, "Invalid save number."
+                
+            save_to_delete = saves[save_number - 1]
+            save_path = self.saves_directory / save_to_delete['filename']
+            
+            try:
+                save_path.unlink()  # Delete the file
+                return True, f"Deleted save: {save_to_delete['name']}"
+            except FileNotFoundError:
+                return False, "Save file not found."
+            except Exception as e:
+                logger.error(f"Error deleting save file: {str(e)}")
+                return False, "Error deleting save file."
+
+        except Exception as e:
+            logger.error(f"Error in delete_game_save: {str(e)}")
+            return False, "Error processing delete command."
