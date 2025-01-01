@@ -40,7 +40,7 @@ class Game:
         }
 
     def deserialize(self, data):
-        self.is_running = data['is_running']
+        self.is_running = data.get('is_running', True)  # Default to True if not found
         self.load_all_worlds()
         if data['current_world']:
             self.current_world = self.worlds[data['current_world']]
