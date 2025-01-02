@@ -106,21 +106,25 @@ def load_game_state(session_id, save_name):
 
         # Create and setup new game
         game = Game()
-        game.game_state.progression.world_progress = state['game_state']['world_progress']
-        game.player.deserialize(state['player_state'])
-        game.deserialize(state)  # Load is_running and worlds
-
-        # Set the current world
-        current_world_name = state['world_state']['name']
-        if current_world_name in game.worlds:
-            game.current_world = game.worlds[current_world_name]
-            game.current_world.initialize(game.game_state)
+        game.setup()  # Initialize the game first
         
-            # Restore current room
-            room_id = state['player_state']['current_room_id']
-            if room_id in game.current_world.rooms:
-                game.player.current_room = game.current_world.rooms[room_id]
-                game.player.state.current_room_id = room_id
+        # Now load the saved state
+        if 'game_state' in state:
+            game.game_state.progression.world_progress = state['game_state'].get('world_progress', {})
+        
+        if 'player_state' in state:
+            game.player.deserialize(state['player_state'])
+            
+            # Get the world name and initialize it
+            world_name = state['player_state'].get('current_world_id')
+            if world_name and world_name in game.worlds:
+                game.current_world = game.worlds[world_name]
+                game.current_world.initialize(game.game_state)
+                
+                # Set the current room
+                room_id = state['player_state'].get('current_room_id')
+                if room_id and room_id in game.current_world.rooms:
+                    game.player.current_room = game.current_world.rooms[room_id]
 
         games[session_id] = game
         return game

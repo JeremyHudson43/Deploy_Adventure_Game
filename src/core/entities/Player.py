@@ -74,13 +74,19 @@ class Player:
             'attributes': self.state.attributes
         }
 
-    def deserialize(self, data: dict) -> None:
-        """Restore player state from serialized data"""
-        self.state = PlayerState(
-            inventory=Bag([Item(name) for name in data['inventory']]),
-            visited_rooms=set(data['visited_rooms']),
-            current_room_id=data['current_room_id'],
-            current_world_id=data['current_world_id'],
-            discovered_commands=set(data['discovered_commands']),
-            attributes=data['attributes']
-        )
+    def deserialize(self, data):
+        """Restore player state from serialized data."""
+        try:
+            # Create new state with provided data
+            self.state = PlayerState(
+                inventory=Bag([Item(name) for name in data.get('inventory', [])]),
+                visited_rooms=set(data.get('visited_rooms', [])),
+                current_room_id=data.get('current_room_id'),
+                current_world_id=data.get('current_world_id'),
+                discovered_commands=set(data.get('discovered_commands', [])),
+                attributes=data.get('attributes', {})
+            )
+            return True
+        except Exception as e:
+            logger.error(f"Error deserializing player state: {str(e)}")
+            return False

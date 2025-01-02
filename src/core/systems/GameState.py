@@ -23,6 +23,16 @@ class GameState:
             'world_progress': self.world_progress,
             'saves_directory': str(self.saves_directory)
         }
+    
+    def deserialize(self, data):
+        """Load game state from serialized data."""
+        try:
+            self.world_progress = data.get('world_progress', {})
+            # Add any additional state restoration here
+            return True
+        except Exception as e:
+            logger.error(f"Error deserializing game state: {str(e)}")
+            return False
 
     def save_game(self, save_name: str) -> bool:
         """
