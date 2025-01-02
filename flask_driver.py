@@ -55,6 +55,8 @@ def capture_output(output_queue):
 
     return flush_output, restore_stdout
 
+# In flask_driver.py
+
 def save_game_state(session_id, save_name=None):
     """Save game state to file"""
     try:
@@ -63,6 +65,17 @@ def save_game_state(session_id, save_name=None):
             saves_dir = Path('saves')
             saves_dir.mkdir(exist_ok=True)
 
+            # Get current room and world info
+            current_room = None
+            current_world = None
+            if game.player.current_room:
+                # Find the room's ID by searching through current world's rooms
+                for room_id, room in game.current_world.rooms.items():
+                    if room == game.player.current_room:
+                        current_room = room_id
+                        break
+                current_world = game.current_world.name
+
             # Build state object
             state = {
                 'metadata': {
@@ -70,9 +83,28 @@ def save_game_state(session_id, save_name=None):
                     'timestamp': datetime.datetime.now().strftime("%Y%m%d_%H%M%S"),
                     'version': '1.0'
                 },
-                'game_state': game.game_state.serialize(),  # Serialize game state
-                'player_state': game.player.serialize(),  # Serialize player state
-                'world_state': game.current_world.serialize() if game.current_world else None,  # Serialize world
+                'game_state': {
+                    'world_progress': game.game_state.progression.world_progress,
+                    'current_world': current_world,
+                    'current_room': current_room
+                },
+                'player_state': {
+                    'inventory': [item.name for item in game.player.inventory],
+                    'visited_rooms': list(game.player.state.visited_rooms),
+                    'current_room_id': current_room,
+                    'current_world_id': current_world,
+                    'discovered_commands': list(game.player.state.discovered_commands),
+                    'attributes': game.player.state.attributes
+                },
+                'world_state': {
+                    'rooms': {
+                        room_id: {
+                            'items': [item.name for item in room.items],
+                            'npcs': [npc.name for npc in getattr(room, 'npcs', [])]
+                        }
+                        for room_id, room in game.current_world.rooms.items()
+                    }
+                }
             }
 
             # Generate filename and save
@@ -107,24 +139,53 @@ def load_game_state(session_id, save_name):
         # Create and setup new game
         game = Game()
         game.setup()  # Initialize the game first
-        
-        # Now load the saved state
+
+        # Load game state
         if 'game_state' in state:
-            game.game_state.progression.world_progress = state['game_state'].get('world_progress', {})
-        
-        if 'player_state' in state:
-            game.player.deserialize(state['player_state'])
+            game.game_state.progression.world_progress = state['game_state']['world_progress']
             
-            # Get the world name and initialize it
-            world_name = state['player_state'].get('current_world_id')
-            if world_name and world_name in game.worlds:
+            # Set current world
+            world_name = state['game_state']['current_world']
+            if world_name in game.worlds:
                 game.current_world = game.worlds[world_name]
                 game.current_world.initialize(game.game_state)
-                
-                # Set the current room
-                room_id = state['player_state'].get('current_room_id')
-                if room_id and room_id in game.current_world.rooms:
-                    game.player.current_room = game.current_world.rooms[room_id]
+
+        # Load player state
+        if 'player_state' in state:
+            # Load inventory
+            game.player.inventory.clear()
+            for item_name in state['player_state']['inventory']:
+                # Find matching item in current world's items
+                for world_item in game.current_world.items.values():
+                    if world_item.name == item_name:
+                        game.player.inventory.add(world_item)
+                        break
+
+            # Load other player state
+            game.player.state.visited_rooms = set(state['player_state']['visited_rooms'])
+            game.player.state.discovered_commands = set(state['player_state']['discovered_commands'])
+            game.player.state.attributes = state['player_state']['attributes']
+            
+            # Set current room
+            current_room_id = state['player_state']['current_room_id']
+            if current_room_id and current_room_id in game.current_world.rooms:
+                game.player.current_room = game.current_world.rooms[current_room_id]
+                game.player.state.current_room_id = current_room_id
+                game.player.state.current_world_id = state['player_state']['current_world_id']
+
+        # Load world state (room contents)
+        if 'world_state' in state and 'rooms' in state['world_state']:
+            for room_id, room_data in state['world_state']['rooms'].items():
+                if room_id in game.current_world.rooms:
+                    room = game.current_world.rooms[room_id]
+                    
+                    # Restore items
+                    room.items.clear()
+                    for item_name in room_data['items']:
+                        for world_item in game.current_world.items.values():
+                            if world_item.name == item_name:
+                                room.items.add(world_item)
+                                break
 
         games[session_id] = game
         return game
