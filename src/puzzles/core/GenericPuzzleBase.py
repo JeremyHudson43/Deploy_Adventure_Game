@@ -7,237 +7,73 @@ class GenericPuzzleBase(BasePuzzle):
     
     # Theme-specific messages based on room keywords
     THEMED_MESSAGES = {
-        # Air/Wind themes
-        "airbending": {
-            "verb": [
-                "The winds stir at your command... but seek a proper focus.",
-                "Air responds to your motion... but needs direction.",
-                "Your technique disturbs the breeze... though it wants a target.",
-                "The currents acknowledge your gesture... but require purpose.",
-                "You shape the air with skill... yet it yearns for more."
-            ],
-            "noun": [
-                "The air swirls around this... awaiting the proper technique.",
-                "Breezes gather here... but need guidance.",
-                "The winds recognize this... though your approach is wrong.",
-                "Air currents dance about this focus... but how to direct them?",
-                "This draws the attention of the breeze... but requires mastery."
-            ]
+        # ELEMENTAL CONFLUX
+        "level_one": {  # Air level
+            "verb": "That's a known airbending technique... but you need something to use it on.",
+            "noun": "That's something you could airbend... but you need the right technique."
         },
-        # Storm/Thunder themes
-        "storm": {
-            "verb": [
-                "Thunder acknowledges your action... but lacks focus.",
-                "Lightning crackles at your command... yet seeks a target.",
-                "The storm responds to your call... though incompletely.",
-                "Your gesture carries electric potential... but needs direction.",
-                "The tempest recognizes your method... awaiting its purpose."
-            ],
-            "noun": [
-                "Storm energies gather here... but need proper direction.",
-                "Lightning dances around this... seeking proper guidance.",
-                "Thunder rumbles in recognition... but your approach is wrong.",
-                "The tempest stirs at this... though requires different action.",
-                "This calls to the storm... but demands proper technique."
-            ]
+        "level_two": {  # Earth level
+            "verb": "That's a way to manipulate earth... but you need something to target.",
+            "noun": "That's something you could manipulate... but you need an earthbending technique."
         },
-        # Fire/Flame themes
-        "flame": {
-            "verb": [
-                "The flames flicker at your command... but lack focus.",
-                "Fire responds to your gesture... yet seeks its target.",
-                "Embers dance at your action... though need direction.",
-                "Your technique carries heat... but requires purpose.",
-                "The fire acknowledges your way... awaiting proper focus."
-            ],
-            "noun": [
-                "Heat gathers around this... but needs proper guidance.",
-                "The flames dance about this... seeking true command.",
-                "Fire stirs in recognition... though your approach falters.",
-                "This resonates with burning potential... but requires mastery.",
-                "The embers acknowledge this... yet await proper action."
-            ]
+        "level_three": {  # Fire level
+            "verb": "That's a firebending move... but you need something to direct it at.",
+            "noun": "That's something you could bend fire with... but you need the right technique."
         },
-        # Water/Ocean themes
-        "water": {
-            "verb": [
-                "The waters stir at your command... but seek direction.",
-                "Waves respond to your motion... yet need focus.",
-                "Your technique ripples outward... though incompletely.",
-                "The currents acknowledge your gesture... but want purpose.",
-                "You shape the waters with promise... awaiting true focus."
-            ],
-            "noun": [
-                "The waters gather here... but need proper guidance.",
-                "Waves circle around this... seeking true command.",
-                "The currents recognize this... though your approach wavers.",
-                "This draws the tide's attention... but requires mastery.",
-                "Water dances about this focus... yet awaits proper action."
-            ]
+        "level_four": {  # Water level
+            "verb": "That's a waterbending form... but you need something to flow through.",
+            "noun": "That's something you could bend water around... but you need the right form."
         },
-        # Music/Sound themes
-        "music": {
-            "verb": [
-                "The melody stirs at your action... but seeks harmony.",
-                "Rhythms respond to your gesture... yet need focus.",
-                "Your technique carries a tune... though incomplete.",
-                "The music acknowledges your way... but wants direction.",
-                "You shape the song with promise... awaiting true purpose."
-            ],
-            "noun": [
-                "Harmonies gather here... but need proper guidance.",
-                "The melody circles this... seeking true command.",
-                "Music stirs in recognition... though your approach falters.",
-                "This resonates with potential... but requires mastery.",
-                "Notes dance about this focus... yet await proper action."
-            ]
+        "level_five": {  # Spirit level
+            "verb": "That's a spiritual technique... but you need something to focus it on.",
+            "noun": "That's something with spiritual energy... but you need the right technique."
         },
-        # Spirit/Ethereal themes
-        "spirit": {
-            "verb": [
-                "Ethereal energies acknowledge your action... but seek focus.",
-                "The spirits stir at your command... yet need direction.",
-                "Your technique touches the veil... though incompletely.",
-                "Mystic forces respond to your gesture... but want purpose.",
-                "You shape ethereal powers with promise... awaiting true focus."
-            ],
-            "noun": [
-                "Spiritual energy gathers here... but needs proper guidance.",
-                "The veil thins around this... seeking true command.",
-                "Mystic forces recognize this... though your approach wavers.",
-                "This draws ethereal attention... but requires mastery.",
-                "Spirit energies circle this focus... yet await proper action."
-            ]
-        },
-        # Default messages if no theme matches
-        "default": {
-            "verb": [
-                "Your action holds power... but its target eludes you.",
-                "The way you move shows promise... but towards what?",
-                "There's wisdom in that action... but it seeks something more.",
-                "Your approach resonates... but lacks proper focus.",
-                "That method pulses with potential... but needs direction."
-            ],
-            "noun": [
-                "Something stirs in response... but requires the right approach.",
-                "You sense importance here... yet the means escape you.",
-                "This draws your attention... but demands different action.",
-                "You're drawn to this... though your approach isn't quite right.",
-                "There's meaning to be found here... but not like that."
-            ]
-        },# [Previous themes remain the same, adding new ones:]
 
-        # Bob Ross/Painting themes
-        "ross": {
-            "verb": [
-                "Your artistic technique has potential... but needs a happier subject.",
-                "That's a happy little action... seeking its canvas.",
-                "Your creative gesture flows... but hasn't found its joy.",
-                "The brush moves with promise... though needs its muse.",
-                "You paint with spirit... but what will you create?"
-            ],
-            "noun": [
-                "A delightful subject... awaiting your artistic touch.",
-                "What a happy little thing... but how will you capture it?",
-                "This could be our little secret... if you knew how to paint it.",
-                "Nature's beauty calls here... but needs the right strokes.",
-                "Such wonderful inspiration... though your technique needs joy."
-            ]
+        # HARMONIC NEXUS
+        "level_one": {  # Alternative Rock level
+            "verb": "That's a proper performance move... but what will you perform with?",
+            "noun": "That's something you could perform with... but you need the right move."
         },
-        # Megamind/Presentation themes
-        "megamind": {
-            "verb": [
-                "PRESENTATION! Good technique... but what's your target?",
-                "Delightfully evil action... though needs proper focus.",
-                "Wonderfully dramatic gesture... but lacks a subject.",
-                "Now that's a super villain move... seeking its moment.",
-                "Your flair is showing... but where will you direct it?"
-            ],
-            "noun": [
-                "Oh, you're a villain alright... but how will you present this?",
-                "Now THAT'S an evil plan... awaiting proper execution.",
-                "Ollo! This has potential... but needs more drama.",
-                "This could be delightfully evil... with the right presentation.",
-                "A proper villain's tool... though your technique lacks PRESENTATION!"
-            ]
+        "level_two": {  # 8-bit level
+            "verb": "That's a good pixel manipulation... but what will you render?",
+            "noun": "Those are some nice sprites... but you need the right manipulation."
         },
-        # Alice in Wonderland/Mad themes
-        "hatter": {
-            "verb": [
-                "A perfectly mad approach... but to what, I wonder?",
-                "Time approves of that action... though needs its tea party.",
-                "Quite the wonderland gesture... seeking its madness.",
-                "How curiouser and curiouser... but what's your target?",
-                "Mad as a hatter, that move... though needs direction."
-            ],
-            "noun": [
-                "Well that's properly mad... but how will you use it?",
-                "Worthy of an unbirthday... if you knew what to do.",
-                "The madness recognizes this... awaiting proper teatime.",
-                "Time himself would approve... if your technique matched.",
-                "Something wonderlandish here... but needs madder methods."
-            ]
+        "level_three": {  # Steampunk level
+            "verb": "That's a proper mechanical action... but what will you adjust?",
+            "noun": "That's a suitable mechanism... but you need the right action."
         },
-        # Chiptune/8-bit themes
-        "bit": {
-            "verb": [
-                "Your input sequence shows promise... but needs proper data.",
-                "That code execution flows... seeking its variable.",
-                "Program function recognized... though lacks parameters.",
-                "Runtime looks good... but requires target address.",
-                "Pixel-perfect action... awaiting data structure."
-            ],
-            "noun": [
-                "Data structure detected... but needs proper algorithms.",
-                "Valid variable found... seeking execution method.",
-                "Memory address recognized... though requires proper input.",
-                "Sprite data located... but needs animation sequence.",
-                "Bitmap identified... awaiting proper rendering."
-            ]
+
+        # WHIMSICAL REALM
+        "level_one": {  # Creative level (Bob Ross, Megamind, etc)
+            "verb": "That's a creative technique... but what will you make?",
+            "noun": "That's something worth creating with... but you need the right technique."
         },
-        # Steampunk themes
-        "clockwork": {
-            "verb": [
-                "Gears whir at your command... but seek their mechanism.",
-                "Steam pressure builds promisingly... though needs its valves.",
-                "The brass responds to your touch... but requires calibration.",
-                "Mechanical precision noted... seeking proper apparatus.",
-                "Your technique has proper torque... awaiting its machinery."
-            ],
-            "noun": [
-                "The mechanisms acknowledge this... but need proper operation.",
-                "Brass and copper resonate here... seeking the right adjustment.",
-                "Steam gathers about this focus... though requires proper pressure.",
-                "Gears align with this purpose... but need precise calibration.",
-                "The machinery recognizes this... awaiting proper technique."
-            ]
+        "level_two": {  # Wonderland level (Mad Hatter, Queen, etc)
+            "verb": "That's properly mad... but what will you do it to?",
+            "noun": "That's curiously perfect... but needs a properly mad action."
         },
-        # Alternative Rock themes
-        "trench": {
-            "verb": [
-                "The underground stirs at your signal... but seeks its echo.",
-                "Your technique carries the rhythm... though needs its voice.",
-                "The shadows dance to your movement... seeking resonance.",
-                "Yellow tape marks your path... but where does it lead?",
-                "The city hears your call... awaiting proper harmony."
-            ],
-            "noun": [
-                "The underground recognizes this... but needs its signal.",
-                "Echoes gather here... seeking proper amplification.",
-                "The city's pulse aligns with this... though needs direction.",
-                "Shadows mark this significance... but require proper movement.",
-                "The rhythm acknowledges this... awaiting your signal."
-            ]
+        "level_three": {  # Childhood level (Toaster, Blanka, etc)
+            "verb": "That's a playful action... but what will you play with?",
+            "noun": "That's something fun to play with... but you need the right action."
+        },
+
+        # Default
+        "default": {
+            "verb": "That action might work... but you need something to use it on.",
+            "noun": "That's something you could use... but you need the right action."
         }
     }
 
     def _get_themed_messages(self, room_id: str) -> Dict:
-        """Get appropriate themed messages based on room name"""
+        """Get appropriate themed messages based on room's level"""
         room_id = room_id.lower()
-        for theme in self.THEMED_MESSAGES:
-            if theme in room_id:
-                return self.THEMED_MESSAGES[theme]
-        return self.THEMED_MESSAGES["default"]
+        
+        # Extract level from room_id (format is typically "level_one/room_name")
+        level = "default"
+        if "/" in room_id:
+            level = room_id.split("/")[0]
+            
+        return self.THEMED_MESSAGES.get(level, self.THEMED_MESSAGES["default"])
 
     def _get_success_message(self, aspect: str) -> str:
         """Get success message for completing an aspect. Can be overridden by child classes."""
