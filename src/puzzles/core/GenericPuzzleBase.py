@@ -239,6 +239,12 @@ class GenericPuzzleBase(BasePuzzle):
                 return self.THEMED_MESSAGES[theme]
         return self.THEMED_MESSAGES["default"]
 
+    def _get_success_message(self, aspect: str) -> str:
+        """Get success message for completing an aspect. Can be overridden by child classes."""
+        # Convert aspect from snake_case to readable form
+        aspect_name = aspect.replace('_', ' ')
+        return f"The {aspect_name} grows stronger!"
+
     def handle_command(self, command: str, room_id: str, inventory: List[str]) -> Tuple[bool, str]:
         """Generic command handler for verb/noun puzzles"""
         if not self.is_puzzle_room(room_id):
