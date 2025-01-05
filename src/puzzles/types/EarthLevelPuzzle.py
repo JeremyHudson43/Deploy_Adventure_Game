@@ -1,8 +1,8 @@
 from typing import Dict, List, Tuple, Optional
 from puzzles.core.BasePuzzle import BasePuzzle
+from puzzles.core.GenericPuzzleBase import GenericPuzzleBase
 
-
-class EarthLevelPuzzle(BasePuzzle):
+class EarthLevelPuzzle(GenericPuzzleBase):
     puzzle_type = "earth_level"
     
     def __init__(self):

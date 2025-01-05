@@ -1,8 +1,8 @@
 from typing import Dict, List, Tuple, Optional
 from puzzles.core.BasePuzzle import BasePuzzle
+from puzzles.core.GenericPuzzleBase import GenericPuzzleBase
 
-
-class NostalgiaPuzzle(BasePuzzle):
+class NostalgiaPuzzle(GenericPuzzleBase):
     puzzle_type = "nostalgia"
     
     def __init__(self):
@@ -217,36 +217,6 @@ class NostalgiaPuzzle(BasePuzzle):
                 }
             }
         }
-
-    def handle_command(self, command: str, room_id: str, inventory: List[str]) -> Tuple[bool, str]:
-        """
-        Attempt to solve a piece of the childhood memory puzzle by typing commands such as:
-        'share smile' in Rogers' Nexus, 'pour tea' in Hatter's Trap, 
-        'grow plant' in Wall-E's World, 'paint rose' in Queen's Garden, etc.
-        """
-        if not self.is_puzzle_room(room_id):
-            return False, "This puzzle cannot be advanced here."
-
-        words = command.lower().split()
-        if len(words) < 2:
-            return False, "That doesn't seem to help."
-
-        verb = words[0]
-        noun = words[-1]
-
-        for aspect, data in self.aspects.items():
-            if aspect in self._completed_groups:
-                continue
-
-            if data["room"] in room_id.lower():
-                if verb in data["verbs"] and noun in data["nouns"]:
-                    self._completed_groups.add(aspect)
-                    completed, msg = self._handle_completion()
-                    if completed:
-                        return True, msg
-                    return True, f"The memories respond to your command. The {aspect.replace('_',' ')} grows stronger."
-
-        return False, "Nothing happens."
 
     def _handle_completion(self) -> Tuple[bool, str]:
         """Check if all aspects are completed and handle completion."""

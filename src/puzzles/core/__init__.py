@@ -1,6 +1,6 @@
 from .BasePuzzle import BasePuzzle
 from .PuzzleState import PuzzleState
 from .PuzzleManager import PuzzleManager
+from .GenericPuzzleBase import GenericPuzzleBase
 
-# For backwards compatibility
-PuzzleStateManager = PuzzleManager
+__all__ = ['BasePuzzle', 'PuzzleState', 'PuzzleManager', 'GenericPuzzleBase']

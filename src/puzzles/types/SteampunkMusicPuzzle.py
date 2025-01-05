@@ -1,8 +1,8 @@
 from typing import Dict, List, Tuple, Optional
 from puzzles.core.BasePuzzle import BasePuzzle
+from puzzles.core.GenericPuzzleBase import GenericPuzzleBase
 
-
-class SteampunkMusicPuzzle(BasePuzzle):
+class SteampunkMusicPuzzle(GenericPuzzleBase):
     puzzle_type = "steampunk_music"
     
     def __init__(self):
@@ -167,36 +167,6 @@ class SteampunkMusicPuzzle(BasePuzzle):
                 }
             }
         }
-
-    def handle_command(self, command: str, room_id: str, inventory: List[str]) -> Tuple[bool, str]:
-        """
-        Attempt to solve a piece of the clockwork harmony puzzle by typing commands such as:
-        'sync gear' on Giraffe's Stage, 'reverse time' in Cog's Lab, 
-        'conduct wind' on Abney's Airship, etc.
-        """
-        if not self.is_puzzle_room(room_id):
-            return False, "This puzzle cannot be advanced here."
-
-        words = command.lower().split()
-        if len(words) < 2:
-            return False, "That doesn't seem to help."
-
-        verb = words[0]
-        noun = words[-1]
-
-        for aspect, data in self.aspects.items():
-            if aspect in self._completed_groups:
-                continue
-
-            if data["room"] in room_id.lower():
-                if verb in data["verbs"] and noun in data["nouns"]:
-                    self._completed_groups.add(aspect)
-                    completed, msg = self._check_overall_completion()
-                    if completed:
-                        return True, msg
-                    return True, f"The machinery responds to your command. The {aspect.replace('_',' ')} grows stronger."
-
-        return False, "Nothing happens."
 
     def _check_overall_completion(self) -> Tuple[bool, str]:
         """If all aspects are done, mark the puzzle as complete and return a final message."""
