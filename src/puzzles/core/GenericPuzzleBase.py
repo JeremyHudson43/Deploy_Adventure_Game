@@ -9,8 +9,8 @@ class GenericPuzzleBase(BasePuzzle):
     THEMED_MESSAGES = {
         # Default
         "default": {
-            "verb": "That action might work... but you need something to use it on.",
-            "noun": "That's something you could use... but you need the right action."
+            "verb": ["That action might work... but you need something to use it on."],
+            "noun": ["That's something you could use... but you need the right action."]
         }
     }
 
